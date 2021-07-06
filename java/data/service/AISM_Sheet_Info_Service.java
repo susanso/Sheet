@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import data.dao.AISM_Sheet_Info_DAOInter;
-import data.dto.AISM_Sheet_Info_DTO;
+import data.dto.AISM_Sheet_Song_List_DTO;
 
 @Service
 public class AISM_Sheet_Info_Service 
@@ -17,12 +17,12 @@ public class AISM_Sheet_Info_Service
 	public AISM_Sheet_Info_DAOInter dao; 
 	
 	@Override
-	public void insert_song_info(AISM_Sheet_Info_DTO dto) {
+	public void insert_song_info(AISM_Sheet_Song_List_DTO dto) {
 		dao.insert_song_info(dto);
 	}
 	
 	@Override
-	public List<AISM_Sheet_Info_DTO> allSongList() {
+	public List<AISM_Sheet_Song_List_DTO> allSongList() {
 		return dao.allSongList();
 	}
 	
