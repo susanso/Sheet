@@ -39,14 +39,27 @@ public class PageController {
 		return "component/home";
 	}
 
-	// admin test 페이지
+	// Data 입력 페이지
 	@GetMapping(value = "/insert")
 	public String renderInsertPage() {
 		return "component/create/insertData";
 	}
 	
+	// 회원가입 페이지
 	@GetMapping(value = "/signup.do")
 	public String renderSignUpPage() {
 		return "component/user/login/signUp";
+	}
+	
+	// 로그인 후 메인 페이지
+	@GetMapping(value = "/main")
+	public String renderMainPage() {
+		return "component/main";
+	}
+	
+	// Data View 페이지 
+	@GetMapping(value = "/view")
+	public String renderViewPage() {
+		return "component/read/view";
 	}
 }

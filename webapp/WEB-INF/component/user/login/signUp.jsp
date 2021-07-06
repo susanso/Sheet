@@ -19,7 +19,7 @@
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../../css/user/login/signUp.css">
-<title>AISM | 회원가입</title>
+<title>Upvote | 회원가입</title>
 </head>
 <body style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
 	<div class="signUpContainer">
@@ -33,7 +33,7 @@
 							oninput="this.value = this.value.replace(/[^a-z0-9]/gi,'');">
 					</div>
 				</div>
-				<div class="alertId">아이디를 확인해주세요.</div>
+				<div class="alertError alertId">아이디를 확인해주세요.</div>
 				<div class="signUpculumnRow">
 					<div class="signUpTitle">이름  </div>
 					<div class="signUpInputmBox">
@@ -42,7 +42,7 @@
 							spellcheck="false" placeholder="이름">					
 					</div>
 				</div>
-				<div class="alertName">이름을 확인해주세요.</div>
+				<div class="alertError alertName">이름을 확인해주세요.</div>
 				<div class="signUpculumnRow">
 					<div class="signUpTitle">비밀번호  </div>
 					<div class="signUpInputmBox">
@@ -50,7 +50,7 @@
 							class="signUpInputForm signUpPwd1" placeholder="비밀번호">
 					</div>
 				</div>
-				<div class="alertPwd1">비밀번호를 확인해주세요.</div>
+				<div class="alertError alertPwd1">비밀번호를 확인해주세요.</div>
 				<div class="signUpculumnRow">
 					<div class="signUpTitle">비밀번호 확인</div>
 					<div class="signUpInputmBox">
@@ -58,7 +58,7 @@
 							class="signUpInputForm signUpPwd2" placeholder="비밀번호 재확인">
 					</div>
 				</div>
-				<div class="alertBox alertPwd2">비밀번호를 확인해주세요.</div>
+				<div class="alertError alertPwd2">비밀번호를 확인해주세요.</div>
 				<div class="pwdAlertError">비밀번호가 일치하지 않습니다.</div>
 				<div class="createSignUp">회원가입</div>
 		</div>

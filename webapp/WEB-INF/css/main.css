@@ -1,0 +1,30 @@
+.title {
+	font-size: 30px; 
+	font-weight: bold;
+	text-align: center; 
+	margin-top: 50px;
+}
+
+.selectContainer{
+	justify-content: center;
+	display: flex;
+}
+
+.selectType {
+	display: flex;
+	width: 500px;
+	justify-content: space-around;
+	margin-top: 30vh;
+}
+
+.insert{
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.update {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+}
