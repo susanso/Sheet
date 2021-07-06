@@ -52,7 +52,18 @@ public class UserController {
 		map.put("userId", id);
 		map.put("userPwd", pwd);
 		
+		if (membership.validLogin(id, pwd)) {
+			System.out.println("login good");
+			map.put("login", "success");
+		}
+		
+		else {
+			System.out.println("login false");
+			map.put("login", "false");
+		}
+		
 		return map;
+		
 	}
 	
 }

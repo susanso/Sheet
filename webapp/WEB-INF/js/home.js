@@ -50,7 +50,15 @@ $('.loginDo').click(function() {
 			data: {"id": id, "pwd": pwd},
 			type: "GET",
 			success : function(data) {
-				location.href = '/main';
+				console.log(data);
+				
+				if (data.login == "success") {
+					location.href = '/main';
+				}
+				
+				else {
+					console.log("Login False");
+				}
 			}
 		});
 });
@@ -66,7 +74,15 @@ $('.insertPwd').keyup(function(e) {
 				data: {"id": id, "pwd": pwd},
 				type: "GET",
 				success : function(data) {
-					location.href = '/main';
+					console.log(data);
+				
+					if (data.login == "success") {
+						location.href = '/main';
+					}
+					
+					else {
+						console.log("Login False");
+					}
 				}
 		});
 	}
