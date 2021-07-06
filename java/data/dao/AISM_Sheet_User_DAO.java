@@ -15,5 +15,14 @@ public class AISM_Sheet_User_DAO extends SqlSessionDaoSupport implements AISM_Sh
 		// TODO Auto-generated method stub
 		getSqlSession().insert("insertUser", dto);
 	}
+	
+	// 로그인
+	@Override
+	public boolean loginIsValid(String id, String pwd) {
+		String realPwd = getSqlSession().selectOne("getPwd", id);
+		
+		if (realPwd.equals(pwd)) return true;
+		else return false;
+	}
 
 }

@@ -70,7 +70,21 @@ $('.createSignUp').click(function() {
 	let signUp_is_valid = isValidSignUpInfo(user_id, user_name, first_pwd, second_pwd);
 	
 	if (signUp_is_valid == true) {
-		console.log("회원가입 Success");
+		
+		let data_toController = {
+			userId: user_id,
+			userName: user_name,
+			userPwd: second_pwd
+		}
+		
+		$.ajax ({
+			url: "signUp.go",
+			data: data_toController,
+			type: "GET",
+			success : function(data) {
+				location.href = '/';
+			}
+		});
 	}
 	
 	else{
@@ -92,7 +106,21 @@ $('.signUpPwd2').keyup(function(e) {
 		let signUp_is_valid = isValidSignUpInfo(user_id, user_name, first_pwd, second_pwd);
 		
 		if (signUp_is_valid == true) {
-			console.log("회원가입 Success");
+			
+			let data_toController = {
+				userId: user_id,
+				userName: user_name,
+				userPwd: second_pwd
+			}
+		
+			$.ajax ({
+				url: "signUp.go",
+				data: data_toController,
+				type: "GET",
+				success : function(data) {
+					location.href = '/';
+				}
+			});
 		}
 		
 		else{
