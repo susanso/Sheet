@@ -23,31 +23,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.dto.AISM_Sheet_User_Info_DTO;
-import data.dto.AISM_Sheet_Song_List_DTO;
+import data.dto.AISM_Sheet_Info_DTO;
 import data.service.AISM_Sheet_Info_ServiceInter;
 
 
 @Controller
-public class PageController {
+public class UserController {
 	
 	@Autowired
 	private AISM_Sheet_Info_ServiceInter sheet;
 	
-	// main 페이지
-	@GetMapping(value = "/")
-	public String renderHomePage() {
-		return "component/home";
-	}
-
-	// admin test 페이지
-	@GetMapping(value = "/insert")
-	public String renderInsertPage() {
-		return "component/create/insertData";
-	}
-	
-	@GetMapping(value = "/signup.do")
-	public String renderSignUpPage() {
-		return "component/user/login/signUp";
-	}
 }
