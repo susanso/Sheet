@@ -23,14 +23,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.dto.AISM_Sheet_Info_DTO;
-import data.service.AISM_Sheet_Info_ServiceInter;
+import data.dto.AISM_Sheet_Song_List_DTO;
+import data.dto.AISM_Sheet_User_Info_DTO;
+import data.service.AISM_Sheet_User_ServiceInter;
 
 
 @Controller
 public class UserController {
 	
 	@Autowired
-	private AISM_Sheet_Info_ServiceInter sheet;
+	private AISM_Sheet_User_ServiceInter membership;
+	
+	@GetMapping("signUp.go")
+	public @ResponseBody Map<String, String> joinUser(@ModelAttribute AISM_Sheet_User_Info_DTO dto){
+		Map<String, String> map = new HashMap<String, String>();
+		membership.insertUser(dto);
+		map.put("userId", dto.getUserId());
+		map.put("success", "success");
+		return map;
+	}
 	
 }

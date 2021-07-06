@@ -47,30 +47,30 @@ public class CreateController {
 
 		return map;
 	}
-	
-	@GetMapping(value = "/insert/insertSongInfo")
-	public @ResponseBody Map<String, Object> insertInstInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
-
-		Map<String, Object> map = new HashMap<String, Object>();
-
-		sheet.insert_song_info(dto);
-		
-		map.put("song_name", dto.getSongInfo().getSongName());
-		map.put("result", "success");
-
-		return map;
-	}
-	
-	@GetMapping(value = "/insert/insertSongInfo")
-	public @ResponseBody Map<String, Object> insertChordInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
-
-		Map<String, Object> map = new HashMap<String, Object>();
-
-		sheet.insert_song_info(dto);
-		
-		map.put("song_name", dto.getSongInfo().getSongName());
-		map.put("result", "success");
-
-		return map;
-	}
+//	
+//	@GetMapping(value = "/insert/insertSongInfo")
+//	public @ResponseBody Map<String, Object> insertInstInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
+//
+//		Map<String, Object> map = new HashMap<String, Object>();
+//
+//		sheet.insert_song_info(dto);
+//		
+//		map.put("song_name", dto.getSongInfo().getSongName());
+//		map.put("result", "success");
+//
+//		return map;
+//	}
+//	
+//	@GetMapping(value = "/insert/insertSongInfo")
+//	public @ResponseBody Map<String, Object> insertChordInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
+//
+//		Map<String, Object> map = new HashMap<String, Object>();
+//
+//		sheet.insert_song_info(dto);
+//		
+//		map.put("song_name", dto.getSongInfo().getSongName());
+//		map.put("result", "success");
+//
+//		return map;
+//	}
 }
