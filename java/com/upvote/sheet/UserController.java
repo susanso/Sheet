@@ -28,25 +28,9 @@ import data.service.AISM_Sheet_Info_ServiceInter;
 
 
 @Controller
-public class PageController {
+public class UserController {
 	
 	@Autowired
 	private AISM_Sheet_Info_ServiceInter sheet;
 	
-	// main 페이지
-	@GetMapping(value = "/")
-	public String renderHomePage() {
-		return "component/home";
-	}
-
-	// admin test 페이지
-	@GetMapping(value = "/insert")
-	public String renderInsertPage() {
-		return "component/create/insertData";
-	}
-	
-	@GetMapping(value = "/signup.do")
-	public String renderSignUpPage() {
-		return "component/user/login/signUp";
-	}
 }
