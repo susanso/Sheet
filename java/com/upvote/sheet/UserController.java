@@ -34,12 +34,24 @@ public class UserController {
 	@Autowired
 	private AISM_Sheet_User_ServiceInter membership;
 	
+	// 회원가입 Url
 	@GetMapping("signUp.go")
 	public @ResponseBody Map<String, String> joinUser(@ModelAttribute AISM_Sheet_User_Info_DTO dto){
 		Map<String, String> map = new HashMap<String, String>();
 		membership.insertUser(dto);
 		map.put("userId", dto.getUserId());
 		map.put("success", "success");
+		return map;
+	}
+	
+	// 로그인 url 
+	@GetMapping("login.do")
+	public @ResponseBody Map<String, String> loginUser(@RequestParam String id, @RequestParam String pwd){
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("userId", id);
+		map.put("userPwd", pwd);
+		
 		return map;
 	}
 	

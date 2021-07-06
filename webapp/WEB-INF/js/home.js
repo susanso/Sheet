@@ -1,7 +1,9 @@
+// 회원가입 페이지로 이동
 $('.signUp').click(function() {
 	location.href = '/signup.do';
 });
 
+// 아이디/비밀번호 찾기 기능 준비중 모달 띄우기 
 function modal(className) {
 	var zIndex = 9999;
     var modal = $('.' + className);
@@ -24,6 +26,7 @@ function modal(className) {
         .show()
 }
 
+// 아이디/비밀번호 찾기 기능 준비중 모달 띄우기 
 $('.findUserinfo').click(function() {
 	modal('findModal');
 	
@@ -32,6 +35,39 @@ $('.findUserinfo').click(function() {
 	})
 });
 
+// Main Logo 클릭했을 때 새로고
 $('.LoginImg').click(function() {
 	location.href = '/';
+});
+
+// Login 입력 데이터 Controller에 전달 로그인 Button Click Event 
+$('.loginDo').click(function() {
+	let id = $('.insertId').val();
+	let pwd = $('.insertPwd').val();
+	
+	$.ajax ({
+			url: "login.do",
+			data: {"id": id, "pwd": pwd},
+			type: "GET",
+			success : function(data) {
+				location.href = '/main';
+			}
+		});
+});
+
+// Login 입력 데이터 Controller에 전달 로그인 Enter Event 
+$('.insertPwd').keyup(function(e) {
+	if(e.keyCode == 13) {
+		let id = $('.insertId').val();
+		let pwd = $('.insertPwd').val();
+	
+		$.ajax ({
+				url: "login.do",
+				data: {"id": id, "pwd": pwd},
+				type: "GET",
+				success : function(data) {
+					location.href = '/main';
+				}
+		});
+	}
 });
