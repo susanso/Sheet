@@ -2,10 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="data.dto.AISM_Sheet_Info_DTO" alias="sheetdto"/>
+		<typeAlias type="data.dto.AISM_Sheet_Song_List_DTO" alias="songdto"/>
+		<typeAlias type="data.dto.AISM_Sheet_User_Info_DTO" alias="userdto"/>
 	</typeAliases>
+	
 	<mappers>
 		<mapper resource="mybatis/setting/Sheetsql.xml"/>
-		
+		<mapper resource="mybatis/setting/Usersql.xml"/>
 	</mappers>
 </configuration>
