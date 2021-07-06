@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.dto.AISM_Sheet_Info_DTO;
+import data.dto.AISM_Sheet_User_Info_DTO;
+import data.dto.AISM_Sheet_Song_List_DTO;
 import data.service.AISM_Sheet_Info_ServiceInter;
 
 
@@ -35,13 +36,39 @@ public class CreateController {
 
 	// admin test 페이지 -> db 입력 기능
 	@GetMapping(value = "/insert/insertSongInfo")
-	public @ResponseBody Map<String, Object> insertSongInfo(@ModelAttribute AISM_Sheet_Info_DTO dto) {
+	public @ResponseBody Map<String, Object> insertSongInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
 
 		Map<String, Object> map = new HashMap<String, Object>();
 
 		sheet.insert_song_info(dto);
 		
-		map.put("song_name", dto.getSongName());
+		map.put("song_name", dto.getSongInfo().getSongName());
+		map.put("result", "success");
+
+		return map;
+	}
+	
+	@GetMapping(value = "/insert/insertSongInfo")
+	public @ResponseBody Map<String, Object> insertInstInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		sheet.insert_song_info(dto);
+		
+		map.put("song_name", dto.getSongInfo().getSongName());
+		map.put("result", "success");
+
+		return map;
+	}
+	
+	@GetMapping(value = "/insert/insertSongInfo")
+	public @ResponseBody Map<String, Object> insertChordInfo(@ModelAttribute AISM_Sheet_Song_List_DTO dto) {
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		sheet.insert_song_info(dto);
+		
+		map.put("song_name", dto.getSongInfo().getSongName());
 		map.put("result", "success");
 
 		return map;

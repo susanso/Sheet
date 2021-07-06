@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.dto.AISM_Sheet_Info_DTO;
+import data.dto.AISM_Sheet_User_Info_DTO;
+import data.dto.AISM_Sheet_Song_List_DTO;
 import data.service.AISM_Sheet_Info_ServiceInter;
 
 
@@ -33,10 +34,10 @@ public class ViewController {
 	@Autowired
 	private AISM_Sheet_Info_ServiceInter sheet;
 	
-	@GetMapping(value = "/admin/test/showSongInfo")
+	@GetMapping(value = "/show/allSong")
 	public @ResponseBody Map<String, Object> showAllSongList() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		List<AISM_Sheet_Info_DTO> list = new Vector<AISM_Sheet_Info_DTO>();
+		List<AISM_Sheet_Song_List_DTO> list = new Vector<AISM_Sheet_Song_List_DTO>();
 		
 		list = sheet.allSongList();
 		map.put("songList", list);
@@ -44,11 +45,11 @@ public class ViewController {
 		return map;
 	}
 	
-	@PostMapping("showPdSong.go")
+	@PostMapping(value = "/show/pdSong")
 	public @ResponseBody Map<String, Object> showPdSongList(
 			@RequestParam("producerName") String producerName) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		List<AISM_Sheet_Info_DTO> list = new Vector<AISM_Sheet_Info_DTO>();
+
 		
 		/*
 		list = sheet.pdSongList(producerName);

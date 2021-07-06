@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.dto.AISM_Sheet_Info_DTO;
+import data.dto.AISM_Sheet_User_Info_DTO;
+import data.dto.AISM_Sheet_Song_List_DTO;
 import data.service.AISM_Sheet_Info_ServiceInter;
 
 
