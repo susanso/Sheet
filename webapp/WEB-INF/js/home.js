@@ -31,3 +31,7 @@ $('.findUserinfo').click(function() {
 		$('.findModal').css('display', 'none');
 	})
 });
+
+$('.LoginImg').click(function() {
+	location.href = '/';
+});

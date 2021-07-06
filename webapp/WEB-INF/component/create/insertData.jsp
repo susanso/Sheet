@@ -19,8 +19,6 @@
 </head>
 
 <body style="background-color: #000; color: #f2f2f3">
-	<div class = "Title">Upvote Sheet Test Page</div>
-	
 	<div class="InputContainer">
 		<div class="SongInfoInputContainer">
 			<div class="song_info">곡 정보 테이블</div>

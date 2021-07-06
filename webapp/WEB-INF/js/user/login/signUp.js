@@ -48,7 +48,7 @@ function isValidSignUpInfo(userId, userName, firstPwd, secondPwd) {
 	
 	// 첫번째 비밀번호 == 두번재 비밀번호 -> 회원가입 성공 
 	else if ((first_pwd == second_pwd) && (user_id.length != 0) && (user_name.length != 0) && (first_pwd.length != 0) && (second_pwd.length != 0)) {
-		$('.pwdAlertError').css('display', 'none');
+		$('.alertError').css('display', 'none');
 		$('.pwdAlertError').removeClass("alertError");
 		
 		is_valid = true;
@@ -100,13 +100,5 @@ $('.signUpPwd2').keyup(function(e) {
 		}
 	}
 	
-});
-
-// 비밀번호 오류 에러 지우기 위한 메서드 
-$('.signUpPwd2').click(function() {
-	if(($('.pwdAlertError').hasClass("alertError")) && ($('.signUpPwd2').val().length == 0)) {
-		$('.pwdAlertError').css('display', 'none');
-		$('.pwdAlertError').removeClass("alertError");
-	}
 });
 
