@@ -4,6 +4,9 @@
 	<typeAliases>
 		<typeAlias type="data.dto.AISM_Sheet_Song_List_DTO" alias="songdto"/>
 		<typeAlias type="data.dto.AISM_Sheet_User_Info_DTO" alias="userdto"/>
+		<typeAlias type="data.dto.AISM_Sheet_Song_Info_DTO" alias="sdto"/>
+		<typeAlias type="data.dto.AISM_Sheet_Inst_Info_DTO" alias="idto"/>
+		<typeAlias type="data.dto.AISM_Sheet_Chord_Info_DTO" alias="cdto"/>
 	</typeAliases>
 	
 	<mappers>
