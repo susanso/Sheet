@@ -9,8 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Upvote | 편집</title>
 <!-- favicon -->
-<link rel="apple-touch-icon" href="../image/favicon/favicon_ipad.png" type="image/png"/>
-<link rel="shortcut icon" href="../image/favicon/favicon_pc.png" type="image/png">
+<link rel="apple-touch-icon" href="../image/upvote_logo.png" type="image/png"/>
+<link rel="shortcut icon" href="../image/upvote_logo.png" type="image/png">
 
 <link rel="stylesheet" type="text/css" href="../../css/read/view.css">
 <!-- 제이쿼리 -->
