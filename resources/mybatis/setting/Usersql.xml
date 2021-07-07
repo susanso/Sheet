@@ -4,7 +4,12 @@
 	<insert id="insertUser" parameterType="userdto">
 		INSERT INTO sheet.user_info(userId, userPwd, userName) values(#{userId}, #{userPwd}, #{userName});
 	</insert>
-	<select id = "getPwd" parameterType="String">
-		SELECT userPwd FROM sheet.user_info WHERE userId = #{id};
+	
+	<select id = "getPwd" parameterType="HashMap" resultType = "int">
+		SELECT count(*) FROM sheet.user_info WHERE userId=#{id} and userPwd=#{pwd};
+	</select>
+	
+	<select id = "getID" parameterType = "HashMap" resultType = "int">
+		SELECT count(*) FROM sheet.user_info WHERE userID=#{id};
 	</select>
 </mapper>

@@ -10,4 +10,7 @@ public interface AISM_Sheet_User_ServiceInter {
 	//로그인
 	public boolean validLogin(String id, String pwd);
 	
+	//아이디 중복확인
+	public boolean validID(String id);
+	
 }

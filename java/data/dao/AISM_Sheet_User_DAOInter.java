@@ -9,4 +9,7 @@ public interface AISM_Sheet_User_DAOInter {
 	
 	//로그인
 	public boolean loginIsValid(String id, String pwd);
+	
+	//아이디 중복확인
+	public boolean validID(String id);
 }

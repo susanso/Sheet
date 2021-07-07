@@ -33,7 +33,15 @@
 							oninput="this.value = this.value.replace(/[^a-z0-9]/gi,'');">
 					</div>
 				</div>
-				<div class="alertError alertId">아이디를 확인해주세요.</div>
+				<div class = "overlapContainer">
+					<div class = "checkIdOverlap">중복 확인</div>
+					<div class = "overlap Idoverlap">사용 불가능한 아이디입니다.</div>
+					<div class = "overlap IdNotOverlap">사용 가능한 아이디입니다.</div>
+				</div>
+				<div class="overlapAlertBox">
+					아이디 중복 확인을 진행하세요. 
+					<a class = "modalCloseBtn">닫기</a>
+				</div>
 				<div class="signUpculumnRow">
 					<div class="signUpTitle">이름  </div>
 					<div class="signUpInputmBox">
@@ -58,9 +66,12 @@
 							class="signUpInputForm signUpPwd2" placeholder="비밀번호 재확인">
 					</div>
 				</div>
-				<div class="alertError alertPwd2">비밀번호를 확인해주세요.</div>
 				<div class="pwdAlertError">비밀번호가 일치하지 않습니다.</div>
 				<div class="createSignUp">회원가입</div>
+				<div class="signUpAlertBox">
+					회원가입이 완료되었습니다.
+					<a class = "modalCloseBtn">닫기</a>
+				</div>
 		</div>
 	</div>
 </body>

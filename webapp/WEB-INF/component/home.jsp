@@ -66,6 +66,11 @@
 		<a class = "modalCloseBtn">닫기</a>
 	</div>
 	
+	<div class = "loginErrorModal">
+		아이디, 비밀번호를 다시 확인해주세요.
+		<a class = "modalCloseBtn">닫기</a>
+	</div>
+	
 	<script src="../../js/home.js"></script>
 </body>
 </html>

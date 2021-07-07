@@ -1,7 +1,5 @@
 @charset "UTF-8";
-
-
-			  
+	  
 .findModal {
 	display: none;
     width: 300px;
@@ -17,11 +15,23 @@
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	
+}
+
+.loginErrorModal {
+	display: none;
+    width: 300px;
+    background-color: rgb(20, 20, 10);
+    border: 1px solid black;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 8px;
 }
 
 .modalCloseBtn{
-	padding-left: 45px;
+	padding-left: 40px;
 	cursor: pointer;
 }
 /* 모바일 */

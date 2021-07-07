@@ -1,5 +1,7 @@
 package data.dao;
 
+import java.util.HashMap;
+
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -19,10 +21,30 @@ public class AISM_Sheet_User_DAO extends SqlSessionDaoSupport implements AISM_Sh
 	// 로그인
 	@Override
 	public boolean loginIsValid(String id, String pwd) {
-		String realPwd = getSqlSession().selectOne("getPwd", id);
+		HashMap<String, String> map = new HashMap <String, String>();
 		
-		if (realPwd.equals(pwd)) return true;
+		map.put("id", id);
+		map.put("pwd", pwd);
+		
+		Integer is_valid = getSqlSession().selectOne("getPwd", map);
+		
+		if (is_valid >= 1) return true;
 		else return false;
+	}
+	
+	// 아이디 중복 확인
+	@Override
+	public boolean validID(String id) {
+		HashMap<String, String> map = new HashMap <String, String>();
+		
+		map.put("id", id);
+		
+		// DB에 사용자가 입력한 아이디 있는지 확인 
+		Integer is_valid = getSqlSession().selectOne("getID", map);
+		
+		// DB에 이미 아이디 존재하면 1개 이상 반환하므로 중복 -> 아이디 사용 불가 
+		if (is_valid >= 1) return false;
+		else return true;
 	}
 
 }
