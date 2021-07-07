@@ -22,6 +22,7 @@
 </head>
 
 <body style="background-color: rgb(38, 40, 43); color: rgb(242, 242, 243);">
+<%@ include file="../../component/top.jsp" %>
 <div class = "title" style = "font-size: 24px; text-align: center; margin-top: 50px;">View & Edit Page</div>
 	
 <script src="../../js/read/view.js"></script>

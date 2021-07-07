@@ -46,5 +46,11 @@ public class AISM_Sheet_User_DAO extends SqlSessionDaoSupport implements AISM_Sh
 		if (is_valid >= 1) return false;
 		else return true;
 	}
+	
+	//사용자 이름 가져오기
+	@Override	
+	public String getUserName(String id) {
+		return getSqlSession().selectOne("getUserName", id);
+	}
 
 }

@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,6 +53,23 @@ public class PageController {
 	@GetMapping(value = "/signup.do")
 	public String renderSignUpPage() {
 		return "component/user/login/signUp";
+	}
+	
+	// Top page에 사용자 정보 전달하기 위함 
+	public ModelAndView renderTopPage(HttpServletRequest request) {
+		ModelAndView model = new ModelAndView();
+		
+		// main page view에 값 전달하기 위해 설정 
+		model.setViewName("component/top");
+		
+		// Session 가져와서 메인 페이지에 뿌려줌 
+		HttpSession session = request.getSession();
+		String userName = (String) session.getAttribute("userName");
+		
+		// 회원 정보 저장 객체에 저장 
+		model.addObject("userName", userName);
+		
+		return model;
 	}
 	
 	// 로그인 후 메인 페이지
