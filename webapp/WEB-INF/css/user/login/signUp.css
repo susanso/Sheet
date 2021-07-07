@@ -53,6 +53,32 @@
     
 }
 
+.overlapContainer {
+	display: flex;
+	width: 500px;
+	justify-content: space-between;
+}
+
+.overlap {
+	padding-top: 7px;
+}
+
+.checkIdOverlap {
+	height: 40px;
+	padding-top: 6px;
+	cursor: pointer;
+}
+
+.Idoverlap{
+	display: none;
+	color: indianred;
+}
+
+.IdNotOverlap {
+	display: none;
+	color: white;
+}
+
 .signUpContainer {
     height: 100vh;
     display: flex;
@@ -85,4 +111,41 @@
 	display: none;
 	color: indianred;
 }
+
+.signUpAlertBox{
+	display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.overlapAlertBox{
+	display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.signUpAlertBox .modalCloseBtn {
+	position: absolute;
+	top: 35px;
+	right: 10px;
+}
+
+.modalCloseBtn{
+	cursor: pointer;
+	position: absolute;
+    top: 35px;
+    right: 10px;
+}
+
+
 

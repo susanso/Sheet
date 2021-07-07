@@ -10,7 +10,7 @@ function modal(className) {
     modal
         .css({
             position: 'fixed',
-            top: '5%',
+            top: '30%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
             msTransform: 'translate(-50%, -50%)',
@@ -28,11 +28,12 @@ $('.findUserinfo').click(function() {
 	})
 });
 
-// Main Logo 클릭했을 때 새로고
+// Main Logo 클릭했을 때 새로고침
 $('.LoginImg').click(function() {
 	location.href = '/';
 });
 
+// 로그인 컨트롤러에 요청 보내는 메서드 
 function login() {
 	let id = $('.insertId').val();
 	let pwd = $('.insertPwd').val();
@@ -42,12 +43,13 @@ function login() {
 			data: {"id": id, "pwd": pwd},
 			type: "POST",
 			success : function(data) {
-				console.log(data);
 				
+				// 로그인 성공하면 메인 페이지로 이동 
 				if (data.login == "success") {
 					location.href = '/main';
 				}
 				
+				// 로그인 실패하면 아이디, 비밀번호 확인하라는 모달창 띄움 
 				else {
 					console.log("Login Fail");
 					

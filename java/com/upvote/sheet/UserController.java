@@ -38,7 +38,7 @@ public class UserController extends AbxtractHttpSession {
 	@Autowired
 	private AISM_Sheet_User_ServiceInter membership;
 	
-	// 회원가입 Url
+	// 회원가입 메서드 
 	@GetMapping("signUp.go")
 	public @ResponseBody Map<String, String> joinUser(@ModelAttribute AISM_Sheet_User_Info_DTO dto){
 		Map<String, String> map = new HashMap<String, String>();
@@ -48,7 +48,7 @@ public class UserController extends AbxtractHttpSession {
 		return map;
 	}
 	
-	// 로그인 url 
+	// 로그인 메서드 
 	@PostMapping("login.do")
 	public @ResponseBody Map<String, String> loginUser(HttpServletRequest request, @RequestParam String id, @RequestParam String pwd){
 		Map<String, String> map = new HashMap<String, String>();
@@ -76,7 +76,24 @@ public class UserController extends AbxtractHttpSession {
 		else map.put("login", "fail");
 		
 		return map;
+	}
+	
+	// 회원가입할 때 아이디 중복확인 메서드 
+	@PostMapping("checkID")
+	public @ResponseBody Map<String, String> is_valid_id(@RequestParam String id) {
+		Map<String, String> map = new HashMap<String, String>();
 		
+		
+		// DB에 사용자가 입력한 ID 넣어서 중복 확인하기 위한 객체 
+		map.put("userId", id);
+		
+		// DB에 ID 보내서 유효성 확인
+		boolean id_is_valid = membership.validID(id);
+		
+		if (id_is_valid) map.put("id", "valid");
+		else map.put("id", "non_valid");
+		
+		return map;
 	}
 	
 }

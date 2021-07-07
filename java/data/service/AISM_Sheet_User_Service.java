@@ -26,5 +26,11 @@ public class AISM_Sheet_User_Service implements AISM_Sheet_User_ServiceInter{
 	public boolean validLogin(String id, String pwd) {
 		return dao.loginIsValid(id, pwd);
 	}
+	
+	//아이디 중복확인
+	@Override
+	public boolean validID(String id) {
+		return dao.validID(id);
+	}
 
 }
