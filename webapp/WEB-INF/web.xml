@@ -44,5 +44,10 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<!--  Session Duration -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	
 </web-app>
 

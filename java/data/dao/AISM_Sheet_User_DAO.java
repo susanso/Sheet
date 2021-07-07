@@ -1,5 +1,7 @@
 package data.dao;
 
+import java.util.HashMap;
+
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -19,9 +21,14 @@ public class AISM_Sheet_User_DAO extends SqlSessionDaoSupport implements AISM_Sh
 	// 로그인
 	@Override
 	public boolean loginIsValid(String id, String pwd) {
-		String realPwd = getSqlSession().selectOne("getPwd", id);
+		HashMap<String, String> map = new HashMap <String, String>();
 		
-		if (realPwd.equals(pwd)) return true;
+		map.put("id", id);
+		map.put("pwd", pwd);
+		
+		Integer is_valid = getSqlSession().selectOne("getPwd", map);
+		
+		if (is_valid >= 1) return true;
 		else return false;
 	}
 

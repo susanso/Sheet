@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,13 +26,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import data.session.AbxtractHttpSession;
 import data.dto.AISM_Sheet_Song_List_DTO;
 import data.dto.AISM_Sheet_User_Info_DTO;
 import data.service.AISM_Sheet_User_ServiceInter;
 
 
 @Controller
-public class UserController {
+public class UserController extends AbxtractHttpSession {
 	
 	@Autowired
 	private AISM_Sheet_User_ServiceInter membership;
@@ -45,22 +49,31 @@ public class UserController {
 	}
 	
 	// 로그인 url 
-	@GetMapping("login.do")
-	public @ResponseBody Map<String, String> loginUser(@RequestParam String id, @RequestParam String pwd){
+	@PostMapping("login.do")
+	public @ResponseBody Map<String, String> loginUser(HttpServletRequest request, @RequestParam String id, @RequestParam String pwd){
 		Map<String, String> map = new HashMap<String, String>();
 		
+		// DB에 사용자가 입력한 ID, PWD 넣어서 유효한지 확인하기 위한 객체
 		map.put("userId", id);
 		map.put("userPwd", pwd);
 		
-		if (membership.validLogin(id, pwd)) {
-			System.out.println("login good");
+		// DB에 ID, PWD 보내서 유효성 확인 
+		boolean login_is_valid = membership.validLogin(id, pwd);
+		
+		// 로그인 성공 -> Client에 로그인 결과 성공으로 전송 & Session 설정 
+		if (login_is_valid) {
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("userId", id);
+			session.setAttribute("userPwd", pwd);
+			
+			session.setMaxInactiveInterval(1800);
+			
 			map.put("login", "success");
 		}
 		
-		else {
-			System.out.println("login false");
-			map.put("login", "false");
-		}
+		// 로그인 실패 -> Client에 로그인 결과 실패로 전송 
+		else map.put("login", "fail");
 		
 		return map;
 		
