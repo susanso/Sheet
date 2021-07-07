@@ -1,0 +1,22 @@
+.profile {
+	display: flex;
+    justify-content: flex-end;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+
+.profileImg{
+	background : url(../image/profile/default_profile.png);
+	background-size: 100% 100%;
+	width: 2em;
+	height: 2em;
+	margin: auto;
+	margin-right: 0.4em;
+	border-radius: 100%;
+	cursor: pointer;
+}
+
+.userName {
+	margin-top: 3px;
+	cursor: pointer;
+}

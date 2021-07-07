@@ -62,13 +62,20 @@ public class UserController extends AbxtractHttpSession {
 		
 		// 로그인 성공 -> Client에 로그인 결과 성공으로 전송 & Session 설정 
 		if (login_is_valid) {
+			// 사용자 이름 가져오기 
+			String userName = membership.getUserName(id);
+			
+			// Session 설정 
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("userId", id);
 			session.setAttribute("userPwd", pwd);
+			session.setAttribute("userName", userName);
 			
+			// Session 유지 기간 = 30분 
 			session.setMaxInactiveInterval(1800);
 			
+			// 로그인 성공 결과 Client에 전송 
 			map.put("login", "success");
 		}
 		

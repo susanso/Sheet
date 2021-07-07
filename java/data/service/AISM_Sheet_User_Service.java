@@ -32,5 +32,11 @@ public class AISM_Sheet_User_Service implements AISM_Sheet_User_ServiceInter{
 	public boolean validID(String id) {
 		return dao.validID(id);
 	}
+	
+	//사용자 이름 가져오기
+	@Override
+	public String getUserName(String id) {
+		return dao.getUserName(id);
+	}
 
 }

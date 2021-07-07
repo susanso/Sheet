@@ -12,4 +12,8 @@
 	<select id = "getID" parameterType = "HashMap" resultType = "int">
 		SELECT count(*) FROM sheet.user_info WHERE userID=#{id};
 	</select>
+	
+	<select id = "getUserName" parameterType = "String" resultType = "String">
+		SELECT userName FROM sheet.user_info WHERE userID=#{id};
+	</select>
 </mapper>

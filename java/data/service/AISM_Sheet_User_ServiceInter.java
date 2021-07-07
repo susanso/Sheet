@@ -13,4 +13,7 @@ public interface AISM_Sheet_User_ServiceInter {
 	//아이디 중복확인
 	public boolean validID(String id);
 	
+	//사용자 이름 가져오기
+	public String getUserName(String id);
+	
 }
