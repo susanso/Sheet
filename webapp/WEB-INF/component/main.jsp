@@ -28,6 +28,7 @@
 	<div class = "selectType">
 		<div class = "insert">입력</div>
 		<div class = "update">수정 & 확인</div>
+		<div class = "hookTest">Flask Test</div>
 	</div>
 </div>
 

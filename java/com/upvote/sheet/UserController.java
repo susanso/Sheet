@@ -90,7 +90,6 @@ public class UserController extends AbxtractHttpSession {
 	public @ResponseBody Map<String, String> is_valid_id(@RequestParam String id) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		
 		// DB에 사용자가 입력한 ID 넣어서 중복 확인하기 위한 객체 
 		map.put("userId", id);
 		
