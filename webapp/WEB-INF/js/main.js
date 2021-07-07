@@ -8,3 +8,13 @@ $('.insert').click(function() {
 $('.update').click(function() {
 	location.href = '/view';
 });
+
+$('.hookTest').click(function() {
+	$.ajax({
+		url:'/main/flasktest',
+		type:'POST',
+		success: function(data){
+			console.log(data);
+		}
+	});
+})
