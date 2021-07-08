@@ -19,10 +19,13 @@
 <!-- 부트스트랩 -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
-
-<div class = "profile">
-	<div class = "profileImg"></div>
-	<div class = "userName">${userName}</div>
+<div class = "topContainer">
+	<div class = "upvoteLogo"># UPVOTE Entertainment</div>
+	<div class = "profile">
+		<div class = "profileImg"></div>
+		<div class = "userName">${userName}</div>
+		<div class = "logout"><a href = "logout.do" class = "logoutPage">로그아웃</a></div>
+	</div>
 </div>
 
 <script src="../../js/top.js"></script>

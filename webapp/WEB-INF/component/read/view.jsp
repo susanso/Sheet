@@ -23,8 +23,22 @@
 
 <body style="background-color: rgb(38, 40, 43); color: rgb(242, 242, 243);">
 <%@ include file="../../component/top.jsp" %>
-<div class = "title" style = "font-size: 24px; text-align: center; margin-top: 50px;">View & Edit Page</div>
-	
+
+<div class = "tableContainer">
+	<div class = "tableTitleBox">
+		<div class = "column checkBox">
+			<input type = "checkbox" name = "check">
+		</div>
+		<div class = "column pdname">작업 담당자</div>
+		<div class = "column song">곡명</div>
+		<div class = "column artist">아티스트명</div>
+		<div class = "column genre">장르</div>
+		<div class = "column key">키</div>
+		<div class = "column track">트랙 형태</div>
+		<div class = "column songform">송폼 넘버링</div>
+		<div class = "column chordInfo">코드 정보</div>
+	</div>
+</div>
 <script src="../../js/read/view.js"></script>
 </body>
 </html>
