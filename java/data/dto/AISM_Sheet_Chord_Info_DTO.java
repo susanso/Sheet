@@ -14,6 +14,11 @@ public class AISM_Sheet_Chord_Info_DTO {
 	}
 
 
+	public void print() {
+		System.out.println(songId);
+		System.out.println(chord);
+		System.out.println(measureNum);
+	}
 	public String getSongId() {
 		return songId;
 	}
