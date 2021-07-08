@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sheet">
+	<insert id="insertSongInfo" parameterType="sdto">
+		INSERT INTO sheet.song_info(songName, artist, producerName, genre, keyName, bpm, songForm, beat, songId, userId) values(#{songName}, #{artist}, #{producerName}, #{genre}, #{keyName}, #{bpm}, #{songForm}, #{beat}, "songId", "userId");
+	</insert>
+	<insert id="insertInstInfo" parameterType="idto">
+		INSERT INTO sheet.inst_info(songId, instName, trackNum) values(#{songId}, #{instName}, #{trackNum});
+	</insert>
+	<insert id="insertChordInfo" parameterType="cdto">
+		INSERT INTO sheet.inst_info(songId, chord, measureNum) values(#{songId}, #{chord}, #{measureNum});
+	</insert>
+	
+	<select id="selectAllSong" resultType="hashmap">
+		select * from sheet.song_info;
+	</select>
+
+</mapper>
