@@ -19,7 +19,19 @@ public class AISM_Sheet_Song_Info_DTO {
 	public AISM_Sheet_Song_Info_DTO() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public void print() {
+		System.out.println(userId);
+		System.out.println(songId);
+		System.out.println(songName);
+		System.out.println(artist);
+		System.out.println(producerName);
+		System.out.println(genre);
+		System.out.println(keyName);
+		System.out.println(bpm);
+		System.out.println(songForm);
+		System.out.println(beat);
+	}
 
 	public String getUserId() {
 		return userId;

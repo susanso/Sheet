@@ -11,7 +11,11 @@ public class AISM_Sheet_Inst_Info_DTO {
 	public AISM_Sheet_Inst_Info_DTO() {
 		// TODO Auto-generated constructor stub
 	}
-
+	public void print() {
+		System.out.println(songId);
+		System.out.println(instName);
+		System.out.println(trackNum);
+	}
 	public String getSongId() {
 		return songId;
 	}
