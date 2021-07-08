@@ -5,10 +5,10 @@
 <html>
 <head>
 <!-- favicon -->
-<link rel="apple-touch-icon" href="../image/favicon/favicon_ipad.png"
-	type="image/png" />
-<link rel="shortcut icon" href="../image/favicon/favicon_pc.png"
-	type="image/png">
+
+<link rel="apple-touch-icon" href="../image/upvote_logo.png" type="image/png"/>
+<link rel="shortcut icon" href="../image/upvote_logo.png" type="image/png">
+
 <!-- 제이쿼리 -->
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <!-- ajax -->

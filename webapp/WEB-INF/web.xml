@@ -21,6 +21,21 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!--  Login Filter  -->
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>data.session.loginFilter</filter-class>
+		<init-param>
+			<param-name>excludeURL</param-name>
+			<param-value>/,/login.do,/logout.do</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	<!-- Filter -->
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->

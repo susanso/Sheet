@@ -1,8 +1,12 @@
+.topContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
 .profile {
 	display: flex;
     justify-content: flex-end;
-    padding-right: 200px;
-    padding-top: 30px;
+    padding-right: 10px;
 }
 
 .profileImg{
@@ -17,6 +21,27 @@
 }
 
 .userName {
-	margin-top: 3px;
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.logout{
+	display: none;
+	justify-content: flex-end;
+    padding-left: 20px;
+    padding-top: 2px;
+}
+
+.logoutPage{
+	color: white;
+}
+
+.logoutPage:hover {
+	color: white;
+}
+
+.upvoteLogo{
+	font-size: 24px;
+	font-weight: bold;
 	cursor: pointer;
 }

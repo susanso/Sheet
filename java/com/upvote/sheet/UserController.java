@@ -85,11 +85,20 @@ public class UserController extends AbxtractHttpSession {
 		return map;
 	}
 	
+	// 로그아웃 메서드
+	@GetMapping("logout.do")
+	public String logOut(HttpSession session) {
+		// Session 끊음 
+		session.invalidate();
+		
+		// 홈 페이지로 이동 
+		return "component/home";
+	}
+	
 	// 회원가입할 때 아이디 중복확인 메서드 
 	@PostMapping("checkID")
 	public @ResponseBody Map<String, String> is_valid_id(@RequestParam String id) {
 		Map<String, String> map = new HashMap<String, String>();
-		
 		
 		// DB에 사용자가 입력한 ID 넣어서 중복 확인하기 위한 객체 
 		map.put("userId", id);
