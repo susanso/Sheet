@@ -14,6 +14,14 @@
 	<select id="selectAllSong" resultType="hashmap">
 		select * from sheet.song_info;
 	</select>
+
+	<select id="selectAllInst" resultType="map">
+		select instName from sheet.inst_list;
+	</select>
+	
+	<select id = "getSongName" parameterType = "HashMap" resultType = "int">
+		SELECT count(*) FROM sheet.song_info WHERE songName=#{songName};
+
 	
 	<select id = "selectInstInfo" parameterType = "map" resultType = "idto">
 		select * from sheet.inst_info where songId = #{songID};
@@ -21,6 +29,7 @@
 	
 	<select id = "selectChordInfo" parameterType = "map" resultType = "cdto">
 		select * from sheet.chord_info where songId = #{songID};
+
 	</select>
 
 </mapper>
