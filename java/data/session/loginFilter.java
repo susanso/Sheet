@@ -36,7 +36,7 @@ public class loginFilter implements Filter {
 		String path = ((HttpServletRequest) request).getServletPath();
 		
 		// 필터 필요한 url 일 때  
-		if(!excludeURL.contains(path) && (!path.contains("home")) && (!path.contains("png"))) {
+		if(!excludeURL.contains(path) && (!path.contains("home")) && (!path.contains("png")) && (!path.contains("signUp"))) {
 			String id = (String) session.getAttribute("userId");
 			
 			// 세션이 없으면 홈 페이지로 이동 

@@ -60,6 +60,17 @@ public class AISM_Sheet_Info_Service
 		return dao.allSongList();
 	}
 	
+	// 코드 정보 가져오기
+	@Override
+	public List<AISM_Sheet_Inst_Info_DTO> getInstInfo(String songID) {
+		return dao.getInstInfo(songID);
+	}
+		
+	// 트랙 정보 가져오기
+	public List<AISM_Sheet_Chord_Info_DTO> getChordInfo(String songID) {
+		return dao.getChordInfo(songID);
+	}
+	
 	/*
 	//producer의 모든 song 가져오기
 	@Override

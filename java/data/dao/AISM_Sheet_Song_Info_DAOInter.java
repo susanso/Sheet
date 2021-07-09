@@ -19,4 +19,10 @@ public interface AISM_Sheet_Song_Info_DAOInter {
 	
 	// 모든 song 가져오기
 	public List<AISM_Sheet_Song_List_DTO> allSongList();
+	
+	// 트랙 정보 가져오기
+	public List<AISM_Sheet_Inst_Info_DTO> getInstInfo(String songID);
+	
+	// 코드 정보 가져오기
+	public List<AISM_Sheet_Chord_Info_DTO> getChordInfo(String songID);
 }

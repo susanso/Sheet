@@ -91,7 +91,7 @@
 }
 
 .track {
-	width: 150px;
+	width: 160px;
 }
 
 .chordInfo {
@@ -202,4 +202,24 @@
     cursor: pointer;
     padding-left: 3px;
     padding-right: 3px;
+}
+
+.trackBox {
+	height: 90px;
+	overflow-y: overlay;
+}
+
+.trackColumn {
+	display: flex;
+	padding-left: 30px;
+}
+
+.chordBox {
+	height: 90px;
+	overflow-y: overlay;
+}
+
+.chordColumn {
+	display: flex;
+	padding-left: 30px;
 }

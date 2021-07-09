@@ -28,7 +28,7 @@
 		<filter-class>data.session.loginFilter</filter-class>
 		<init-param>
 			<param-name>excludeURL</param-name>
-			<param-value>/,/login.do,/logout.do</param-value>
+			<param-value>/,/login.do,/logout.do,/signUp.go,/signup.do,/checkID</param-value>
 		</init-param>
 	</filter>
 	
