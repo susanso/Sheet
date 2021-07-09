@@ -83,4 +83,10 @@ public class PageController {
 	public String renderViewPage() {
 		return "component/read/view";
 	}
+	
+	//하현준 작업용
+	@GetMapping("insertPage")
+	public String test1() {
+		return "component/create/insertPage";
+	}
 }
