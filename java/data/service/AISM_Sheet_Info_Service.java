@@ -52,12 +52,22 @@ public class AISM_Sheet_Info_Service
 		dao.insertChordInfo(cdto);
 	}
 	
-	
-	
-	
+	//모든 곡 가져오
 	@Override
 	public List<AISM_Sheet_Song_List_DTO> allSongList() {
 		return dao.allSongList();
+	}
+	
+	//모든 악기 가져오기 
+	@Override
+	public List<String> getInstList(){
+		return dao.getInstList();
+	}
+	
+	//곡명 중복 확인	
+	@Override
+	public boolean validSongName(String songName) {
+		return dao.validSongName(songName);
 	}
 	
 	/*

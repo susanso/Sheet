@@ -23,6 +23,11 @@ public interface AISM_Sheet_Info_ServiceInter {
 	
 	//모든 song 가져오기
 	public List<AISM_Sheet_Song_List_DTO> allSongList();
+	//모든 악기 가져오기
+	public List<String> getInstList();
+	
+	//곡명 중복 확인	
+	public boolean validSongName(String songName);
 	/*
 	//producer의 모든 song 가져오기
 	public List<AISM_Sheet_Info_DTO> pdSongList();

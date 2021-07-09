@@ -52,7 +52,8 @@ public class CreateController {
 	//song, inst, chord 정보 저장 
 	@PostMapping("insertSong.do")
 	public @ResponseBody Map<String, Object> insertSongList(
-			HttpServletRequest request,HttpSession session,
+			HttpServletRequest request,
+			HttpSession session,
 			@RequestParam("songData") String songData,
 			@RequestParam("inst_li") String inst_li,
 			@RequestParam("chord_li") String chord_li) throws ParseException, JsonParseException, JsonMappingException, IOException{	
@@ -60,10 +61,13 @@ public class CreateController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		JSONParser jsonParser = new JSONParser();
 		ObjectMapper objectMapper = new ObjectMapper();
-			
+		
+		//song_info userId 추가해서 Bean객체
 		JSONObject jsonSongObj = (JSONObject) jsonParser.parse(songData);
 		jsonSongObj.put("userId", (String) session.getAttribute("userId"));
 		AISM_Sheet_Song_Info_DTO jsonSongDTO = objectMapper.readValue(jsonSongObj.toString(), AISM_Sheet_Song_Info_DTO.class);
+		
+		// inst_info, chord_info JSON 배열로 파싱
         JSONArray jsonInstArr = (JSONArray) jsonParser.parse(inst_li);
         JSONArray jsonChordArr = (JSONArray) jsonParser.parse(chord_li);
  
@@ -119,10 +123,30 @@ public class CreateController {
 	}
 	
 
+	@PostMapping("checkSongName")
+	public @ResponseBody Map<String, Boolean> checkSongName(@RequestParam String songName) {
+		Map<String, Boolean> map = new HashMap<String, Boolean>();
+		
+		boolean isValid = sheet.validSongName(songName);
+		
+		if (isValid) map.put("result", true);
+		else map.put("result", false);
+		
+		return map;
+	}
 	
 	
-	
-	
+	@GetMapping("getInstList")
+	public @ResponseBody Map<String, Object> getInstList() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<String> instList = new ArrayList<>();
+		
+		instList = sheet.getInstList();
+		
+		map.put("instList", instList);
+		
+		return map;
+	}
 	
 	
 	

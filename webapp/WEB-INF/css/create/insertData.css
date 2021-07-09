@@ -25,13 +25,13 @@
 	margin-top: 5vh;
 	font-weight: bold;
 	text-align: center;
-	width: 400px;
+	width: 500px;
 	margin-left: 150px;
 }
 
 .InputBar {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 15px;
 	margin-right: 20px;
 }
 
@@ -86,7 +86,7 @@
 	margin-top: 5vh;
 	font-weight: bold;
 	text-align: center;
-	width: 400px;
+	width: 500px;
 }
 
 .inst_info{
@@ -98,7 +98,7 @@
 	margin-top: 5vh;
 	font-weight: bold;
 	text-align: center;
-	width: 400px;
+	width: 500px;
 	margin-right: 150px;
 }
 
@@ -115,4 +115,42 @@
 
 .label {
 	margin-left: 50px;
+}
+
+.instToggleUp{
+	
+}
+
+.instToggleUp{
+	display : none;
+}
+
+
+.emptyInputAlertBox{
+	display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.dupSongAlertBox{
+	display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.modalCloseBtn{
+	cursor: pointer;
+	position: absolute;
+    top: 35px;
+    right: 10px;
 }
