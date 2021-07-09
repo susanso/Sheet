@@ -9,4 +9,4 @@ $(document).on("mouseout",".userName",function(){
  
 $('.upvoteLogo').click(function() {
 	location.href = '/main';
-})
+});
