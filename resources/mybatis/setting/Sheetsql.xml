@@ -21,7 +21,7 @@
 	
 	<select id = "getSongName" parameterType = "HashMap" resultType = "int">
 		SELECT count(*) FROM sheet.song_info WHERE songName=#{songName};
-
+	</select>
 	
 	<select id = "selectInstInfo" parameterType = "map" resultType = "idto">
 		select * from sheet.inst_info where songId = #{songID};
