@@ -6,7 +6,7 @@ $(document).on("mouseover",".userName",function(){
 $(document).on("mouseout",".userName",function(){
 	$(".logout").css("display", 'none');
 });
-
+ 
 $('.upvoteLogo').click(function() {
 	location.href = '/main';
 })
