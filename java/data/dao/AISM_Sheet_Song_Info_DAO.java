@@ -2,6 +2,7 @@ package data.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -62,5 +63,25 @@ public class AISM_Sheet_Song_Info_DAO
 		// DB에 이미 아이디 존재하면 1개 이상 반환하므로 중복 -> 아이디 사용 불가
 		if (is_valid >= 1) return false;
 		else return true;
+
+	// 트랙 정보 가져오기
+	@Override
+	public List<AISM_Sheet_Inst_Info_DTO> getInstInfo(String songID) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("songID", songID);
+		
+		return getSqlSession().selectList("selectInstInfo", map);
+	}
+		
+	// 코드 정보 가져오기
+	@Override
+	public List<AISM_Sheet_Chord_Info_DTO> getChordInfo(String songID) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("songID", songID);
+		
+		return getSqlSession().selectList("selectChordInfo", map);
+
 	}
 }

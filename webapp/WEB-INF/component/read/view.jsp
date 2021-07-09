@@ -25,20 +25,40 @@
 <%@ include file="../../component/top.jsp" %>
 
 <div class = "tableContainer">
+	<div class = "selectViewType">
+		<div class = "viewMine">내 데이터</div>
+		<div class = "viewAll">전체 보기</div>
+	</div>
 	<div class = "tableTitleBox">
-		<div class = "column checkBox">
-			<input type = "checkbox" name = "check">
-		</div>
+		<div class = "column checkBox"></div>
 		<div class = "column pdname">작업 담당자</div>
 		<div class = "column song">곡명</div>
 		<div class = "column artist">아티스트명</div>
 		<div class = "column genre">장르</div>
 		<div class = "column key">키</div>
+		<div class = "column songform">송폼</div>
 		<div class = "column track">트랙 형태</div>
-		<div class = "column songform">송폼 넘버링</div>
 		<div class = "column chordInfo">코드 정보</div>
 	</div>
+	<div class = "tableColumnBox">
+		<div class = "dataColumnContainer">
+		</div>
+	</div>
+	<div class = "function">
+		<div class = "search">
+			<div class = "searchBox">
+				<input type = "text" class = "searchInfo">
+			</div>
+			<div class = "searchBtn">검색</div>
+		</div>
+		<div class = "editBox">
+			<div class = "edit">수정</div>
+			<div class = "delete">삭제</div>
+		</div>
+	</div>
+	
 </div>
+
 <script src="../../js/read/view.js"></script>
 </body>
 </html>
