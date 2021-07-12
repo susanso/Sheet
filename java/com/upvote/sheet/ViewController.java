@@ -48,15 +48,14 @@ public class ViewController {
 		return map;
 	}
 	
-	@PostMapping(value = "/show/pdSong")
-	public @ResponseBody Map<String, Object> showPdSongList(
-			@RequestParam("producerName") String producerName) {
+	// 검색 기능으로 데이터 가져오는 메서드
+	@GetMapping(value = "/show/pdSong")
+	public @ResponseBody Map<String, Object> showPdSongList(@RequestParam("producerName") String producerName) {
 		Map<String, Object> map = new HashMap<String, Object>();
-
+		List<AISM_Sheet_Song_List_DTO> list = new Vector<AISM_Sheet_Song_List_DTO>();
 		
-		/*
 		list = sheet.pdSongList(producerName);
-		*/
+		map.put("songList", list);
 		
 		return map;
 	}
@@ -80,6 +79,5 @@ public class ViewController {
 		map.put("chordInfo", chordInfo);
 		
 		return map;
-	}
-	
+	}	
 }

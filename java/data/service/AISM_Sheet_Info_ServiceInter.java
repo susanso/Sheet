@@ -29,10 +29,10 @@ public interface AISM_Sheet_Info_ServiceInter {
 	
 	// 트랙 정보 가져오기
 	public List<AISM_Sheet_Chord_Info_DTO> getChordInfo(String songID);
-	/*
+	
 	//producer의 모든 song 가져오기
-	public List<AISM_Sheet_Info_DTO> pdSongList();
+	public List<AISM_Sheet_Song_List_DTO> pdSongList(String producerName);
+	
 	//1개 song 가져오기
-	public List<AISM_Sheet_Info_DTO> oneSongInfo();
-	*/
+	//public List<AISM_Sheet_Info_DTO> oneSongInfo();
 }

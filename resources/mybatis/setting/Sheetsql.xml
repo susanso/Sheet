@@ -22,5 +22,9 @@
 	<select id = "selectChordInfo" parameterType = "map" resultType = "cdto">
 		select * from sheet.chord_info where songId = #{songID};
 	</select>
+	
+	<select id = "selectEachSong" parameterType = "map" resultType = 'sdto'>
+		select * from sheet.song_info where producerName = #{producerName};
+	</select>
 
 </mapper>

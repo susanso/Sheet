@@ -25,4 +25,7 @@ public interface AISM_Sheet_Song_Info_DAOInter {
 	
 	// 코드 정보 가져오기
 	public List<AISM_Sheet_Chord_Info_DTO> getChordInfo(String songID);
+	
+	//producer의 모든 song 가져오기
+	public List<AISM_Sheet_Song_List_DTO> getEachSongList(String producerName);
 }
