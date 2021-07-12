@@ -139,7 +139,7 @@ public class CreateController {
 	@GetMapping("getInstList")
 	public @ResponseBody Map<String, Object> getInstList() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		List<String> instList = new ArrayList<>();
+		List<String> instList = new ArrayList<String>();
 		
 		instList = sheet.getInstList();
 		

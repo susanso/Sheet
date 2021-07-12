@@ -137,7 +137,7 @@
     font-weight: bold;
 }
 
-.dupSongAlertBox{
+.alertBox{
 	display: none;
     width: 300px;
     padding: 20px 60px;

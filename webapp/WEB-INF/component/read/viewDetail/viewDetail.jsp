@@ -14,7 +14,7 @@
 <!-- 부트스트랩 -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/viewDetail/viewDetail.css">
+<link rel="stylesheet" type="text/css" href="../css/read/viewDetail/viewDetail.css">
 <title>Upvote Sheet</title>
 </head>
 <body style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
@@ -321,7 +321,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="/js/viewDetail/viewDetail.js"></script>
+	<script src="/js/read/viewDetail/viewDetail.js"></script>
 	<a id="topBtn" href="#">TOP</a>
 </body>
 </html>
