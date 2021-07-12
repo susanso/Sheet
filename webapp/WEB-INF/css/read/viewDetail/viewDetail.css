@@ -78,7 +78,6 @@ select {
 }
 
 
-
 /* <--------- 카드 부분 시작 ---------> */
 /* 카드 전체를 감싸는 부분 */
 .all_cards_container {
@@ -240,8 +239,8 @@ select {
 .card_container {
     margin-bottom: 15px;
 }
-/* 1행 : 작업 담당자 | 작업자 이름 */
-.card_content_line1 {
+/* 작업 담당자, 작업자 이름 */
+.card_content_writer {
     display: flex;
     align-content: center;
     justify-content: flex-end;
@@ -252,8 +251,8 @@ select {
     font-weight: bold;
 }
 
-/* 카드 내 박스 head 공통 */
-.box_head {
+/* 카드 내 head 공통 */
+.item_head {
     font-weight: bold;
     border-bottom-color: #EBEBEB;
     border-width: medium;
@@ -261,63 +260,75 @@ select {
     padding: 5px;
 }
 
-/* 카드 내 박스 content 공통 */
-.box_content {
+/* 카드 내 content 공통 */
+.item_content {
     padding: 5px;
 }
 
-/* 카드 내 박스 2,3행 */
-.card_content_line23 {
-    display: flex;
-    align-content: center;
-    justify-content: space-evenly;
-    margin-top: 5px;
-}
-.line23_box {
-    background-color: #ffff;
-    width: 100%;
-    border-radius: 5px;
-    padding: 5px;
-    overflow: auto;
-}
-.line23_box.box2 {
-    margin-right: 5px;
-}
-
-/* 카드 내 박스 4행 */
-.card_content_line4 {
+/* 곡 정보 : 장르, 키, BPM, 송폼 넘버링, 트랙 형태, 코드 정보 */
+.card_content_song_info {
     display: flex;
     align-content: center;
     justify-content: space-between;
     margin-top: 5px;
 }
-.line4_box {
+.songInfo {
     background-color: #ffff;
     width: 100%;
     border-radius: 5px;
     padding: 5px;
     overflow: auto;
 }
-
-/* 박스 1열 오른쪽 마진 */
-.box1 {
+.songInfo.track {
     margin-right: 5px;
 }
-
+.songInfo.genre {
+    margin-right: 5px;
+}
+.songInfo.key {
+    margin-right: 5px;
+}
+.songInfo.BPM {
+    margin-right: 5px;
+}
+.code_info {
+    background-color: #ffff;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+}
+/* <-- 마디 --> */
+.code_inform_content.bar {
+    margin-bottom: 7px;
+}
+.code_inform_content.bar_head {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.track_content.track_number {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.item_content.track_content {
+    display: flex;
+    padding: 10;
+    align-items: center;
+}
 
 /* 트랙 형태 스크롤 */
-.track_content {
+.track_contents {
     HEIGHT: 150px;
     OVERFLOW-Y: OVERLAY;
 }
-.track_content::-webkit-scrollbar {
+.track_contents::-webkit-scrollbar {
     width: 5px; /*스크롤바의 너비*/
 }
-.track_content::-webkit-scrollbar-thumb {
+.track_contents::-webkit-scrollbar-thumb {
     background-color: #898989; /*스크롤바의 색상*/
     border-radius: 10px;
 }	
-.track_content::-webkit-scrollbar-thumb:hover{
+.track_contents::-webkit-scrollbar-thumb:hover{
 	background: #787878;
 	cursor: pointer;
 }
