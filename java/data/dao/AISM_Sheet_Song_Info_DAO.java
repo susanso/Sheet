@@ -63,6 +63,7 @@ public class AISM_Sheet_Song_Info_DAO
 		// DB에 이미 아이디 존재하면 1개 이상 반환하므로 중복 -> 아이디 사용 불가
 		if (is_valid >= 1) return false;
 		else return true;
+	}
 
 	// 트랙 정보 가져오기
 	@Override

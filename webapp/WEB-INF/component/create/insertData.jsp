@@ -82,7 +82,7 @@
 			<div class="Input">
 				<div class="InputBar">트랙 개수</div>
 				<label for="trackNum"> <input type="text"
-					class="input_label trackNum">
+					class="input_label trackNum" placeholder = "트랙 개수를 입력해 주세요.">
 				</label>
 			</div>
 			<div class="Input">
@@ -96,7 +96,7 @@
 			<div class="Input">
 				<div class="InputBar">마디 개수</div>
 				<label for="measureNum"> <input type="text"
-					class="input_label measureNum">
+					class="input_label measureNum" placeholder = "마디 개수를 입력해 주세요.">
 				</label>
 			</div>
 			<div class="Input">
@@ -116,7 +116,7 @@
 		모든 정보를 입력해 주세요.
 		<a class = "modalCloseBtn">닫기</a>
 	</div>
-	<div class = "dupSongAlertBox">
+	<div class = "alertBox">
 		<div class = "alertTxt"></div>
 		<a class = "modalCloseBtn">닫기</a>
 	</div>
