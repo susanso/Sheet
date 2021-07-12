@@ -28,8 +28,8 @@ var trackCount = 1;
 //class = "songInfo_quantity_input_button" 값 가져오기
 var trackNumInput = $("#trackNumInput").val();
 var codeNumInput = $("#codeNumInput").val();
-console.log(codeNumInput);
-console.log(trackCount);
+//console.log(codeNumInput);
+//console.log(trackCount);
 //#trackNumInput placeholder 값 교체 작업
 //$(".songInfo_quantity_apply_button").click(function(){
 //	$("#trackNumInput").val(trackCount);
@@ -38,7 +38,26 @@ console.log(trackCount);
 //});
 
 
-//코드 정보 입력창 추가
+
+//트랙 정보 입력창 추가
+$("#track_quantity_apply_button").click(function(){
+	let inputNum = trackCount;
+	let i = trackCount+trackNumInput;
+	for(; i-1>inputNum; inputNum++ ){
+		let text="";
+		text += "<div id = track" + inputNum+1;
+		text += " class = 'songInfo_add_box'> <div class = 'songInfo_add_item'>악기 ";
+		text += inputNum+1 + "</div><input ";
+		text += " class = 'songInfo_add_input_button' placeholder='트랙 형태' /></div>";
+		$(".songInfo_track_plus_box").append(text);
+		//$("#trackNumInput").val(trackCount);
+	}
+	
+	
+});
+
+
+//트랙 정보 입력창 추가
 
 $(".up_button_track").click(function(){
 	trackCount++;

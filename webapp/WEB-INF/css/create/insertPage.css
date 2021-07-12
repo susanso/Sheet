@@ -25,8 +25,9 @@
 /*-----------------------Main------------------------*/
 .main_container{
 	width: 700px;
+	height: auto;
 	background: white;
-	padding: 50px 50px 0px 50px ;
+	padding: 50px 50px 50px 50px ;
 	margin: 0 auto;
 	border-radius: 8px;
 }
@@ -103,7 +104,24 @@
 /*--------------songInfo_quantity-------------------------*/
 .songInfo_quantity_updown_button_box{
 	display: flex;
-	width: 40px;
+	width: 60px;
+	justify-content: space-evenly;
+}
+.songInfo_quantity_updown_button{
+	width: 25px;
+	height: 40px;
+	background: #ccc;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px black;
+	transition-duration: 0.3s;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.songInfo_quantity_updown_button:active{
+	margin-left: 1px;
+	margin-top: 1px;
+	box-shadow: none;
 }
 .songInfo_quantity_name_item{
 	color: black;
@@ -117,8 +135,9 @@
 	height: 15px;
 }
 .songInfo_quantity_input_button{
-	width: 30px;
+	width: 40px;/*원래 30 이었음*/
 	height: 20px;
+	
 }
 .songInfo_quantity_box{
 	justify-content: space-evenly;
@@ -140,7 +159,6 @@
 	display: flex;
     align-items: center;
     padding-top: 20px;
-	padding-bottom: 20px;
 	justify-content: flex-end;
 }
 

@@ -25,7 +25,7 @@
 				<div class = "titleInfo_box">
 					<div class = "titleInfo_name_item"> 작성자 </div>
 					<div class = "titleInfo_button_box">
-						<input class = "titleInfo_button " placeholder="작업자 이름" />
+						<input class = "titleInfo_button button_name" placeholder="작업자 이름" />
 					</div>
 				</div>
 				<div class = "titleInfo_line"></div>
@@ -59,10 +59,10 @@
 					<div class = "songInfo_name_item"> 트랙 형태 </div>
 					<div class = "songInfo_quantity_box">	
 						<div class = "songInfo_quantity_name_item"> 악기 수 </div>
-						<input class = "songInfo_quantity_input_button" id = "trackNumInput" value = "1"/> <!-- 악기 숫자 입력하는 부분 -->
+						<input class = "songInfo_quantity_input_button" id = "trackNumInput" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" value = "1"/> <!-- 악기 숫자 입력하는 부분 -->
 						<div class = "songInfo_quantity_updown_button_box">
-							<input class = "songInfo_quantity_updown_button up_button_track" type="button" value="+" />
-							<input class = "songInfo_quantity_updown_button down_button_track" type="button" value="-" />
+							<div class = "songInfo_quantity_updown_button up_button_track"> +</div>
+							<div class = "songInfo_quantity_updown_button down_button_track"> -</div>
 						</div>
 						<input class = "songInfo_quantity_apply_button" id = "track_quantity_apply_button" type="button" value="설정" />
 					</div>
