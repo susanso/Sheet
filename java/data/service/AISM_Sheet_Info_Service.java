@@ -81,18 +81,18 @@ public class AISM_Sheet_Info_Service
 		return dao.getChordInfo(songID);
 	}
 	
-	/*
+	
 	//producer의 모든 song 가져오기
 	@Override
-	public List<AISM_Sheet_Info_DTO> pdSongList(String producerName) {
-		
+	public List<AISM_Sheet_Song_List_DTO> pdSongList(String producerName) {
+		return dao.getEachSongList(producerName);
 	}
 	
 	//1개 song 가져오기
-	@Override
-	public List<AISM_Sheet_Info_DTO> oneSongInfo() {
-		
-	}
-	*/
+//	@Override
+//	public List<AISM_Sheet_Info_DTO> oneSongInfo() {
+//		
+//	}
+//	*/
 }
 	
