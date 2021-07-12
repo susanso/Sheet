@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+/* 타이틀 */
+.Title {
+	text-align: center;
+	margin-top: 10vh;
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 50;
+}
+
+/* <--------- 서치바 | 필터 부분 시작 ---------> */
+/* SEARCH */
+.search_bar_title {
+    display: flex;
+    margin: 0 auto;
+    width: 85%;
+    align-content: center;
+    justify-content: flex-end;
+}
+.search_bar {
+    display: flex;
+    margin: 0 auto;
+    width: 85%;
+    align-content: center;
+    justify-content: flex-end;
+}
+.search {
+    background: white;
+    border-radius: 5px;
+    color: #5E5E5E;
+    padding: 5px;
+    border-style: solid;
+    border-block-color: #4BA9FF;
+    margin-right: 10;
+    padding-right: 25px;
+}
+.search_img {
+    height: 30px;
+    position: absolute;
+    top: auto;
+    background: url(http://localhost:8888/image/market/test/search.png) 0% 0% / cover;
+    left: 80%;
+    width: 30px;
+    border-radius: 8px 0 0 8px;
+    padding: 5px;
+}
+.search_bar_input_box {
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+
+/* FILTER */
+select {
+	width: 110px;
+    background: white;
+    border-radius: 5px;
+    color: #5E5E5E;
+    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-block-color: #4BA9FF;
+}
+
+.title_search {
+	color: white;
+    padding: 5px;
+    margin-right: 10;
+    font-weight: bold;
+    width: 210;
+}
+.title_filter {
+    width: 110px;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+
+/* <--------- 카드 부분 시작 ---------> */
+/* 카드 전체를 감싸는 부분 */
+.all_cards_container {
+    width: 85%;
+    /* height: 800px; 높이 지정 시 스크롤 나옴*/
+    margin: 0 auto;
+    align-content: center;
+    font-family: Roboto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    overflow: auto;
+    justify-content: unset;
+}
+/* 카드 헤드 */
+.card_head {
+    display: flex;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #4BA9FF;
+    border-radius: 5px 5px 0px 0px;
+    border-style: solid;
+    border-top-color: #EBEBEB;
+    border-left-color: #EBEBEB;
+    border-right-color: #EBEBEB;
+    border-width: thin;
+}
+.card_head_title {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.card_head_buttons {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.song_title {
+    font-weight: bold;
+    font-size: large;
+    color: black;
+    margin-right: 7px;
+    margin-left: 5px;
+}
+.song_artist {
+    font-weight: normal;
+    font-size: small;
+    color: black;
+    margin-top: 5;
+}
+
+/* <--------- 버튼 부분 시작 ---------> */
+/* 수정 버튼 */
+.button.edit_button {
+    background-color: #003ad5;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 45;
+    height: 25px;
+    margin-right: 5;
+    padding: 0;
+    line-height: unset;
+    box-shadow: 0 4px 16px rgb(0 79 255 / 30%);
+    border: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 클릭 시 포커스 테두리 삭제 */
+.button.edit_button:focus{
+	outline:0;
+}
+/* 마우스오버 시 색상 및 그림자 변화 */
+.button.edit_button:hover{
+	background: #1F5EFF;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+}
+/* 저장 버튼 */
+.button.save_button {
+    background-color: #b70000;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 45;
+    margin-right: 5;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+    height: 25px;
+    padding: 0;
+    line-height: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 클릭 시 포커스 테두리 삭제 */
+.button.save_button:focus{
+	outline:0;
+}
+/* 마우스오버 시 색상 및 그림자 변화 */
+.button.save_button:hover{
+	background: #f00000;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+}
+
+/* 삭제 버튼 */
+.button.delete_button {
+    background-color: #787878;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 45;
+    text-align: center;
+    box-shadow: 0 4px 16px rgb(0 79 255 / 30%);
+    border: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    margin-right: 5;
+    padding: 0;
+    line-height: unset;
+    justify-content: center;
+}
+/* 클릭 시 포커스 테두리 삭제 */
+.button.delete_button:focus{
+	outline:0;
+}
+/* 마우스오버 시 색상 및 그림자 변화 */
+.button.delete_button:hover{
+	background: #949494;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+}
+
+
+/* <--------- 카드 안쪽 부분 시작 ---------> */
+/* background-하얀색 */
+.card_content_white_background {
+    display: flex;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+}
+/* background-회색 */
+.card_content_gray_background {
+    margin: 10;
+    padding: 10px;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    color: black;
+    width: 100%;
+}
+/* 카드 하나 당 컨테이너 하나 */
+.card_container {
+    margin-bottom: 15px;
+}
+/* 1행 : 작업 담당자 | 작업자 이름 */
+.card_content_line1 {
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+}
+/* 작업 담당자 */
+.writer {
+    margin-right: 10;
+    font-weight: bold;
+}
+
+/* 카드 내 박스 head 공통 */
+.box_head {
+    font-weight: bold;
+    border-bottom-color: #EBEBEB;
+    border-width: medium;
+    border-bottom-style: solid;
+    padding: 5px;
+}
+
+/* 카드 내 박스 content 공통 */
+.box_content {
+    padding: 5px;
+}
+
+/* 카드 내 박스 2,3행 */
+.card_content_line23 {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+.line23_box {
+    background-color: #ffff;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+}
+.line23_box.box2 {
+    margin-right: 5px;
+}
+
+/* 카드 내 박스 4행 */
+.card_content_line4 {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.line4_box {
+    background-color: #ffff;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: auto;
+}
+
+/* 박스 1열 오른쪽 마진 */
+.box1 {
+    margin-right: 5px;
+}
+
+
+/* 트랙 형태 스크롤 */
+.track_content {
+    HEIGHT: 150px;
+    OVERFLOW-Y: OVERLAY;
+}
+.track_content::-webkit-scrollbar {
+    width: 5px; /*스크롤바의 너비*/
+}
+.track_content::-webkit-scrollbar-thumb {
+    background-color: #898989; /*스크롤바의 색상*/
+    border-radius: 10px;
+}	
+.track_content::-webkit-scrollbar-thumb:hover{
+	background: #787878;
+	cursor: pointer;
+}
+
+/* 전체 카드들 스크롤 */
+.all_cards_container{
+	OVERFLOW-Y: auto;
+}
+.all_cards_container::-webkit-scrollbar {
+    width: 10px; /*스크롤바의 너비*/
+}
+.all_cards_container::-webkit-scrollbar-thumb {
+    background-color: #787878; /*스크롤바의 색상*/
+    border-radius: 10px;
+}	
+.all_cards_container::-webkit-scrollbar-thumb:hover{
+	background: #787878;
+	cursor: pointer;
+}
+
+/* top 이동 버튼 */
+a#topBtn {
+  	position: fixed;   /* 포지션 고정 */
+   	right: 30px;         /* 오른쪽에서 2% - %도 할수 있음*/
+   	bottom: 0px;       /* 밑에서 5px */
+   	width: 40px;
+   	height: 30px;
+   	justify-content: center;
+    border-radius: 10% 10% 0 0;
+    background: white;
+   	display: flex;     /* 보여지지 없음 - 기본적으로  안보여지게 */
+   	z-index: 9999;     /* 포지션을 먼저 지정후 z-좌표(레이어) : 9999입니다. */
+	font-weight: bolder;
+	align-items: center;
+}
+a {
+    color: #003ad6;
+}
+
+

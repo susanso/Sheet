@@ -40,10 +40,31 @@ public class AISM_Sheet_Song_Info_DAO
 	}
 	
 	@Override
-	public List<AISM_Sheet_Song_List_DTO> allSongList(){
+	public List<AISM_Sheet_Song_List_DTO> allSongList() {
 		return getSqlSession().selectList("selectAllSong");
 	}
 	
+	// 모든 악기 가져오기
+	@Override
+	public List<String> getInstList(){
+		return getSqlSession().selectList("selectAllInst");
+	}
+
+	// 곡명 중복확인
+	@Override
+	public boolean validSongName(String songName) {
+		HashMap<String, String> map = new HashMap<String, String>();
+
+		map.put("songName", songName);
+
+		// DB에 사용자가 입력한 아이디 있는지 확인
+		Integer is_valid = getSqlSession().selectOne("getSongName", map);
+
+		// DB에 이미 아이디 존재하면 1개 이상 반환하므로 중복 -> 아이디 사용 불가
+		if (is_valid >= 1) return false;
+		else return true;
+	}
+
 	// 트랙 정보 가져오기
 	@Override
 	public List<AISM_Sheet_Inst_Info_DTO> getInstInfo(String songID) {
@@ -62,6 +83,7 @@ public class AISM_Sheet_Song_Info_DAO
 		map.put("songID", songID);
 		
 		return getSqlSession().selectList("selectChordInfo", map);
+
 	}
 	
 	//producer의 모든 song 가져오기

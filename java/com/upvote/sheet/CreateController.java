@@ -12,11 +12,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +30,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import data.dto.AISM_Sheet_User_Info_DTO;
 import data.dto.AISM_Sheet_Chord_Info_DTO;
@@ -42,42 +50,44 @@ public class CreateController {
 	private AISM_Sheet_Info_ServiceInter sheet;
 
 	//song, inst, chord 정보 저장 
-	@GetMapping(value = "/insert/insertSongInfo")
+	@PostMapping("insertSong.do")
 	public @ResponseBody Map<String, Object> insertSongList(
-			@RequestParam String jsonData,
-			@RequestParam String userId) throws ParseException{
-		
-		jsonData = "{\"song\": {\"userId\":\"userId\",\"songId\":\"songId\",\"songName\":\"songName\",\"artist\":\"artist\",\"producerName\":\"producerName\",\"genre\":\"genre\",\"keyName\":\"keyName\",\"bpm\":\"bpm\",\"songForm\":\"songForm\",\"beat\":\"beat\"},"
-				+ "\"inst\":[{\"songId\":\"songId\",\"instNum\":\"0\",\"instName\":\"melody\"},{\"instNum\":\"1\",\"instName\":\"bass\"}],"
-				+ "\"chord\":[{\"songId\":\"songId\",\"measureNum\":\"1\",\"chord\":\"I,I,I,I\"},{\"measureNum\":\"2\",\"chord\":\"IV,IV,IV,IV\"}]}";
-		
+			HttpServletRequest request,
+			HttpSession session,
+			@RequestParam("songData") String songData,
+			@RequestParam("inst_li") String inst_li,
+			@RequestParam("chord_li") String chord_li) throws ParseException, JsonParseException, JsonMappingException, IOException{	
+
 		Map<String, Object> map = new HashMap<String, Object>();
-		
 		JSONParser jsonParser = new JSONParser();
+		ObjectMapper objectMapper = new ObjectMapper();
 		
-		JSONObject jsonObject = (JSONObject) jsonParser.parse(jsonData);
-		AISM_Sheet_Song_Info_DTO jsonSongObj= (AISM_Sheet_Song_Info_DTO) jsonObject.get("song");
-        JSONArray jsonInstArr = (JSONArray) jsonObject.get("inst");
-        JSONArray jsonChordArr = (JSONArray) jsonObject.get("chord");
-        
-        
-        if (insertSongInfo(jsonSongObj).get("result") == "success") {
-        	
+		//song_info userId 추가해서 Bean객체
+		JSONObject jsonSongObj = (JSONObject) jsonParser.parse(songData);
+		jsonSongObj.put("userId", (String) session.getAttribute("userId"));
+		AISM_Sheet_Song_Info_DTO jsonSongDTO = objectMapper.readValue(jsonSongObj.toString(), AISM_Sheet_Song_Info_DTO.class);
+		
+		// inst_info, chord_info JSON 배열로 파싱
+        JSONArray jsonInstArr = (JSONArray) jsonParser.parse(inst_li);
+        JSONArray jsonChordArr = (JSONArray) jsonParser.parse(chord_li);
+ 
+        if (insertSongInfo(jsonSongDTO).get("result") == "success") {
         	for(int i=0; i<jsonInstArr.size(); i++){
-        		AISM_Sheet_Inst_Info_DTO jsonInstObj = (AISM_Sheet_Inst_Info_DTO) jsonInstArr.get(i);
-                insertInstInfo(jsonInstObj);
+        		AISM_Sheet_Inst_Info_DTO instDTO = objectMapper.readValue(jsonInstArr.get(i).toString(), AISM_Sheet_Inst_Info_DTO.class);
+        		insertInstInfo(instDTO);
+        		instDTO.print();
             }
+        	
         	for(int i=0; i<jsonChordArr.size(); i++){
-        		AISM_Sheet_Chord_Info_DTO jsonChordObj = (AISM_Sheet_Chord_Info_DTO) jsonChordArr.get(i);
-                insertChordInfo(jsonChordObj);
+        		AISM_Sheet_Chord_Info_DTO chordDTO = objectMapper.readValue(jsonChordArr.get(i).toString(), AISM_Sheet_Chord_Info_DTO.class);
+        		insertChordInfo(chordDTO);
+        		chordDTO.print();
             }
         }
-        
 		map.put("result", "success");
 
 		return map;
 	}
-	
 	
 	public Map<String, Object> insertSongInfo(@ModelAttribute AISM_Sheet_Song_Info_DTO sdto) {
 		
@@ -113,10 +123,30 @@ public class CreateController {
 	}
 	
 
+	@PostMapping("checkSongName")
+	public @ResponseBody Map<String, Boolean> checkSongName(@RequestParam String songName) {
+		Map<String, Boolean> map = new HashMap<String, Boolean>();
+		
+		boolean isValid = sheet.validSongName(songName);
+		
+		if (isValid) map.put("result", true);
+		else map.put("result", false);
+		
+		return map;
+	}
 	
 	
-	
-	
+	@GetMapping("getInstList")
+	public @ResponseBody Map<String, Object> getInstList() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<String> instList = new ArrayList<String>();
+		
+		instList = sheet.getInstList();
+		
+		map.put("instList", instList);
+		
+		return map;
+	}
 	
 	
 	
