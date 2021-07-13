@@ -21,12 +21,12 @@
 
 <link rel="stylesheet" type="text/css"
 	href="/css/read/viewDetail/viewDetail.css">
-<title>Upvote Sheet</title>
+<title>${songInfo.songName} -  ${songInfo.artist}</title>
 </head>
-<body style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
+<body onload = "windowResize();" style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
 	<!-- 카드 부분 시작 -->
 	<!-- 모든 카드를 감싸는 부분 -->
-	<form action="/updateSong.do" method="post">
+	<form action="/updateSong.do" method="post" style = "margin: 0; padding: 0;">
 		<div class="all_cards_container">
 			<!-- 카드 한 개당 컨테이너 하나로 감쌈 -->
 			<div class="card_container">
@@ -82,7 +82,7 @@
 								<div class="item_head track_title">트랙 형태</div>
 								<c:forEach var="inst" items="${instInfo}" varStatus="trackIndex">
 									<div class="item_content track_content">
-										<div class="track_content track_number">${inst.trackNum}</div>
+										<div class="track_content track_number">Track ${inst.trackNum}</div>
 										<div class="track_content track_input">
 											<input type="text" class="update_input input_track_info" value = "${inst.instName}" disabled>
 										</div>
@@ -96,7 +96,7 @@
 								<div class="item_content code_inform_content">
 									<c:forEach var="chord" items="${chordInfo}" varStatus="chordIndex">
 										<div class="code_inform_content bar">
-											<div class="code_inform_content bar_head">${chord.measureNum}마디</div>
+											<div class="code_inform_content bar_head">${chord.measureNum} 마디</div>
 											<div class="code_inform_content bar_input">
 												<input type="text" class="update_input input_code_info" value = "${chord.chord}" disabled>
 											</div>
@@ -111,7 +111,6 @@
 		</div>
 	</form>
 	<script src="/js/read/viewDetail/viewDetail.js"></script>
-	<a id="topBtn" href="#">TOP</a>
 </body>
 </html>
 

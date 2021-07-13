@@ -37,6 +37,7 @@ $(function() {
 	});
 });
 
+
 function modal(className) {
     var modal = $('.' + className);
 
@@ -50,4 +51,13 @@ function modal(className) {
             webkitTransform: 'translate(-50%, -50%)'
         })
         .show()
+
+// Window 크기 다시 지정
+function windowResize() {
+	// width는 동일 height만 다시 지정 
+	let height = $('.all_cards_container').height();
+	window.resizeTo(900, height + 45); // 45 = url + title bar
+	
+	console.log('height : ', height);
+
 }

@@ -259,10 +259,27 @@ $('.viewAll').click(function() {
 	getSongInfo();
 });
 
+// 팝업 창 설정 메서드
+function popUp(url) {
+	
+	// 팝업 창 크기 설정
+	let popupWidth = 900;
+	let popupHeight = 200;
+	
+	// 현재 브라우저 기준 가운데 출력
+	let popupX = (document.body.offsetWidth / 2) - (popupWidth / 2);
+	let popupY = (document.body.offsetHeight / 2) - (popupHeight / 2);
+
+	window.open(url, "_blank", "width=" + popupWidth + "px," + "height=" + popupHeight + "px,left=" + popupX + ",top=" + popupY);
+}
+
 // 편집하기 -> data column 더블 클릭 -> 이벤트 핸들러 호출
 $(document).on("dblclick",".tableDataBox",function(){
+	
 	let songID = $(this).attr('item');
-
-	// viewDetail Page로 전달할 데이터(Song_Info + inst_info + chord_info table Data) 컨트롤러에 요청하고 이동
-	location.href = '/edit?songId=' + songID;
+	
+	// viewDetail Page로 전달할 데이터(Song_Info + inst_info + chord_info table Data) 컨트롤러에 요청 후 새로운 창 띄우기 이동
+	let url = "/edit?songId=" + songID;
+	
+	popUp(url);
 });
