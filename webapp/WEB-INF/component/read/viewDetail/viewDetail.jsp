@@ -1,20 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 <!-- favicon -->
-<link rel="apple-touch-icon" href="../image/favicon/favicon_ipad.png" type="image/png"/>
-<link rel="shortcut icon" href="../image/favicon/favicon_pc.png" type="image/png">
+<link rel="apple-touch-icon" href="../image/favicon/favicon_ipad.png"
+	type="image/png" />
+<link rel="shortcut icon" href="../image/favicon/favicon_pc.png"
+	type="image/png">
 <!-- 제이쿼리 -->
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <!-- ajax -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- 부트스트랩 -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/read/viewDetail/viewDetail.css">
+<link rel="stylesheet" type="text/css"
+	href="/css/read/viewDetail/viewDetail.css">
 <title>Upvote Sheet</title>
 </head>
 <body style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
@@ -23,6 +28,7 @@
 	<div class = "instInfo">${instInfo}</div>
 	<div class = "chordInfo">${chordInfo}</div>
 	<!-- 서치바 부분 시작 -->
+	<!-- 
 	<div class="search_bar_main_container">
 		<div class="search_bar_title_container">
 			<div class="search_bar_title">
@@ -44,286 +50,124 @@
 			</div>
 		</div>
 	</div>
+	-->
 	<!-- 카드 부분 시작 -->
 	<!-- 모든 카드를 감싸는 부분 -->
-	<div class="all_cards_container">
-		<!-- 카드 한 개당 컨테이너 하나로 감쌈 -->
-		<div class="card_container">
-			<!-- 카드 헤드 부분 -->
-			<div class="card_head">
-				<div class="card_head_title">
-					<div class="song_title">곡명</div>
-					<div class="song_artist">아티스트명</div>
-				</div>
-				<div class="card_head_buttons">
-					<div class="button edit_button">수정</div>
-					<div class="button delete_button">삭제</div>
-				</div>
-			</div>
-			<!-- 카드 내용 부분 -->
-			<div class="card_content_white_background">
-				<div class="card_content_gray_background">
-					<!-- 카드 내용: 1행 -->
-					<div class="card_content_line1">
-						<div class="writer">작업 담당자</div>
-						<div class="writer_name">작업자 이름</div>
+	<form action="/updateSong.do" method="post">
+		<div class="all_cards_container">
+			<!-- 카드 한 개당 컨테이너 하나로 감쌈 -->
+			<div class="card_container">
+				<!-- 카드 헤드 부분 -->
+				<div class="card_head">
+					<div class="card_head_title">
+						<input type="text" class="update_input song_title" value="곡명" disabled>
+						<input type="text" class="update_input song_artist" value="아티스트명" disabled>
 					</div>
-					<!-- 카드 내용: 2행 -->
-					<div class="card_content_line23">
-						<!-- 카드 내용: 2행 박스 -->
-						<div class="line23_box box1">
-							<div class="box_head">장르</div>
-							<div class="box_content">OST</div>
-						</div>
-						<div class="line23_box box2">
-							<div class="box_head">키</div>
-							<div class="box_content">GM</div>
-						</div>
-					
-						<div class="line23_box box1">
-							<div class="box_head">BPM</div>
-							<div class="box_content">120</div>
-						</div>
-						<div class="line23_box box4">
-							<div class="box_head">송폼 넘버링</div>
-							<div class="box_content">1, 5, 9</div>
-						</div>
+					<div class="card_head_buttons">
+						<c:if test = "${isQualified}">  
+							<div class="button edit_button">수정</div>
+							<div class="button delete_button">삭제</div>
+						</c:if>
 					</div>
-					<!-- 카드 내용: 4행 -->
-					<div class="card_content_line4">
-						<!-- 카드 내용: 4행 박스 -->
-						<div class="line4_box box1">
-							<div class="box_head track_title">트랙 형태</div>
-							<div class="box_content track_content">
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
+				</div>
+				<!-- 카드 내용 부분 -->
+				<div class="card_content_white_background">
+					<div class="card_content_gray_background">
+						<!-- 작업 담당자, 작업자 이름 -->
+						<div class="card_content_writer">
+							<div class="writer">작업 담당자</div>
+							<input type="text" class="update_input writer_name" value = "작업 담당자" disabled>
+						</div>
+						<!-- 곡 정보 : 장르, 키, BPM, 송폼 넘버링 -->
+						<div class="card_content_song_info">
+							<!-- 장르 -->
+							<div class="songInfo genre">
+								<div class="item_head">장르</div>
+								<input type="text" class="update_input item_content" value = "OST" disabled>
 							</div>
-						</div> 
-						<div class="line4_box box2">
-							<div class="box_head code_inform_title">코드 정보</div>
-							<div class="box_content code_inform_content">
-								1 마디 : V, V, V, V
-								2 마디 : III, III, III, III
-								3 마디 : IV, V, IV, V
-								4 마디 : III, III, III, III
+							<!-- 키 -->
+							<div class="songInfo key">
+								<div class="item_head">키</div>
+								<input type="text" class="update_input item_content" value = "GM" disabled>
+							</div>
+							<!-- BPM -->
+							<div class="songInfo BPM">
+								<div class="item_head">BPM</div>
+								<input type="text" class="update_input item_content" value = "120" disabled>
+							</div>
+							<!-- 송폼 넘버링 -->
+							<div class="songInfo songForm">
+								<div class="item_head">송폼 넘버링</div>
+								<input type="text" class="update_input item_content" value = "1,5,9" disabled>
 							</div>
 						</div>
+						<!-- 곡 정보 : 트랙 형태, 코드 정보 -->
+						<div class="card_content_song_info">
+							<!-- 트랙 형태 -->
+							<div class="songInfo track">
+								<div class="item_head track_title">트랙 형태</div>
+								<div class="item_content track_content">
+									<div class="track_content track_number">1</div>
+									<div class="track_content track_input">
+										<input type="text" class="update_input input_track_info" value = "melody" disabled>
+									</div>
+								</div>
+								<div class="item_content track_content">
+									<div class="track_content track_number">2</div>
+									<div class="track_content track_input">
+										<input type="text" class="update_input input_track_info" value = "melody" disabled>
+									</div>
+								</div>
+								<div class="item_content track_content">
+									<div class="track_content track_number">3</div>
+									<div class="track_content track_input">
+										<input type="text" class="update_input input_track_info" value = "melody" disabled>
+									</div>
+								</div>
+								<div class="item_content track_content">
+									<div class="track_content track_number">4</div>
+									<div class="track_content track_input">
+										<input type="text" class="update_input input_track_info" value = "melody" disabled>
+									</div>
+								</div>
+							</div>
+							<!-- 코드 정보 -->
+							<div class="songInfo code_info">
+								<div class="item_head code_inform_title">코드 정보</div>
+								<!-- 코드 정보 상세: 마디 입력  -->
+								<div class="item_content code_inform_content">
+									<div class="code_inform_content bar">
+										<div class="code_inform_content bar_head">1 마디</div>
+										<div class="code_inform_content bar_input">
+											<input type="text" class="update_input input_code_info" value = "i,i,i,i" disabled>
+										</div>
+									</div>
+									<div class="code_inform_content bar">
+										<div class="code_inform_content bar_head">2 마디</div>
+										<div class="code_inform_content bar_input">
+											<input type="text" class="update_input input_code_info" value = "i,i,i,i" disabled>
+										</div>
+									</div>
+									<div class="code_inform_content bar">
+										<div class="code_inform_content bar_head">3 마디</div>
+										<div class="code_inform_content bar_input">
+											<input type="text" class="update_input input_code_info" value = "i,i,i,i" disabled>
+										</div>
+									</div>
+									<div class="code_inform_content bar">
+										<div class="code_inform_content bar_head">4 마디</div>
+										<div class="code_inform_content bar_input">
+											<input type="text" class="update_input input_code_info" value = "i,i,i,i" disabled>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>		
+				</div>
 			</div>
 		</div>
-		<!-- 카드 한 개당 컨테이너 하나로 감쌈 -->
-		<div class="card_container">
-			<!-- 카드 헤드 부분 -->
-			<div class="card_head">
-				<div class="card_head_title">
-					<div class="song_title">곡명</div>
-					<div class="song_artist">아티스트명</div>
-				</div>
-				<div class="card_head_buttons">
-					<div class="button edit_button">수정</div>
-					<div class="button delete_button">삭제</div>
-				</div>
-			</div>
-			<!-- 카드 내용 부분 -->
-			<div class="card_content_white_background">
-				<div class="card_content_gray_background">
-					<!-- 카드 내용: 1행 -->
-					<div class="card_content_line1">
-						<div class="writer">작업 담당자</div>
-						<div class="writer_name">작업자 이름</div>
-					</div>
-					<!-- 카드 내용: 2행 -->
-					<div class="card_content_line23">
-						<!-- 카드 내용: 2행 박스 -->
-						<div class="line23_box box1">
-							<div class="box_head">장르</div>
-							<div class="box_content">OST</div>
-						</div>
-						<div class="line23_box box2">
-							<div class="box_head">키</div>
-							<div class="box_content">GM</div>
-						</div>
-					
-						<div class="line23_box box1">
-							<div class="box_head">BPM</div>
-							<div class="box_content">120</div>
-						</div>
-						<div class="line23_box box4">
-							<div class="box_head">송폼 넘버링</div>
-							<div class="box_content">1, 5, 9</div>
-						</div>
-					</div>
-					<!-- 카드 내용: 4행 -->
-					<div class="card_content_line4">
-						<!-- 카드 내용: 4행 박스 -->
-						<div class="line4_box box1">
-							<div class="box_head track_title">트랙 형태</div>
-							<div class="box_content track_content">
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-							</div>
-						</div> 
-						<div class="line4_box box2">
-							<div class="box_head code_inform_title">코드 정보</div>
-							<div class="box_content code_inform_content">
-								1 마디 : V, V, V, V
-								2 마디 : III, III, III, III
-								3 마디 : IV, V, IV, V
-								4 마디 : III, III, III, III
-							</div>
-						</div>
-					</div>
-				</div>		
-			</div>
-		</div>
-		<!-- 카드 한 개당 컨테이너 하나로 감쌈 -->
-		<div class="card_container">
-			<!-- 카드 헤드 부분 -->
-			<div class="card_head">
-				<div class="card_head_title">
-					<div class="song_title">곡명</div>
-					<div class="song_artist">아티스트명</div>
-				</div>
-				<div class="card_head_buttons">
-					<div class="button edit_button">수정</div>
-					<div class="button delete_button">삭제</div>
-				</div>
-			</div>
-			<!-- 카드 내용 부분 -->
-			<div class="card_content_white_background">
-				<div class="card_content_gray_background">
-					<!-- 카드 내용: 1행 -->
-					<div class="card_content_line1">
-						<div class="writer">작업 담당자</div>
-						<div class="writer_name">작업자 이름</div>
-					</div>
-					<!-- 카드 내용: 2행 -->
-					<div class="card_content_line23">
-						<!-- 카드 내용: 2행 박스 -->
-						<div class="line23_box box1">
-							<div class="box_head">장르</div>
-							<div class="box_content">OST</div>
-						</div>
-						<div class="line23_box box2">
-							<div class="box_head">키</div>
-							<div class="box_content">GM</div>
-						</div>
-					
-						<div class="line23_box box1">
-							<div class="box_head">BPM</div>
-							<div class="box_content">120</div>
-						</div>
-						<div class="line23_box box4">
-							<div class="box_head">송폼 넘버링</div>
-							<div class="box_content">1, 5, 9</div>
-						</div>
-					</div>
-					<!-- 카드 내용: 4행 -->
-					<div class="card_content_line4">
-						<!-- 카드 내용: 4행 박스 -->
-						<div class="line4_box box1">
-							<div class="box_head track_title">트랙 형태</div>
-							<div class="box_content track_content">
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-							</div>
-						</div> 
-						<div class="line4_box box2">
-							<div class="box_head code_inform_title">코드 정보</div>
-							<div class="box_content code_inform_content">
-								1 마디 : V, V, V, V
-								2 마디 : III, III, III, III
-								3 마디 : IV, V, IV, V
-								4 마디 : III, III, III, III
-							</div>
-						</div>
-					</div>
-				</div>		
-			</div>
-		</div>
-		<!-- 카드 한 개당 컨테이너 하나로 감쌈 -->
-		<div class="card_container">
-			<!-- 카드 헤드 부분 -->
-			<div class="card_head">
-				<div class="card_head_title">
-					<div class="song_title">곡명</div>
-					<div class="song_artist">아티스트명</div>
-				</div>
-				<div class="card_head_buttons">
-					<div class="button edit_button">수정</div>
-					<div class="button delete_button">삭제</div>
-				</div>
-			</div>
-			<!-- 카드 내용 부분 -->
-			<div class="card_content_white_background">
-				<div class="card_content_gray_background">
-					<!-- 카드 내용: 1행 -->
-					<div class="card_content_line1">
-						<div class="writer">작업 담당자</div>
-						<div class="writer_name">작업자 이름</div>
-					</div>
-					<!-- 카드 내용: 2행 -->
-					<div class="card_content_line23">
-						<!-- 카드 내용: 2행 박스 -->
-						<div class="line23_box box1">
-							<div class="box_head">장르</div>
-							<div class="box_content">OST</div>
-						</div>
-						<div class="line23_box box2">
-							<div class="box_head">키</div>
-							<div class="box_content">GM</div>
-						</div>
-					
-						<div class="line23_box box1">
-							<div class="box_head">BPM</div>
-							<div class="box_content">120</div>
-						</div>
-						<div class="line23_box box4">
-							<div class="box_head">송폼 넘버링</div>
-							<div class="box_content">1, 5, 9</div>
-						</div>
-					</div>
-					<!-- 카드 내용: 4행 -->
-					<div class="card_content_line4">
-						<!-- 카드 내용: 4행 박스 -->
-						<div class="line4_box box1">
-							<div class="box_head track_title">트랙 형태</div>
-							<div class="box_content track_content">
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-								1. bass 2. pad 3. lead 4. drums
-							</div>
-						</div> 
-						<div class="line4_box box2">
-							<div class="box_head code_inform_title">코드 정보</div>
-							<div class="box_content code_inform_content">
-								1 마디 : V, V, V, V
-								2 마디 : III, III, III, III
-								3 마디 : IV, V, IV, V
-								4 마디 : III, III, III, III
-							</div>
-						</div>
-					</div>
-				</div>		
-			</div>
-		</div>
-	</div>
+	</form>
 	<script src="/js/read/viewDetail/viewDetail.js"></script>
 	<a id="topBtn" href="#">TOP</a>
 </body>
