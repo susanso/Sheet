@@ -118,6 +118,7 @@
     background-color: #D4D4D4;
     border-radius: 10px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .dataColumnContainer::-webkit-scrollbar {
