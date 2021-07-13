@@ -10,9 +10,9 @@ $(".edit_button").click(function() {
 		$(this).removeClass("edit_button");
 	} else {
 		$(".update_input").prop('disabled', true);
-		$(THIS).addClass("edit_button");
-		$(THIS).removeClass("save_button");
-		$(THIS).text("수정");
+		$(this).addClass("edit_button");
+		$(this).removeClass("save_button");
+		$(this).text("수정");
 	}
 });
 

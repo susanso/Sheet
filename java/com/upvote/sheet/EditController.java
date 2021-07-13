@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +47,7 @@ public class EditController {
 	
 	// 트랙 형태와 코드 정보 가져오는 메서드 
 	@GetMapping(value = "/edit")
-	public ModelAndView renderEditPage(@RequestParam("songId") String songID) {
+	public ModelAndView renderEditPage(HttpSession session, @RequestParam("songId") String songID) {
 			
 		ModelAndView model = new ModelAndView();
 		
@@ -57,6 +59,15 @@ public class EditController {
 		songInfo = sheet.getSongInfo(songID);
 		instInfo = sheet.getInstInfo(songID);
 		chordInfo = sheet.getChordInfo(songID);
+		
+		// 세션 확인해서 작업 담당자 본인이면 수정, 삭제 가능 여부 저장 
+		String userName = (String)session.getAttribute("userName");
+		if (songInfo.getProducerName() == userName) {
+			model.addObject("isQualified", true);
+		}
+		else {
+			model.addObject("isQualified", false);
+		}
 		
 		// 보낼 정보 객체로 저장 
 		model.addObject("songInfo", songInfo);
