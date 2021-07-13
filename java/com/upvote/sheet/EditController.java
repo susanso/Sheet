@@ -27,8 +27,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import data.dto.AISM_Sheet_User_Info_DTO;
+import data.dto.AISM_Sheet_Chord_Info_DTO;
+import data.dto.AISM_Sheet_Inst_Info_DTO;
+import data.dto.AISM_Sheet_Song_Info_DTO;
 import data.dto.AISM_Sheet_Song_List_DTO;
 import data.service.AISM_Sheet_Info_ServiceInter;
 
@@ -39,48 +43,30 @@ public class EditController {
 	@Autowired
 	private AISM_Sheet_Info_ServiceInter sheet;
 	
-	@PostMapping("/main/flasktest")
-	public @ResponseBody Map<String, String> flaskTest() throws IOException {
-		Map<String, String> map = new HashMap<String, String>();
-		
-		// JSON 데이터 받을 URL 객체 생성
-		URL url = new URL("http://141.164.62.192:8888/hyunjin");
-
-		// HttpURLConnection 객체를 생성해 openConnection 메소드로 url 연결
-		HttpURLConnection con = (HttpURLConnection) url.openConnection();
-		
-		// 전송 방식 (POST)
-		con.setRequestMethod("POST");
-		
-		// application/json 형식으로 전송, Request body를 JSON으로 던져줌.
-		con.setRequestProperty("Content-Type", "application/json; utf-8");
-		
-		// Response data를 JSON으로 받도록 설정
-		con.setRequestProperty("Accept", "application/json");
-		
-		// Output Stream을 POST 데이터로 전송
-		con.setDoOutput(true);
-		
-		String jsonInputString = "from Sheet Server";
-		
-		// JSON 보내는 Output stream
-		try (OutputStream os = con.getOutputStream()) {
-			byte[] input = jsonInputString.getBytes("utf-8");
-			os.write(input, 0, input.length);
-		}
-		
-		try (BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"))) {
-			StringBuilder response = new StringBuilder();
-			String responseLine = null;
+	// 트랙 형태와 코드 정보 가져오는 메서드 
+	@GetMapping(value = "/edit")
+	public ModelAndView renderEditPage(@RequestParam("songId") String songID) {
 			
-			while ((responseLine = br.readLine()) != null) {
-				response.append(responseLine.trim());
-				map.put("flask", responseLine.trim());
-				
-				System.out.println(response.toString() + "로 값을 받음");
-			}
-		}
-				
-		return map;
-	}
+		ModelAndView model = new ModelAndView();
+		
+		// 곡 정보, 트랙 정보, 코드 정보 받아올 변수 
+		AISM_Sheet_Song_Info_DTO songInfo = new AISM_Sheet_Song_Info_DTO();
+		List<AISM_Sheet_Inst_Info_DTO> instInfo = new Vector<AISM_Sheet_Inst_Info_DTO>();
+		List<AISM_Sheet_Chord_Info_DTO> chordInfo = new Vector<AISM_Sheet_Chord_Info_DTO>();
+		
+		songInfo = sheet.getSongInfo(songID);
+		instInfo = sheet.getInstInfo(songID);
+		chordInfo = sheet.getChordInfo(songID);
+		
+		// 보낼 정보 객체로 저장 
+		model.addObject("songInfo", songInfo);
+		model.addObject("instInfo", instInfo);
+		model.addObject("chordInfo", chordInfo);
+		
+		// 보낼 View Page 저장
+		model.setViewName("/component/read/viewDetail/viewDetail");
+		
+		return model;
+	}	
+	
 }

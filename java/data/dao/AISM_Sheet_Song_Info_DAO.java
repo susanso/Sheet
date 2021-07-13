@@ -85,4 +85,24 @@ public class AISM_Sheet_Song_Info_DAO
 		return getSqlSession().selectList("selectChordInfo", map);
 
 	}
+	
+	//producer의 모든 song 가져오기
+	@Override
+	public List<AISM_Sheet_Song_List_DTO> getEachSongList(String producerName) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("producerName", producerName);
+		
+		return getSqlSession().selectList("selectEachSong", map);
+	}
+	
+	// SongID로 곡 정보 가져오기 
+	@Override
+	public AISM_Sheet_Song_Info_DTO getSongInfo(String songID) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("songID", songID);
+		
+		return getSqlSession().selectOne("selectSongInfo", map);
+	}
 }

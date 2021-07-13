@@ -30,17 +30,18 @@ public interface AISM_Sheet_Info_ServiceInter {
 	//곡명 중복 확인	
 	public boolean validSongName(String songName);
 
+	// songID로 곡 정보 가져오기
+	public AISM_Sheet_Song_Info_DTO getSongInfo(String songID);
 	
 	// 코드 정보 가져오기
 	public List<AISM_Sheet_Inst_Info_DTO> getInstInfo(String songID);
 	
 	// 트랙 정보 가져오기
 	public List<AISM_Sheet_Chord_Info_DTO> getChordInfo(String songID);
-
-	/*
+  
 	//producer의 모든 song 가져오기
-	public List<AISM_Sheet_Info_DTO> pdSongList();
+	public List<AISM_Sheet_Song_List_DTO> pdSongList(String producerName);
+	
 	//1개 song 가져오기
-	public List<AISM_Sheet_Info_DTO> oneSongInfo();
-	*/
+	//public List<AISM_Sheet_Info_DTO> oneSongInfo();
 }

@@ -30,7 +30,6 @@
 		<div class = "viewAll">전체 보기</div>
 	</div>
 	<div class = "tableTitleBox">
-		<div class = "column checkBox"></div>
 		<div class = "column pdname">작업 담당자</div>
 		<div class = "column song">곡명</div>
 		<div class = "column artist">아티스트명</div>
@@ -47,13 +46,9 @@
 	<div class = "function">
 		<div class = "search">
 			<div class = "searchBox">
-				<input type = "text" class = "searchInfo">
+				<input type = "text" class = "searchInfo" value ='담당자를 입력해주세요.'>
 			</div>
 			<div class = "searchBtn">검색</div>
-		</div>
-		<div class = "editBox">
-			<div class = "edit">수정</div>
-			<div class = "delete">삭제</div>
 		</div>
 	</div>
 	
