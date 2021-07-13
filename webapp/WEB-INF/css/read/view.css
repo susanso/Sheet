@@ -39,6 +39,10 @@
     cursor: pointer;
 }
 
+.searchInfo {
+	color: darkgray;
+}
+
 .viewAll {
 	border-style: hidden;
     background-color: #D4D4D4;
@@ -62,20 +66,16 @@
     align-self: center;
 }
 
-.checkBox {
-	width: 10px;
-}
-
 .pdname {
 	width: 80px;
 }
 
 .song {
-	width: 80px;
+	width: 100px;
 }
 
 .artist {
-	width: 80px;
+	width: 100px;
 }
 
 .genre {
@@ -118,6 +118,7 @@
     background-color: #D4D4D4;
     border-radius: 10px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .dataColumnContainer::-webkit-scrollbar {
@@ -167,43 +168,6 @@
 	margin-top: 8px;
 }
 
-.editBox {
-	display: flex;
-    width: 72px;
-    justify-content: space-between;
-    margin-right: 20px;
-}
-
-.edit {
-	font-size: 16px;
-    font-weight: bold;
-    border-style: hidden;
-    background-color: #D4D4D4;
-    border-radius: 3px;
-    height: 30px;
-    display: flex;
-    padding-top: 3px;
-    color: black;
-    cursor: pointer;
-    padding-left: 3px;
-    padding-right: 3px;
-}
-
-.delete {
-	font-size: 16px;
-    font-weight: bold;
-    border-style: hidden;
-    background-color: #D4D4D4;
-    border-radius: 3px;
-    height: 30px;
-    display: flex;
-    padding-top: 3px;
-    color: black;
-    cursor: pointer;
-    padding-left: 3px;
-    padding-right: 3px;
-}
-
 .trackBox {
 	height: 90px;
 	overflow-y: overlay;
@@ -222,4 +186,36 @@
 .chordColumn {
 	display: flex;
 	padding-left: 30px;
+}
+
+.trackBox::-webkit-scrollbar {
+	width: 10px;
+}
+
+.trackBox::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.trackBox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightsteelblue;
+}
+.trackBox::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+.chordBox::-webkit-scrollbar {
+	width: 10px;
+}
+
+.chordBox::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.chordBox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightsteelblue;
+}
+.chordBox::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
 }

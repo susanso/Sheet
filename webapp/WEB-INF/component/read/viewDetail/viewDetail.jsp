@@ -24,6 +24,9 @@
 </head>
 <body style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
 	<div class="Title">Upvote Sheet Page</div>
+	<div class = "songInfo">${songInfo.songName}</div>
+	<div class = "instInfo">${instInfo}</div>
+	<div class = "chordInfo">${chordInfo}</div>
 	<!-- 서치바 부분 시작 -->
 	<!-- 
 	<div class="search_bar_main_container">
