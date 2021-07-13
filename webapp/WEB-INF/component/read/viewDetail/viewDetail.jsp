@@ -37,8 +37,9 @@
 						<input type="text" class="update_input song_artist" value="${songInfo.artist}" disabled>
 					</div>
 					<div class="card_head_buttons">
-						<c:if test = "${isQualified}"> <!-- controller단에서 확인해서 넘겨줌 --> 
+						<c:if test = "${isQualified == true}">
 							<div class="button edit_button">수정</div>
+							<button type = "submit" class="button save_button" style = "display: none;">저장</button>
 							<div class="button delete_button">삭제</div>
 						</c:if>
 					</div>
@@ -49,7 +50,7 @@
 						<!-- 작업 담당자, 작업자 이름 -->
 						<div class="card_content_writer">
 							<div class="writer">작업 담당자</div>
-							<input type="text" class="update_input writer_name" value = "${songInfo.producerName}" disabled>
+							<div class="writer_name">${songInfo.producerName}</div>
 						</div>
 						<!-- 곡 정보 : 장르, 키, BPM, 송폼 넘버링 -->
 						<div class="card_content_song_info">
