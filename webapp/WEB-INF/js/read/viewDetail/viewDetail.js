@@ -1,24 +1,16 @@
-// session확인해서 producerName이랑 일치하면 수정 - 저장 버튼 show
 
-
-// 수정-저장 버튼
+// 수정 버튼 누름 
 $(".edit_button").click(function() {
-	if ($(this).hasClass("edit_button")) {
-		$(".update_input").prop('disabled', false);
-		$(this).text("저장");
-		$(this).addClass("save_button");
-		$(this).removeClass("edit_button");
-	} else {
-		$(".update_input").prop('disabled', true);
-		$(this).addClass("edit_button");
-		$(this).removeClass("save_button");
-		$(this).text("수정");
-	}
+	$(".update_input").prop('disabled', false);
+	$(this).css('display', 'none');
+	$(".save_button").css('display', 'flex');
 });
 
 // 저장 버튼 누르면 update
 $(".save_button").click(function() {
-	
+	$(".update_input").prop('disabled', true);
+	$(this).css('display', 'none');
+	$(".edit_button").css('display', 'flex');
 });
 
 // 삭제 버튼
@@ -44,3 +36,18 @@ $(function() {
 		return false;
 	});
 });
+
+function modal(className) {
+    var modal = $('.' + className);
+
+    modal
+        .css({
+            position: 'fixed',
+            top: '30%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            msTransform: 'translate(-50%, -50%)',
+            webkitTransform: 'translate(-50%, -50%)'
+        })
+        .show()
+}

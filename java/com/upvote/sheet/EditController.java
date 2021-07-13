@@ -62,7 +62,8 @@ public class EditController {
 		
 		// 세션 확인해서 작업 담당자 본인이면 수정, 삭제 가능 여부 저장 
 		String userName = (String)session.getAttribute("userName");
-		if (songInfo.getProducerName() == userName) {
+		if (userName.equals(songInfo.getProducerName())) {
+			System.out.println("동일");
 			model.addObject("isQualified", true);
 		}
 		else {
@@ -78,6 +79,9 @@ public class EditController {
 		model.setViewName("/component/read/viewDetail/viewDetail");
 		
 		return model;
-	}	
+	}
+	
+//	@PostMapping(value = "/updateSong.do")
+//	public Map<Stirng, Stirng> updateSong()
 	
 }

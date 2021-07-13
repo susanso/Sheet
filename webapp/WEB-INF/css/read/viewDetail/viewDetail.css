@@ -160,7 +160,6 @@ select {
 }
 /* 저장 버튼 */
 .button.save_button {
-	display: none;
     background-color: #b70000;
     border-radius: 5px;
     font-weight: bold;
@@ -368,5 +367,4 @@ a#topBtn {
 a {
     color: #003ad6;
 }
-
 
