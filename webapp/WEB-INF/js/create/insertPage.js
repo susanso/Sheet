@@ -39,10 +39,12 @@ var codeNumInput = $("#codeNumInput").val();
 
 
 
-//트랙 정보 입력창 추가
+//트랙 정보 입력창 숫자 입력 추가
 $("#track_quantity_apply_button").click(function(){
+	console.log(trackCount);
+	console.log(trackNumInput);
 	let inputNum = trackCount;
-	let i = trackCount+trackNumInput;
+	let i = inputNum+trackNumInput;
 	for(; i-1>inputNum; inputNum++ ){
 		let text="";
 		text += "<div id = track" + inputNum+1;
@@ -57,7 +59,7 @@ $("#track_quantity_apply_button").click(function(){
 });
 
 
-//트랙 정보 입력창 추가
+//트랙 정보 입력창 버튼 입력 추가
 
 $(".up_button_track").click(function(){
 	trackCount++;
@@ -71,7 +73,7 @@ $(".up_button_track").click(function(){
 });
 
 
-//코드 정보 입력창 추가
+//코드 정보 입력창 버튼 입력 추가
 var codeCount = 1; 
 $(".up_button_code").click(function(){
 	codeCount++;
@@ -84,7 +86,7 @@ $(".up_button_code").click(function(){
 	$("#codeNumInput").val(codeCount);
 });
 
-//코드 정보 입력창 삭제
+//코드 정보 입력창 버튼 입력 삭제
 $(".down_button_code").click(function(){
 	if(codeCount>1){
 		$("#code"+codeCount).remove();
@@ -96,7 +98,7 @@ $(".down_button_code").click(function(){
 	}
 });
 
-//트랙 형태 입력창 삭제
+//트랙 형태 입력창 버튼 입력 삭제
 $(".down_button_track").click(function(){
 	if(trackCount>1){
 		$("#track"+trackCount).remove();
