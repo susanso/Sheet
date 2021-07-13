@@ -6,9 +6,10 @@
 	background: black;
 	padding-bottom: 80px;
 }
+/*-----------------------Header------------------------*/
 .header_container{
 	width: 800px;
-	height: 150px;
+	height: 180px;
 	background: black;
 	align-items: center;
     justify-content: center;
@@ -20,42 +21,22 @@
 	align-items: center;
     display: flex;
     justify-content: center;
-	
 }
-.box{
-	display: flex;
-    align-items: center;
-}
-.section_box{
-	display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-.section_box2{
-	margin-top: 10px;
-	display: flex;
-}
-.colomn_box{
-	border: solid 2px black;
-    margin: 0 auto;
-	width: 300px;
-	padding: 10px;
-	border-radius: 5px;
-}
-.button_box{
-	justify-content: space-around;
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
-}
+/*-----------------------Main------------------------*/
 .main_container{
 	width: 700px;
+	height: auto;
 	background: white;
-	padding: 50px 50px 0px 50px ;
+	padding: 50px 50px 50px 50px ;
 	margin: 0 auto;
 	border-radius: 8px;
 }
-.name_item{
+/*--------------titleInfo-------------------------*/
+.titleInfo_box{
+	display: flex;
+    align-items: center;
+}
+.titleInfo_name_item{
 	width: 100px;
 	height: 40px;
 	color: black;
@@ -63,66 +44,121 @@
     display: flex;
     justify-content: center;
 }
-.second_item{
-	margin: 0 auto;
-}
-.colomn_item{
-	width: 100px;
-	height: 40px;
-	color: black;
-	align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-.input_box{
-	width: 500px;
-	align-items: center;
-    display: flex;
-    justify-content: space-around;
-}
-.sheet_button{
-	border-radius: 5px;
-	border: solid 1px #8a8a8a;
-	width: 150px;
-	height: 30px;
-}
-.button_1{
-	margin-left:0px;
-}
-.line{
+.titleInfo_line{
 	width: 600px;
 	border: solid 0.1px black;
 	background: black;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-.line2{
-	width: 1px;
-	height: 80px;
-	border: solid 1px black;
-	background: black;
+.titleInfo_button{
+	border-radius: 5px;
+	border: solid 1px #8a8a8a;
+	width: 140px;
+	height: 30px;
 }
-.updown_button{
+/*--------------songInfo-------------------------*/
+.songInfo_container{ 
+	margin-top: 10px;
+	display: flex;
+}
+
+.songInfo_box{
+	border: solid 2px black;
+    margin: 0 auto;
+	width: 300px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.songInfo_add_box{
+	height: 40px;
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.songInfo_add_item{
+	width: 55px;
+	display: flex;
+    align-items: center;
+}
+
+
+.songInfo_name_item{
+	width: 100px;
+	height: 40px;
+	color: black;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+.songInfo_add_input_button{
+	border-radius: 5px;
+	border: solid 1px #8a8a8a;
+	width: 150px;
+	height: 30px;
+}
+
+/*--------------songInfo_quantity-------------------------*/
+.songInfo_quantity_updown_button_box{
+	display: flex;
+	width: 60px;
+	justify-content: space-evenly;
+}
+.songInfo_quantity_updown_button{
+	width: 25px;
+	height: 40px;
+	background: #ccc;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px black;
+	transition-duration: 0.3s;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.songInfo_quantity_updown_button:active{
+	margin-left: 1px;
+	margin-top: 1px;
+	box-shadow: none;
+}
+.songInfo_quantity_name_item{
+	color: black;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.songInfo_quantity_updown_button{
 	font-size: 5px;
 	width: 20px;
 	height: 15px;
 }
-.plus_button{
-	width: 30px;
+.songInfo_quantity_input_button{
+	width: 40px;/*원래 30 이었음*/
 	height: 20px;
+	
 }
-.plus_button_box{
-	display: flex;
-	width: 40px;
-}
-.apply_section{
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-.add_code{
-	display: flex;
-    justify-content: center;
+.songInfo_quantity_box{
+	justify-content: space-evenly;
+    display: flex;
     align-items: center;
-    margin-right: 20px;
+    height: 40px;
 }
+
+/*
+#trackNumInput{
+	placeholder= "1";
+}
+*/
+
+/*-----------------apply_button_container-----------------*/
+
+
+.save_button_container{
+	display: flex;
+    align-items: center;
+    padding-top: 20px;
+	justify-content: flex-end;
+}
+

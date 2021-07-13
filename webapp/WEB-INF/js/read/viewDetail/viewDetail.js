@@ -1,3 +1,6 @@
+// session확인해서 producerName이랑 일치하면 수정 - 저장 버튼 show
+
+
 // 수정-저장 버튼
 $(".edit_button").click(function() {
 	if ($(this).hasClass("edit_button")) {
