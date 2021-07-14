@@ -1,6 +1,7 @@
 package data.session;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -41,7 +42,14 @@ public class loginFilter implements Filter {
 			
 			// 세션이 없으면 홈 페이지로 이동 
 			if(id == null) {
-				http_response.sendRedirect("/");
+				response.setContentType("text/html; charset=euc-kr");
+				
+				PrintWriter out = response.getWriter();
+				
+				// 로그인 진행 알람 후 로그인 페이지로 이동
+				out.println("<script>alert('로그인을 진행해주세요.'); location.href = '/'</script>");
+				out.flush();
+				
 				return ;
 			}
 		}

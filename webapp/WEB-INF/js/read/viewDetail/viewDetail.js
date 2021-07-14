@@ -86,29 +86,11 @@ $(function() {
 	});
 });
 
-
-function modal(className) {
-	var modal = $('.' + className);
-
-	modal
-		.css({
-			position: 'fixed',
-			top: '30%',
-			left: '50%',
-			transform: 'translate(-50%, -50%)',
-			msTransform: 'translate(-50%, -50%)',
-			webkitTransform: 'translate(-50%, -50%)'
-		})
-		.show()
-}
 // Window 크기 다시 지정
 function windowResize() {
 	// width는 동일 height만 다시 지정 
 	let height = $('.all_cards_container').height();
-	window.resizeTo(900, height + 45); // 45 = url + title bar
-
-	console.log('height : ', height);
-
+  window.resizeTo(900, height + 57); // 48 = url + title bar
 }
 
 //트랙 정보 읽어오기 

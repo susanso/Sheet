@@ -19,42 +19,43 @@
 	display: flex;
     padding-right: 20px;
     padding-bottom: 5px;
-    width: 172px;
     font-size: 16px;
-    justify-content: space-between;
-    float: right;
+    justify-content: flex-end;
 }
 
 .viewMine {
 	border-style: hidden;
     background-color: #D4D4D4;
     border-radius: 7px;
-    width: 74px;
+    width: 80px;
     height: 30px;
     display: flex;
-    padding-left: 7px;
-    padding-top: 3px;
     color: black;
     font-weight: bold;
     cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchInfo {
 	color: darkgray;
+	height: 100%;
 }
 
 .viewAll {
 	border-style: hidden;
     background-color: #D4D4D4;
     border-radius: 7px;
-    width: 74px;
+    width: 80px;
     height: 30px;
     display: flex;
-    padding-left: 7px;
-    padding-top: 3px;
     color: black;
     font-weight: bold;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 .column{
@@ -86,22 +87,55 @@
 	width: 50px;
 }
 
+.BPM {
+	width: 50px;
+}
+
+.beat {
+	width: 50px;
+}
+
 .songform {
 	width: 50px;
 }
 
 .track {
-	width: 160px;
+	width: 200px;
+    margin: 0;
+    margin-right: 10px;
 }
 
 .chordInfo {
-	width: 150px;
+	width: 200px;
+	margin: 0;
 }
 
 .tableColumnBox{
 	display: flex;
 }
 
+.loadingContainer {
+	display: flex;
+	height: 100%;
+	align-items: center;
+  	justify-content: center;
+}
+
+.loadingBox {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .dataColumnContainer{
 	width: 100%;
 	height: 580px;
@@ -139,26 +173,27 @@
 
 .search {
 	display: flex;
-	width: 193px;
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 
 .searchBox {
 	color: black;
-	padding-top: 1.5px;
+	height: 25px;
+	margin-right: 10px;
 }
 
 .searchBtn {
 	font-weight: bold;
     font-size: 16px;
-    padding-top: 3px;
+    padding-top: 1px;
     border-style: hidden;
     background-color: white;
     border-radius: 3px;
     color: black;
     padding-left: 3px;
     padding-right: 4px;
-    cursor: pointer
+    cursor: pointer;
+    height: 25px;
 }
 
 .function {
@@ -175,7 +210,7 @@
 
 .trackColumn {
 	display: flex;
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 .chordBox {
@@ -185,7 +220,7 @@
 
 .chordColumn {
 	display: flex;
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 .trackBox::-webkit-scrollbar {

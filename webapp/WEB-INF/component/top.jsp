@@ -21,6 +21,10 @@
 </head>
 <div class = "topContainer">
 	<div class = "upvoteLogo"># UPVOTE Entertainment</div>
+	<div class = "functionPage">
+		<div class = "page insertPage">입력</div>
+		<div class = "page viewPage">수정</div>
+	</div>
 	<div class = "profile">
 		<div class = "profileImg"></div>
 		<div class = "userName">${userName}</div>

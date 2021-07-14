@@ -249,7 +249,6 @@ select {
 .writer {
     margin-right: 10;
     font-weight: bold;
-    margin-top: 3px;
 }
 
 /* 카드 내 head 공통 */
@@ -303,13 +302,13 @@ select {
 .code_inform_content.bar {
     margin-bottom: 6px;
     display: flex;
-    width: 200px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .code_inform_content.bar_head {
     margin-bottom: 5px;
     font-weight: bold;
     padding-top: 5px;
+    margin-right: 10px;
 }
 .track_content.track_number {
     font-weight: bold;
@@ -318,6 +317,7 @@ select {
 .item_content.track_content {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 /* 트랙 형태 스크롤 */

@@ -114,7 +114,7 @@
 		<div class = "alertTxt"></div>
 		<a class = "modalCloseBtn">닫기</a>
 	</div>
-	
 	<script src="../js/create/insertData.js"></script>
 </body>
+<%@ include file="../../component/footer.jsp" %>
 </html>

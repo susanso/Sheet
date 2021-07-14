@@ -35,6 +35,8 @@
 		<div class = "column artist">아티스트명</div>
 		<div class = "column genre">장르</div>
 		<div class = "column key">키</div>
+		<div class = "column BPM">BPM</div>
+		<div class = "column beat">박자</div>
 		<div class = "column songform">송폼</div>
 		<div class = "column track">트랙 형태</div>
 		<div class = "column chordInfo">코드 정보</div>
@@ -53,7 +55,7 @@
 	</div>
 	
 </div>
-
+<%@ include file="../../component/footer.jsp" %>
 <script src="../../js/read/view.js"></script>
 </body>
 </html>

@@ -8,6 +8,9 @@ function getSongInfo() {
 	// 모든 데이터 저장할 리스트 선언 
 	let allData_li = new Array();
 	
+	// 로딩중 띄우기 
+	loadingOn();
+	
 	// 컨트롤러에 데이터 요청 
 	$.ajax ({
 	url : "/show/allSong", 
@@ -24,6 +27,8 @@ function getSongInfo() {
 				else if (key == 'artist') songInfo.artist = song[key];
 				else if (key == 'genre') songInfo.genre = song[key];
 				else if (key == 'keyName') songInfo.keyName = song[key];
+				else if (key == 'bpm') songInfo.bpm = song[key];
+				else if (key == 'beat') songInfo.beat = song[key];
 				else if (key == 'songForm') songInfo.songForm = song[key];
 				else if (key == 'songId') songInfo.songId = song[key];
 			}
@@ -34,7 +39,7 @@ function getSongInfo() {
 	},
 	
 	// 모든 데이터 다 담고 songID 추출해서 코드 정보와 트랙 정보 가져옴 
-	complete : function() {
+	complete : function() {		
 		songID_li = getSongID(allData_li);
 		// 코드 정보 + 트랙 정보 붙은 데이터 
 		get_chord_and_track_info(allData_li, songID_li);
@@ -99,6 +104,8 @@ function get_chord_and_track_info(allData_li, songID_li) {
 					eachData.trackInfo = trackInfo;
 					eachData.chordInfo = chordInfo;
 					
+					loadingOff(allData_li.length);
+				
 					viewData(eachData);
 				}
 			}
@@ -108,7 +115,7 @@ function get_chord_and_track_info(allData_li, songID_li) {
 
 // jsp에 각 데이터 렌더하는 메서드 
 function viewData(data) {
-	
+
 	let trackBox = '<div class = "trackBox">';
 	
 	for (var track of data.trackInfo) {
@@ -134,6 +141,8 @@ function viewData(data) {
 					'<div class = "column artist">' + data.artist + '</div>' + 
 					'<div class = "column genre">' + data.genre + '</div>' + 
 					'<div class = "column key">' + data.keyName + '</div>' + 
+					'<div class = "column BPM">' + data.bpm + '</div>' +
+					'<div class = "column beat">' + data.beat + '</div>' + 
 					'<div class = "column songform">' + data.songForm + '</div>';
 	
 	dataColumn +=	'<div class = "column track">' + trackBox + '</div>' + 
@@ -188,6 +197,28 @@ function getChordTrack(songID, song_info) {
 			}});
 			
 	return song_info;
+}
+
+// 로딩중 켜기
+function loadingOn() {
+	let loading = '<div class = "loadingContainer">' + 
+					'<div class = "loadingBox"></div>' + 
+				  '</div>';
+		
+	$('.dataColumnContainer').append(loading);
+}
+
+// 로딩중 끄기
+function loadingOff(allData_length) {
+	let dataCount = $('.dataColumnContainer').children().length;
+	
+	// 마지막 원소 보여줄 때 로딩중 끄기 
+	if (dataCount == allData_length - 1) {
+		console.log('loading off');
+		$('.loadingContainer').css('display', 'none');
+	}
+	
+	
 }
 
 // 검색 하려고 검색 박스 클릭 이벤트 핸들러
