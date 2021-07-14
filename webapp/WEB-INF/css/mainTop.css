@@ -1,0 +1,36 @@
+.topContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.page {
+	cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.insertPage{
+/* 	background : url(../image/create/Insert.png); */
+/* 	background-size: 100% 100%; */
+	margin-right: 20px;
+}
+
+
+.viewPage {
+	cursor: pointer;
+}
+
+.upvoteLogo{
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.test{
+	color: white;
+	width: 500px;
+	height: 200px;
+	overflow: overlay;
+}
