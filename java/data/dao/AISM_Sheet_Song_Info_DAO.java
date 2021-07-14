@@ -20,7 +20,6 @@ public class AISM_Sheet_Song_Info_DAO
 	
 	@Override
 	public void insertSongList(AISM_Sheet_Song_List_DTO dto) {
-		//TODO
 		getSqlSession().insert("insertSongList", dto);
 	}
 	
@@ -104,5 +103,31 @@ public class AISM_Sheet_Song_Info_DAO
 		map.put("songID", songID);
 		
 		return getSqlSession().selectOne("selectSongInfo", map);
+	}
+
+	// song info 수정
+	@Override
+	public void updateSongInfo(AISM_Sheet_Song_Info_DTO sdto) {
+		System.out.println("여기는 다오");
+		System.out.println(sdto);
+		getSqlSession().update("updateSongInfo", sdto);
+	}
+	
+	// inst info 수정
+	@Override
+	public void updateInstInfo(AISM_Sheet_Inst_Info_DTO idto) {
+		System.out.println(idto);
+		getSqlSession().update("updateInstInfo", idto);
+	}
+
+	// chord info 수정
+	@Override
+	public void updateChordInfo(AISM_Sheet_Chord_Info_DTO cdto) {
+		getSqlSession().update("updateChordInfo", cdto);
+	}
+	
+	@Override
+	public void deleteSong(String songId) {
+		getSqlSession().delete("deleteSong", songId);
 	}
 }

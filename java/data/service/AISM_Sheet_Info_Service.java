@@ -93,12 +93,28 @@ public class AISM_Sheet_Info_Service
 	public AISM_Sheet_Song_Info_DTO getSongInfo(String songID) {
 		return dao.getSongInfo(songID);
 	}
+
+	// song info 수정
+	@Override
+	public void updateSongInfo(AISM_Sheet_Song_Info_DTO sdto) {
+		dao.updateSongInfo(sdto);
+	}
+
+	// inst info 수정
+	@Override
+	public void updateInstInfo(AISM_Sheet_Inst_Info_DTO idto) {
+		dao.updateInstInfo(idto);
+	}
+
+	// chord info 수정
+	@Override
+	public void updateChordInfo(AISM_Sheet_Chord_Info_DTO cdto) {
+		dao.updateChordInfo(cdto);
+	}
 	
-	//1개 song 가져오기
-//	@Override
-//	public List<AISM_Sheet_Info_DTO> oneSongInfo() {
-//		
-//	}
-//	*/
+	// song info 삭제 
+	@Override
+	public void deleteSong(String songId) {
+		dao.deleteSong(songId);
+	}
 }
-	

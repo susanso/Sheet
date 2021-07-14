@@ -65,6 +65,7 @@ public class CreateController {
 		//song_info userId 추가해서 Bean객체
 		JSONObject jsonSongObj = (JSONObject) jsonParser.parse(songData);
 		jsonSongObj.put("userId", (String) session.getAttribute("userId"));
+		jsonSongObj.put("producerName", session.getAttribute("userName"));
 		AISM_Sheet_Song_Info_DTO jsonSongDTO = objectMapper.readValue(jsonSongObj.toString(), AISM_Sheet_Song_Info_DTO.class);
 		
 		// inst_info, chord_info JSON 배열로 파싱
@@ -84,6 +85,7 @@ public class CreateController {
         		chordDTO.print();
             }
         }
+        
 		map.put("result", "success");
 
 		return map;

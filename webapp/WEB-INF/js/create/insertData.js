@@ -1,7 +1,7 @@
 var inst_li_DB;
 var trackIdx;
-var chord_reg = RegExp(/(^[A-Za-z0-9\+\-]+,)*([A-Za-z0-9\+\-])$/)
-//var chord_8_reg = RegExp(/(^[A-Za-z0-9\+\-]+,){7}([A-Za-z0-9\+\-])$/)
+var chord_4_reg = RegExp(/^([A-Za-z0-9\+\-]+[,]){3}[A-Za-z0-9\+\-]$/)
+var chord_8_reg = RegExp(/^([A-Za-z0-9\+\-]+[,]){7}[A-Za-z0-9\+\-]$/)
 
 //////////////// 트랙 정보 (악기 정보 입력) ////////////////
 //트랙 개수 입력 
@@ -228,7 +228,10 @@ $('.SongSubmitButton').click(function() {
 			console.log("입력 완료");
 		}
 	});
-
+	alert("입력 완료!!");
+	console.log(songData.songId);
+	let url = "/edit?songId=" + songData.songId;
+	popUp(url);
 });
 
 //코드 입력 형식 체크 ㅁ,ㅁ,ㅁ,ㅁ 
@@ -236,7 +239,7 @@ function checkChordForm(chord_li) {
 	console.log("여기");
 	for (let i=0; i < chord_li.length; i++) {
 		console.log(chord_li[i].measureNum, chord_li[i].chord);
-		if(!chord_reg.test(chord_li[i].chord)){
+		if(!chord_4_reg.test(chord_li[i].chord) && !chord_8_reg.test(chord_li[i].chord)){
 			console.log("코드 입력 형식 에러");
 			return false;
 		}
@@ -341,4 +344,18 @@ function modal(className, text) {
 			webkitTransform: 'translate(-50%, -50%)'
 		})
 		.show()
+}
+
+// 팝업 창 설정 메서드
+function popUp(url) {
+	
+	// 팝업 창 크기 설정
+	let popupWidth = 900;
+	let popupHeight = 200;
+	
+	// 현재 브라우저 기준 가운데 출력
+	let popupX = (document.body.offsetWidth / 2) - (popupWidth / 2);
+	let popupY = (document.body.offsetHeight / 2) - (popupHeight / 2);
+
+	window.open(url, "_blank", "width=" + popupWidth + "px," + "height=" + popupHeight + "px,left=" + popupX + ",top=" + popupY);
 }
