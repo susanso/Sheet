@@ -85,6 +85,7 @@ function get_chord_and_track_info(allData_li, songID_li) {
 					
 					track_di.trackNum = info.trackNum;
 					track_di.instName = info.instName;
+					track_di.serum = info.serum;
 					
 					trackInfo.push(track_di);
 				}
@@ -125,6 +126,15 @@ function viewData(data) {
 	}
 	trackBox += '</div>'
 	
+	let serumBox = '<div class = "serumBox">';
+	
+	for (var track of data.trackInfo) {
+		let serumColumn = '<div class = "serumColumn">'
+		serumColumn += track.trackNum + '. ' + track.serum + '</div>';
+		serumBox += serumColumn;
+	}
+	serumBox += '</div>'
+	
 	let chordBox = '<div class = "chordBox">';
 	
 	for (var measure of data.chordInfo) {
@@ -146,6 +156,7 @@ function viewData(data) {
 					'<div class = "column songform">' + data.songForm + '</div>';
 	
 	dataColumn +=	'<div class = "column track">' + trackBox + '</div>' + 
+					'<div class = "column inst">' + serumBox + '</div>' + 
 					'<div class = "column chordInfo">' + chordBox + '</div>' + 
 			  	  '</div>';
 
@@ -212,8 +223,11 @@ function loadingOn() {
 function loadingOff(allData_length) {
 	let dataCount = $('.dataColumnContainer').children().length;
 	
+	console.log('all data length : ', allData_length);
+	console.log('data count : ', dataCount);
+	
 	// 마지막 원소 보여줄 때 로딩중 끄기 
-	if (dataCount == allData_length - 1) {
+	if (dataCount == allData_length) {
 		console.log('loading off');
 		$('.loadingContainer').css('display', 'none');
 	}
