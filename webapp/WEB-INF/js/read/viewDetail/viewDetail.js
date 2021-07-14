@@ -58,5 +58,5 @@ function windowResize() {
 	// width는 동일 height만 다시 지정 
 	let height = $('.all_cards_container').height();
 	
-	window.resizeTo(900, height + 45); // 45 = url + title bar
+	window.resizeTo(900, height + 57); // 48 = url + title bar
 }

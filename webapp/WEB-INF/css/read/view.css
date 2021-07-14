@@ -19,24 +19,24 @@
 	display: flex;
     padding-right: 20px;
     padding-bottom: 5px;
-    width: 172px;
     font-size: 16px;
-    justify-content: space-between;
-    float: right;
+    justify-content: flex-end;
 }
 
 .viewMine {
 	border-style: hidden;
     background-color: #D4D4D4;
     border-radius: 7px;
-    width: 74px;
+    width: 80px;
     height: 30px;
     display: flex;
-    padding-left: 7px;
-    padding-top: 3px;
     color: black;
     font-weight: bold;
     cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchInfo {
@@ -48,14 +48,14 @@
 	border-style: hidden;
     background-color: #D4D4D4;
     border-radius: 7px;
-    width: 74px;
+    width: 80px;
     height: 30px;
     display: flex;
-    padding-left: 7px;
-    padding-top: 3px;
     color: black;
     font-weight: bold;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 .column{
@@ -100,11 +100,14 @@
 }
 
 .track {
-	width: 160px;
+	width: 200px;
+    margin: 0;
+    margin-right: 10px;
 }
 
 .chordInfo {
-	width: 150px;
+	width: 200px;
+	margin: 0;
 }
 
 .tableColumnBox{
@@ -207,7 +210,7 @@
 
 .trackColumn {
 	display: flex;
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 .chordBox {
@@ -217,7 +220,7 @@
 
 .chordColumn {
 	display: flex;
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 .trackBox::-webkit-scrollbar {
