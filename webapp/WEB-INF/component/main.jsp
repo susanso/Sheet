@@ -30,7 +30,7 @@
 		<div class = "update">수정 & 확인</div>
 	</div>
 </div>
-
 <script src="../../js/main.js"></script>
 </body>
 </html>
+<%@ include file="../component/footer.jsp" %>
