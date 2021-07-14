@@ -23,7 +23,7 @@
 	href="/css/read/viewDetail/viewDetail.css">
 <title>${songInfo.songName} -  ${songInfo.artist}</title>
 </head>
-<body onload = "windowResize();" style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
+<body onload = "windowResize();" style="color: rgb(242, 242, 243);">
 	<!-- 카드 부분 시작 -->
 	<!-- 모든 카드를 감싸는 부분 -->
 	<form action="/updateSong.do" method="post" style = "margin: 0; padding: 0;">
