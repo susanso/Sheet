@@ -55,7 +55,7 @@
 	</div>
 	
 </div>
-
+<%@ include file="../../component/footer.jsp" %>
 <script src="../../js/read/view.js"></script>
 </body>
 </html>
