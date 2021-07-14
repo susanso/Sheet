@@ -24,7 +24,7 @@
 <title>Upvote | 입력</title>
 </head>
 
-<body style="background-color: #000; color: #f2f2f3">
+<body style="background-color: rgb(0, 0, 0); color: rgb(242, 242, 243);">
 	<%@ include file="../../component/top.jsp"%>
 	<div class="InputContainer">
 		<div class="SongInfoInputContainer">
@@ -39,12 +39,6 @@
 				<div class="InputBar">가수명</div>
 				<label for="artist"> <input type="text"
 					class="input_label artist">
-				</label>
-			</div>
-			<div class="Input">
-				<div class="InputBar">작성자</div>
-				<label for="producer_name"> <input type="text"
-					class="input_label producer_name">
 				</label>
 			</div>
 			<div class="Input">

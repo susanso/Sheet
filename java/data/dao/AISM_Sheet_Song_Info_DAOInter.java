@@ -23,7 +23,7 @@ public interface AISM_Sheet_Song_Info_DAOInter {
 	// 모든 악기 가져오기 
 	public List<String> getInstList();
 	
-	// 곡명 중복확
+	// 곡명 중복확인 
 	public boolean validSongName(String songName);
 
 	// 트랙 정보 가져오기
@@ -37,4 +37,16 @@ public interface AISM_Sheet_Song_Info_DAOInter {
 	
 	// SongID로 곡 정보 가져오기 
 	public AISM_Sheet_Song_Info_DTO getSongInfo(String songID);
+	
+	// song info 수정
+	public void updateSongInfo(AISM_Sheet_Song_Info_DTO sdto);
+
+	// inst info 수정
+	public void updateInstInfo(AISM_Sheet_Inst_Info_DTO idto);
+
+	// chord info 수정
+	public void updateChordInfo(AISM_Sheet_Chord_Info_DTO cdto);
+	
+	// song info 수정 
+	public void deleteSong(String songId);
 }
