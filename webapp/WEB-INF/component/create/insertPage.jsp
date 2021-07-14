@@ -66,9 +66,9 @@
 						</div>
 						<input class = "songInfo_quantity_apply_button" id = "track_quantity_apply_button" type="button" value="설정" />
 					</div>
-					<div class = "songInfo_add_box track_add_box">
+					<div class = "songInfo_track_add_box track_add_box1">
 						<div class = "songInfo_add_item"> 악기 1 </div>
-						<input class = "songInfo_add_input_button track_value"  placeholder="트랙 형태" />
+						<input class = "songInfo_add_input_button track_value" id = "track1"  placeholder="트랙 형태" />
 					</div>
 					<div class = "songInfo_track_plus_box"></div>
 				</div>
@@ -85,9 +85,9 @@
 						</div>
 						<input class = "songInfo_quantity_apply_button" id = "code_quantity_apply_button" type="button" value="설정" />
 					</div>
-					<div class = "songInfo_add_box code_add_box">
+					<div class = "songInfo_code_add_box code_add_box1">
 						<div class = "songInfo_add_item"> 마디 1 </div>
-						<input class = "songInfo_add_input_button" placeholder="코드 정보" />
+						<input class = "songInfo_add_input_button" id = "code1" placeholder="코드 정보" />
 					</div>
 					<div class = "songInfo_code_plus_box"></div>
 				</div>
