@@ -39,6 +39,7 @@
 		<div class = "column beat">박자</div>
 		<div class = "column songform">송폼</div>
 		<div class = "column track">트랙 형태</div>
+		<div class = "column inst">악기 정보</div>
 		<div class = "column chordInfo">코드 정보</div>
 	</div>
 	<div class = "tableColumnBox">
