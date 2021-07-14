@@ -1,8 +1,13 @@
 @charset "UTF-8";
-
+a {
+    color: #b4a5d9;
+    text-decoration: none;
+}
 .signUpBox {
 	width: 500px;
-	padding: 0;
+    padding: 30px;
+    background: #B3A5D9;
+    border-radius: 20px;
 }
 .signUpInputmBox{
 	width: 80%;
@@ -10,11 +15,11 @@
 	padding: 0;
 }
 .signUpInputForm {
-    background-color: #505051;
-    color: #fff;
+    background-color: #FFEAF9;
+    color: #4E4E4E;
     border: 0;
     outline: none;
-    border-radius: 3px;
+    border-radius: 10px;
     width: 100%;
     height: 35px;
     padding-left: 1em;
@@ -23,10 +28,11 @@
 	width: 98px;
 }
 .signUpTitle {
-	text-align:left;
-	padding: 0;
-	line-height: 2em;
+	text-align: left;
+    padding: 0;
+    line-height: 2em;
     width: 100px;
+    font-weight: bold;
 }
 .alertBox {
     padding: 0 0 0 1em;
@@ -35,14 +41,16 @@
 
 .createSignUp {
 	margin: auto;
-	background: #246593;
-	text-align: center;
-	height: 45px;
-	font-size: 20px;
-	cursor: pointer;
-	line-height: 44px;
-	margin-top: 1em;
-	border-radius: 3px;
+    background: #DAD1FF;
+    text-align: center;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 44px;
+    margin-top: 1em;
+    border-radius: 10px;
+    color: #4E4E4E;
+    font-weight: bold;
 }
 .signUpculumnRow{
 	align-items: center;
@@ -54,9 +62,10 @@
 }
 
 .overlapContainer {
-	display: flex;
-	width: 500px;
-	justify-content: space-between;
+	margin-bottom: 0.5em;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .overlap {
@@ -64,14 +73,20 @@
 }
 
 .checkIdOverlap {
-	height: 40px;
-	padding-top: 6px;
-	cursor: pointer;
+	padding: 6px;
+    cursor: pointer;
+    margin-right: 30px;
+    background: #DAD1FF;
+    border-radius: 10px;
+    color: #4E4E4E;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .Idoverlap{
 	display: none;
-	color: indianred;
+	color: red;
 }
 
 .IdNotOverlap {
@@ -89,27 +104,34 @@
 
 .pwdAlertError{
 	display: none;
-	color: indianred;
+	color: red;
+	margin-left: 100px;
 }
 
 .alertId{
 	display: none;
-	color: indianred;
+	color: red;
+	margin-left: 100px;
 }
 
 .alertName{
 	display: none;
-	color: indianred;
+	color: #ff0000;
+    margin-bottom: 0.5em;
+    margin-left: 100px;
 }
 
 .alertPwd1{
 	display: none;
-	color: indianred;
+	color: red;
+	margin-left: 100px;
+	margin-bottom: 0.5em;
 }
 
 .alertPwd2{
 	display: none;
-	color: indianred;
+	color: red;
+	margin-left: 100px;
 }
 
 .signUpAlertBox{
@@ -134,7 +156,7 @@
     font-weight: bold;
 }
 
-.signUpAlertBox .modalCloseBtn {
+.signUpAlertBox.modalCloseBtn {
 	position: absolute;
 	top: 35px;
 	right: 10px;

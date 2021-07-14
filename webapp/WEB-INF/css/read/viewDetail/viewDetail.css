@@ -1,4 +1,10 @@
 @charset "UTF-8";
+html {
+    background: #262626;
+}
+body{
+	background: #262626;
+}
 
 /* 타이틀 */
 .Title {
@@ -81,13 +87,13 @@ select {
 /* <--------- 카드 부분 시작 ---------> */
 /* 카드 전체를 감싸는 부분 */
 .all_cards_container {
-    width: 85%;
+	width: 85%;
     /* height: 800px; 높이 지정 시 스크롤 나옴*/
-    margin: 0 auto;
+	margin: 0 auto;
     align-content: center;
     font-family: Roboto;
-    margin-top: 50px;
-    margin-bottom: 100px;
+	margin-top: 50px;	
+	margin-bottom: 100px;
     overflow: auto;
     justify-content: unset;
 }
@@ -163,6 +169,7 @@ select {
 .button.save_button {
 	display: none;
     background-color: #FF5674;
+    background-color: #b70000;
     border-radius: 5px;
     font-weight: bold;
     width: 45;
@@ -239,13 +246,14 @@ select {
 }
 /* 카드 하나 당 컨테이너 하나 */
 .card_container {
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
 }
 /* 작업 담당자, 작업자 이름 */
 .card_content_writer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 5px;
     color: #4E4E4E;
 }
 input.update_input.writer_name {
@@ -311,11 +319,15 @@ input.update_input.writer_name {
 }
 /* <-- 마디 --> */
 .code_inform_content.bar {
-    margin-bottom: 7px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: flex-start;
 }
 .code_inform_content.bar_head {
     margin-bottom: 5px;
     font-weight: bold;
+    padding-top: 5px;
+    margin-right: 10px;
 }
 .track_content.track_number {
     font-weight: bold;
@@ -323,8 +335,8 @@ input.update_input.writer_name {
 }
 .item_content.track_content {
     display: flex;
-    padding: 10;
     align-items: center;
+    justify-content: flex-start;
 }
 
 /* 트랙 형태 스크롤 */
@@ -378,5 +390,4 @@ a#topBtn {
 a {
     color: #003ad6;
 }
-
 

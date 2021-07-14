@@ -22,15 +22,23 @@
 </head>
 
 <body style="background-color: rgb(38, 40, 43); color: rgb(242, 242, 243);">
-<%@ include file="../component/top.jsp" %>
-<div class = "title">Main Page</div>
+<%@ include file="../component/mainTop.jsp" %>
 <div class = "selectContainer">
 	<div class = "selectType">
 		<div class = "insert">입력</div>
 		<div class = "update">수정 & 확인</div>
 	</div>
 </div>
-
+<div class = "profileContainer">
+	<div class = "profile">
+		<div class = "profileImg"></div>
+		<div class = "userName_logout"> 
+			<div class = "userName">${userName}</div>
+			<div class = "logout"><a href = "logout.do" class = "logoutPage">로그아웃</a></div>
+		</div>
+	</div>
+</div>
 <script src="../../js/main.js"></script>
 </body>
 </html>
+<%@ include file="../component/footer.jsp" %>

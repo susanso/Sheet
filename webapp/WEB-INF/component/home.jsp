@@ -53,9 +53,6 @@
 					<div class="signUp">
 						회원가입
 					</div>
-					<div class="findUserinfo">
-						아이디/비밀번호찾기
-					</div>
 				</div>
 			</form>
 		</div>
