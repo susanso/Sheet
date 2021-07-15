@@ -7,6 +7,7 @@ public class AISM_Sheet_Inst_Info_DTO {
 	private String songId;
 	private String instName;
 	private String trackNum;
+	private String serum;
 	
 	public AISM_Sheet_Inst_Info_DTO() {
 		// TODO Auto-generated constructor stub
@@ -15,7 +16,9 @@ public class AISM_Sheet_Inst_Info_DTO {
 		System.out.println(songId);
 		System.out.println(instName);
 		System.out.println(trackNum);
+		System.out.println(serum);
 	}
+	
 	public String getSongId() {
 		return songId;
 	}
@@ -38,6 +41,14 @@ public class AISM_Sheet_Inst_Info_DTO {
 
 	public void setTrackNum(String trackNum) {
 		this.trackNum = trackNum;
+	}
+	
+	public String getSerum() {
+		return serum;
+	}
+
+	public void setSerum(String serum) {
+		this.serum = serum;
 	}
 
 }

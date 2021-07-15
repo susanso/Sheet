@@ -3,6 +3,30 @@
 	justify-content: space-between;
 }
 
+.functionPage{
+	display: flex;
+	width: 70%;
+}
+
+.page {
+	cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.insertPage{
+/* 	background : url(../image/create/Insert.png); */
+/* 	background-size: 100% 100%; */
+	margin-right: 20px;
+}
+
+
+.viewPage {
+	cursor: pointer;
+}
+
 .profile {
 	display: flex;
     justify-content: flex-end;

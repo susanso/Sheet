@@ -8,6 +8,9 @@ function getSongInfo() {
 	// 모든 데이터 저장할 리스트 선언 
 	let allData_li = new Array();
 	
+	// 로딩중 띄우기 
+	loadingOn();
+	
 	// 컨트롤러에 데이터 요청 
 	$.ajax ({
 	url : "/show/allSong", 
@@ -24,6 +27,8 @@ function getSongInfo() {
 				else if (key == 'artist') songInfo.artist = song[key];
 				else if (key == 'genre') songInfo.genre = song[key];
 				else if (key == 'keyName') songInfo.keyName = song[key];
+				else if (key == 'bpm') songInfo.bpm = song[key];
+				else if (key == 'beat') songInfo.beat = song[key];
 				else if (key == 'songForm') songInfo.songForm = song[key];
 				else if (key == 'songId') songInfo.songId = song[key];
 			}
@@ -34,7 +39,7 @@ function getSongInfo() {
 	},
 	
 	// 모든 데이터 다 담고 songID 추출해서 코드 정보와 트랙 정보 가져옴 
-	complete : function() {
+	complete : function() {		
 		songID_li = getSongID(allData_li);
 		// 코드 정보 + 트랙 정보 붙은 데이터 
 		get_chord_and_track_info(allData_li, songID_li);
@@ -80,6 +85,7 @@ function get_chord_and_track_info(allData_li, songID_li) {
 					
 					track_di.trackNum = info.trackNum;
 					track_di.instName = info.instName;
+					track_di.serum = info.serum;
 					
 					trackInfo.push(track_di);
 				}
@@ -99,6 +105,8 @@ function get_chord_and_track_info(allData_li, songID_li) {
 					eachData.trackInfo = trackInfo;
 					eachData.chordInfo = chordInfo;
 					
+					loadingOff(allData_li.length);
+				
 					viewData(eachData);
 				}
 			}
@@ -108,7 +116,7 @@ function get_chord_and_track_info(allData_li, songID_li) {
 
 // jsp에 각 데이터 렌더하는 메서드 
 function viewData(data) {
-	
+
 	let trackBox = '<div class = "trackBox">';
 	
 	for (var track of data.trackInfo) {
@@ -117,6 +125,15 @@ function viewData(data) {
 		trackBox += trackColumn;
 	}
 	trackBox += '</div>'
+	
+	let serumBox = '<div class = "serumBox">';
+	
+	for (var track of data.trackInfo) {
+		let serumColumn = '<div class = "serumColumn">'
+		serumColumn += track.trackNum + '. ' + track.serum + '</div>';
+		serumBox += serumColumn;
+	}
+	serumBox += '</div>'
 	
 	let chordBox = '<div class = "chordBox">';
 	
@@ -128,15 +145,18 @@ function viewData(data) {
 	chordBox += '</div>'
 	
 	let dataColumn = '';
-	dataColumn += '<div class = "tableDataBox" item="' + data.songId + '">"' + 
+	dataColumn += '<div class = "tableDataBox" item="' + data.songId + '">' + 
 					'<div class = "column pdname">' + data.producerName + '</div>' + 
 					'<div class = "column song">' + data.songName + '</div>' + 
 					'<div class = "column artist">' + data.artist + '</div>' + 
 					'<div class = "column genre">' + data.genre + '</div>' + 
 					'<div class = "column key">' + data.keyName + '</div>' + 
+					'<div class = "column BPM">' + data.bpm + '</div>' +
+					'<div class = "column beat">' + data.beat + '</div>' + 
 					'<div class = "column songform">' + data.songForm + '</div>';
 	
 	dataColumn +=	'<div class = "column track">' + trackBox + '</div>' + 
+					'<div class = "column inst">' + serumBox + '</div>' + 
 					'<div class = "column chordInfo">' + chordBox + '</div>' + 
 			  	  '</div>';
 
@@ -170,6 +190,7 @@ function getChordTrack(songID, song_info) {
 					
 					track_di.trackNum = info.trackNum;
 					track_di.instName = info.instName;
+					track_di.serum = info.serum;
 					
 					trackInfo.push(track_di);
 				}
@@ -190,6 +211,28 @@ function getChordTrack(songID, song_info) {
 	return song_info;
 }
 
+// 로딩중 켜기
+function loadingOn() {
+	let loading = '<div class = "loadingContainer">' + 
+					'<div class = "loadingBox"></div>' + 
+				  '</div>';
+		
+	$('.dataColumnContainer').append(loading);
+}
+
+// 로딩중 끄기
+function loadingOff(allData_length) {
+	let dataCount = $('.dataColumnContainer').children().length;
+	
+	// 마지막 원소 보여줄 때 로딩중 끄기 
+	if (dataCount == allData_length) {
+		console.log('loading off');
+		$('.loadingContainer').css('display', 'none');
+	}
+	
+	
+}
+
 // 검색 하려고 검색 박스 클릭 이벤트 핸들러
 $('.searchBox').click(function() {
 	//디폴트로 출력한 값 제거 
@@ -207,7 +250,7 @@ function getData_bySearch(pdName) {
 		url : "/show/pdSong",
 		type: "GET",
 		data: {"producerName" : pdName},
-		
+		async: false,
 		success : function(data) {
 			if (data.songList.length == 0) {
 				alert('찾는 데이터가 없습니다.');
@@ -263,26 +306,23 @@ $('.viewAll').click(function() {
 function popUp(url) {
 	
 	// 팝업 창 크기 설정
-	let popupWidth = 1000;
-	let popupHeight = 500;
+	let popupWidth = 900;
+	let popupHeight = 200;
 	
 	// 현재 브라우저 기준 가운데 출력
 	let popupX = (document.body.offsetWidth / 2) - (popupWidth / 2);
 	let popupY = (document.body.offsetHeight / 2) - (popupHeight / 2);
 
-	window.open(url, "_blank", "width = " + popupWidth + "px, " + "height = " + popupHeight + "px, " + "left = " + popupX + ", top = " + popupY + ", scrollbars = yes, resizable = yes, status = no");
+	window.open(url, "_blank", "width=" + popupWidth + "px," + "height=" + popupHeight + "px,left=" + popupX + ",top=" + popupY);
 }
 
 // 편집하기 -> data column 더블 클릭 -> 이벤트 핸들러 호출
 $(document).on("dblclick",".tableDataBox",function(){
 	
 	let songID = $(this).attr('item');
-	let song = $(this).children(".song").text();
-	let artist = $(this).children(".artist").text();
-	
 	
 	// viewDetail Page로 전달할 데이터(Song_Info + inst_info + chord_info table Data) 컨트롤러에 요청 후 새로운 창 띄우기 이동
 	let url = "/edit?songId=" + songID;
 	
-	popUp(url, song, artist);
+	popUp(url);
 });
