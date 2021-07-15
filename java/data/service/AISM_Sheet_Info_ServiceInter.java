@@ -41,7 +41,16 @@ public interface AISM_Sheet_Info_ServiceInter {
   
 	//producer의 모든 song 가져오기
 	public List<AISM_Sheet_Song_List_DTO> pdSongList(String producerName);
+
+	// song info 수정
+	public void updateSongInfo(AISM_Sheet_Song_Info_DTO sdto);
+
+	// inst info 수정 
+	public void updateInstInfo(AISM_Sheet_Inst_Info_DTO idto);
+
+	// chord info 수정 
+	public void updateChordInfo(AISM_Sheet_Chord_Info_DTO cdto);
 	
-	//1개 song 가져오기
-	//public List<AISM_Sheet_Info_DTO> oneSongInfo();
+	// song info 삭제 
+	public void deleteSong(String songId);
 }

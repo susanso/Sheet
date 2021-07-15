@@ -17,8 +17,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +35,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import data.dto.AISM_Sheet_User_Info_DTO;
 import data.dto.AISM_Sheet_Chord_Info_DTO;
@@ -81,7 +90,93 @@ public class EditController {
 		return model;
 	}
 	
-//	@PostMapping(value = "/updateSong.do")
-//	public Map<Stirng, Stirng> updateSong()
+	// viewDetail에서 수정 정보 가져와서 update 해주는 메서드
+	@PostMapping("updateSong.do")
+	public ModelAndView insertSongList(
+			HttpServletRequest request,
+			HttpSession session,
+			@RequestParam("songData") String songData,
+			@RequestParam("inst_li") String inst_li,
+			@RequestParam("chord_li") String chord_li) throws ParseException, JsonParseException, JsonMappingException, IOException{
+		
+		ModelAndView mv = new ModelAndView();
+		Map<String, Object> map = new HashMap<String, Object>();
+		JSONParser jsonParser = new JSONParser();
+		ObjectMapper objectMapper = new ObjectMapper();
+
+		// song_info userId 추가해서 Bean객체
+		JSONObject jsonSongObj = (JSONObject) jsonParser.parse(songData);
+		jsonSongObj.put("userId", (String) session.getAttribute("userId"));
+		AISM_Sheet_Song_Info_DTO jsonSongDTO = objectMapper.readValue(jsonSongObj.toString(), AISM_Sheet_Song_Info_DTO.class);
+		
+		// inst_info, chord_info JSON 배열로 파싱
+        JSONArray jsonInstArr = (JSONArray) jsonParser.parse(inst_li);
+        JSONArray jsonChordArr = (JSONArray) jsonParser.parse(chord_li);
+        
+        System.out.println(jsonSongObj);
+        System.out.println(jsonInstArr);
+        System.out.println(jsonChordArr);
+        
+        if (updateSongInfo(jsonSongDTO).get("result") == "success") {
+        	System.out.println("song 업데이트 완료");
+        	for(int i=0; i<jsonInstArr.size(); i++){
+        		AISM_Sheet_Inst_Info_DTO instDTO = objectMapper.readValue(jsonInstArr.get(i).toString(), AISM_Sheet_Inst_Info_DTO.class);
+        		updateInstInfo(instDTO);
+        		instDTO.print();
+            }
+        	
+        	for(int i=0; i<jsonChordArr.size(); i++){
+        		AISM_Sheet_Chord_Info_DTO chordDTO = objectMapper.readValue(jsonChordArr.get(i).toString(), AISM_Sheet_Chord_Info_DTO.class);
+        		updateChordInfo(chordDTO);
+        		chordDTO.print();
+            }
+        }
+		System.out.println("!!!!success!!!!");
+
+		return mv;
+	}
 	
+	@GetMapping("deleteSong.do")
+	public Map<String, String> deleteSong(@RequestParam() String songId) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		sheet.deleteSong(songId);
+		map.put("result", "success");
+		
+		return map;
+	}
+	
+	public Map<String, Object> updateSongInfo(@ModelAttribute AISM_Sheet_Song_Info_DTO sdto) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		sheet.updateSongInfo(sdto);
+		
+		map.put("result", "success");
+		
+		return map;
+	}
+	
+	public Map<String, Object> updateInstInfo(@ModelAttribute AISM_Sheet_Inst_Info_DTO idto) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		sheet.updateInstInfo(idto);
+		
+		map.put("result", "success");
+		
+		return map;
+	}
+	
+	public Map<String, Object> updateChordInfo(@ModelAttribute AISM_Sheet_Chord_Info_DTO cdto) {
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		sheet.updateChordInfo(cdto);
+		
+		map.put("result", "success");
+		
+		return map;
+	}
+
 }

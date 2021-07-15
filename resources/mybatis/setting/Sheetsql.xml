@@ -40,4 +40,20 @@
 		select * from sheet.song_info where songId = #{songID};
 	</select>
 
+	<update id="updateSongInfo" parameterType="sdto">
+		update sheet.song_info set songName = #{songName}, artist = #{artist}, genre = #{genre}, keyName = #{keyName},bpm = #{bpm}, songForm = #{songForm}, beat = #{beat}
+		where songId = #{songId};
+	</update>
+	
+	<update id="updateInstInfo" parameterType="idto">
+		update sheet.inst_info set instName = #{instName} where songId = #{songId} and trackNum = #{trackNum};
+	</update>
+	
+	<update id="updateChordInfo" parameterType="cdto">
+		update sheet.chord_info set chord = #{chord} where songId = #{songId} and measureNum = #{measureNum};
+	</update>
+	
+	<delete id = "deleteSong" parameterType = "map">
+		delete from sheet.song_info where songId = #{songId};
+	</delete>
 </mapper>

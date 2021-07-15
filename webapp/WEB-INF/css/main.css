@@ -1,0 +1,89 @@
+.title {
+	font-size: 30px; 
+	font-weight: bold;
+	text-align: center; 
+	margin-top: 50px;
+}
+.selectContainer{
+	justify-content: center;
+	display: flex;
+}
+
+.selectType {
+	display: flex;
+	width: 300px;
+	justify-content: space-around;
+	margin-top: 30vh;
+}
+
+.insert{
+	width: 100px;
+	height: 60px;
+	background: #B3A5D9;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+.speechBubble{
+	display: flex;
+	width: 280px;
+	justify-content: space-around;
+}
+.leftSpeechBubble{
+	width: 0px;
+    height: 0px;
+    border-top: 0px solid transparent;
+    border-right: 10px solid #B3A5D9;
+    border-bottom: 20px solid transparent;
+}
+.rightSpeechBubble{
+	width: 0px;
+    height: 0px;
+    border-top: 0px solid transparent;
+    border-left: 10px solid #B3A5D9;
+    border-bottom: 20px solid transparent;
+}
+.update {
+	width: 180px;
+	background: #B3A5D9;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.hookTest{
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+}
+.main{
+	justify-content: center;
+}
+.profile_img{
+    background: url(../image/profile/default_profile.png);
+    background-size: 100% 100%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.user_name{
+	width: 100px;
+    height: 25px;
+	margin: 0 auto;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}

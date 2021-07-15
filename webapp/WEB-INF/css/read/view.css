@@ -1,11 +1,13 @@
 .tableContainer {
 	padding: 35px;
-    width: 70%;
     min-width: 812px;
     background: #B3A5D9;
     border-radius: 20px;
     margin: 60px auto;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	padding-top: 60px;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .tableTitleBox {
@@ -122,8 +124,14 @@
     margin-right: 10px;
 }
 
+.inst {
+	width: 300px;
+    margin: 0;
+    margin-right: 10px;
+}
+
 .chordInfo {
-	width: 200px;
+	width: 300px;
 	margin: 0;
 }
 
@@ -275,6 +283,32 @@
   background-color: #DAD1FF;
 }
 .chordBox::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+.serumBox {
+	height: 90px;
+	overflow-y: overlay;
+}
+
+.serumColumn {
+	display: flex;
+	padding-left: 20px;
+}
+
+.serumBox::-webkit-scrollbar {
+	width: 10px;
+}
+
+.serumBox::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.serumBox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightsteelblue;
+}
+.serumBox::-webkit-scrollbar-button {
   width: 0;
   height: 0;
 }

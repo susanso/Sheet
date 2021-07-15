@@ -76,8 +76,20 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.songInfo_code_add_box{
+	height: 40px;
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.songInfo_track_add_box{
+	height: 40px;
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 .songInfo_add_item{
-	width: 55px;
+	width: 60px;
 	display: flex;
     align-items: center;
 }
