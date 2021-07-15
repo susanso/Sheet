@@ -145,7 +145,7 @@ function viewData(data) {
 	chordBox += '</div>'
 	
 	let dataColumn = '';
-	dataColumn += '<div class = "tableDataBox" item="' + data.songId + '">"' + 
+	dataColumn += '<div class = "tableDataBox" item="' + data.songId + '">' + 
 					'<div class = "column pdname">' + data.producerName + '</div>' + 
 					'<div class = "column song">' + data.songName + '</div>' + 
 					'<div class = "column artist">' + data.artist + '</div>' + 
@@ -190,6 +190,7 @@ function getChordTrack(songID, song_info) {
 					
 					track_di.trackNum = info.trackNum;
 					track_di.instName = info.instName;
+					track_di.serum = info.serum;
 					
 					trackInfo.push(track_di);
 				}
@@ -223,9 +224,6 @@ function loadingOn() {
 function loadingOff(allData_length) {
 	let dataCount = $('.dataColumnContainer').children().length;
 	
-	console.log('all data length : ', allData_length);
-	console.log('data count : ', dataCount);
-	
 	// 마지막 원소 보여줄 때 로딩중 끄기 
 	if (dataCount == allData_length) {
 		console.log('loading off');
@@ -252,7 +250,7 @@ function getData_bySearch(pdName) {
 		url : "/show/pdSong",
 		type: "GET",
 		data: {"producerName" : pdName},
-		
+		async: false,
 		success : function(data) {
 			if (data.songList.length == 0) {
 				alert('찾는 데이터가 없습니다.');
