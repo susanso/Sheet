@@ -324,14 +324,18 @@ input.update_input.writer_name {
     justify-content: flex-start;
 }
 .code_inform_content.bar_head {
-    margin-bottom: 5px;
-    font-weight: bold;
-    padding-top: 5px;
-    margin-right: 10px;
+	font-weight: bold;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .track_content.track_number {
     font-weight: bold;
-    margin-right: 10px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .item_content.track_content {
     display: flex;
@@ -339,10 +343,20 @@ input.update_input.writer_name {
     justify-content: flex-start;
 }
 
-/* 트랙 형태 스크롤 */
+/* 이건 뭐지 */
 .track_contents {
     HEIGHT: 150px;
     OVERFLOW-Y: OVERLAY;
+}
+/* 트랙 형태 스크롤 */
+.track_scroll {
+    height: 600px;
+    overflow: auto;
+}
+/* 코드 정보 스크롤 */
+.code_scroll {
+    height: 600px;
+    overflow: auto;
 }
 .track_contents::-webkit-scrollbar {
     width: 5px; /*스크롤바의 너비*/

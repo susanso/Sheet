@@ -92,30 +92,34 @@
 							<!-- 트랙 형태 -->
 							<div class="songInfo track">
 								<div class="item_head track_title" id = "${fn:length(instInfo)}">트랙 형태</div>
-								<c:forEach var="inst" items="${instInfo}" varStatus="trackIndex">
-									<div class="item_content track_content">
-										<div class="track_content track_number">Track ${inst.trackNum}</div>
-										<div class="track_content track_input">
-											<input type="text" class="update_input input_track_info" id = "inst${inst.trackNum}"
-											value = "${inst.instName}" disabled>
-										</div>
-									</div>
-								</c:forEach>
+								<div class = "track_scroll">
+									<c:forEach var="inst" items="${instInfo}" varStatus="trackIndex">										
+											<div class="item_content track_content">
+												<div class="track_content track_number">Track ${inst.trackNum}</div>
+												<div class="track_content track_input">
+													<input type="text" class="update_input input_track_info" id = "inst${inst.trackNum}"
+													value = "${inst.instName}" disabled>
+												</div>
+											</div>
+									</c:forEach>
+								</div>
 							</div>
 							<!-- 코드 정보 -->
 							<div class="songInfo code_info">
 								<div class="item_head code_inform_title" id = "${fn:length(chordInfo)}">코드 정보</div>
 								<!-- 코드 정보 상세: 마디 입력  -->
 								<div class="item_content code_inform_content">
-									<c:forEach var="chord" items="${chordInfo}" varStatus="chordIndex">
-										<div class="code_inform_content bar">
-											<div class="code_inform_content bar_head">${chord.measureNum} 마디</div>
-											<div class="code_inform_content bar_input">
-												<input type="text" class="update_input input_code_info" id = "chord${chord.measureNum}"
-												value = "${chord.chord}" disabled>
+									<div class = "code_scroll">
+										<c:forEach var="chord" items="${chordInfo}" varStatus="chordIndex">
+											<div class="code_inform_content bar">
+												<div class="code_inform_content bar_head">${chord.measureNum} 마디</div>
+												<div class="code_inform_content bar_input">
+													<input type="text" class="update_input input_code_info" id = "chord${chord.measureNum}"
+													value = "${chord.chord}" disabled>
+												</div>
 											</div>
-										</div>
-									</c:forEach>
+										</c:forEach>
+									</div>
 								</div>
 							</div>
 						</div>
