@@ -98,7 +98,7 @@ select {
     align-content: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #4BA9FF;
+    background-color: rgb(0, 0, 0);
     border-radius: 5px 5px 0px 0px;
     border-style: solid;
     border-top-color: #EBEBEB;
@@ -218,13 +218,13 @@ select {
 
 
 /* <--------- 카드 안쪽 부분 시작 ---------> */
-/* background-하얀색 */
-.card_content_white_background {
+/* background-보라색 */
+.card_content_purple_background {
     display: flex;
     margin: 0 auto;
     align-content: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #B3A5D9;
     border-radius: 0px 0px 5px 5px;
 }
 /* background-회색 */
@@ -232,7 +232,7 @@ select {
     margin: 10;
     padding: 10px;
     background-color: #EBEBEB;
-    border-radius: 5px;
+    border-radius: 20px;
     color: black;
     width: 100%;
 }
