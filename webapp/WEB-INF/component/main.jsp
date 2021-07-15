@@ -30,7 +30,7 @@
 	</div>
 </div>
 <div class = "profileContainer">
-	<div class = "profile">
+	<div class = "profile"> 
 		<div class = "profileImg"></div>
 		<div class = "userName_logout"> 
 			<div class = "userName">${userName}</div>
