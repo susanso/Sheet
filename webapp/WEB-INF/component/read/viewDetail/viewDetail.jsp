@@ -67,10 +67,13 @@
 								<div class="item_head">키</div>
 								<input type="text" class="update_input item_content keyName" value = "${songInfo.keyName}" disabled>
 							</div>
-							<!-- BPM -->
-							<div class="songInfo BPM">
+							<!-- BPM / 박자 -->
+							<div class="songInfo BPM_beat">
 								<div class="item_head">BPM / 박자</div>
-								<input type="text" class="update_input item_content" value = "${songInfo.bpm}" disabled>
+								<div class="update_input bpm_beat">
+									<input type="text" class="update_input item_content" value = "${songInfo.bpm}" disabled>
+									<input type="text" class="update_input item_content" value = "${songInfo.beat}" disabled> <!-- 박자 이름 여쭤보기 -->
+								</div>
 
 							</div>
 							<!-- 송폼 넘버링 -->

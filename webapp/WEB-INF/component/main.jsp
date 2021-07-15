@@ -43,6 +43,15 @@
 			<div class = "user_name">업보트</div>	
 	</div>
 </div>
+<div class = "profileContainer">
+	<div class = "profile"> 
+		<div class = "profileImg"></div>
+		<div class = "userName_logout"> 
+			<div class = "userName">${userName}</div>
+			<div class = "logout"><a href = "logout.do" class = "logoutPage">로그아웃</a></div>
+		</div>
+	</div>
+</div>
 <script src="../../js/main.js"></script>
 </body>
 </html>

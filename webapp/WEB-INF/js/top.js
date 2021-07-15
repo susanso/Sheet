@@ -1,9 +1,9 @@
 //로그아웃
-$(document).on("mouseover",".userName",function(){
+$(document).on("mouseover",".profile",function(){
 	$(".logout").css("display", 'flex');
 });
 
-$(document).on("mouseout",".userName",function(){
+$(document).on("mouseout",".profile",function(){
 	$(".logout").css("display", 'none');
 });
  

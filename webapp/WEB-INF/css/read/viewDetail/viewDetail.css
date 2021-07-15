@@ -1,4 +1,10 @@
 @charset "UTF-8";
+html {
+    background: #262626;
+}
+body{
+	background: #262626;
+}
 
 /* 타이틀 */
 .Title {
@@ -81,13 +87,13 @@ select {
 /* <--------- 카드 부분 시작 ---------> */
 /* 카드 전체를 감싸는 부분 */
 .all_cards_container {
-/*     width: 85%; */
+	width: 85%;
     /* height: 800px; 높이 지정 시 스크롤 나옴*/
-/*     margin: 0 auto; */
+	margin: 0 auto;
     align-content: center;
     font-family: Roboto;
-/*     margin-top: 50px; */
-/*     margin-bottom: 100px; */
+	margin-top: 50px;	
+	margin-bottom: 100px;
     overflow: auto;
     justify-content: unset;
 }
@@ -98,18 +104,19 @@ select {
     align-content: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 5px 5px 0px 0px;
+    background-color: #262626;
+    border-radius: 20px 20px 0px 0px;
     border-style: solid;
-    border-top-color: #EBEBEB;
-    border-left-color: #EBEBEB;
-    border-right-color: #EBEBEB;
+    border-top-color: #CBCBCB;
+    border-left-color: #CBCBCB;
+    border-right-color: #CBCBCB;
     border-width: thin;
 }
 .card_head_title {
     display: flex;
     align-content: center;
     justify-content: space-between;
+    margin: 0 auto;
 }
 .card_head_buttons {
     display: flex;
@@ -133,7 +140,7 @@ select {
 /* <--------- 버튼 부분 시작 ---------> */
 /* 수정 버튼 */
 .button.edit_button {
-    background-color: #003ad5;
+    background-color: #FFEAF9;
     border-radius: 5px;
     font-weight: bold;
     width: 45;
@@ -154,12 +161,14 @@ select {
 }
 /* 마우스오버 시 색상 및 그림자 변화 */
 .button.edit_button:hover{
-	background: #1F5EFF;
+	background: #FF5674;
 	cursor: pointer;
-	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+	box-shadow: 0 2px 4px #c65465;
 }
 /* 저장 버튼 */
 .button.save_button {
+	display: none;
+    background-color: #FF5674;
     background-color: #b70000;
     border-radius: 5px;
     font-weight: bold;
@@ -181,14 +190,14 @@ select {
 }
 /* 마우스오버 시 색상 및 그림자 변화 */
 .button.save_button:hover{
-	background: #f00000;
+	background: #FFEAF9;
 	cursor: pointer;
-	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+	box-shadow: 0 2px 4px #FF5674;
 }
 
 /* 삭제 버튼 */
 .button.delete_button {
-    background-color: #787878;
+    background-color: #B6B6B6;
     border-radius: 5px;
     font-weight: bold;
     width: 45;
@@ -210,9 +219,9 @@ select {
 }
 /* 마우스오버 시 색상 및 그림자 변화 */
 .button.delete_button:hover{
-	background: #949494;
+	background: #B6B6B6;
 	cursor: pointer;
-	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+	box-shadow: 0 2px 4px #8b8a8c;
 }
 
 
@@ -224,31 +233,40 @@ select {
     align-content: center;
     justify-content: space-between;
     background-color: #B3A5D9;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 20px 20px;
 }
 /* background-회색 */
 .card_content_gray_background {
     margin: 10;
-    padding: 10px;
+    padding: 15px;
     background-color: #EBEBEB;
     border-radius: 20px;
     color: black;
-    width: 100%;
+    width: -webkit-fill-available;
 }
 /* 카드 하나 당 컨테이너 하나 */
 .card_container {
-/*     margin-bottom: 15px; */
+    margin-bottom: 15px; 
 }
 /* 작업 담당자, 작업자 이름 */
 .card_content_writer {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: flex-end;
+    margin-right: 5px;
+    color: #4E4E4E;
+}
+input.update_input.writer_name {
+    color: #4E4E4E;
 }
 /* 작업 담당자 */
 .writer {
     margin-right: 10;
     font-weight: bold;
+}
+/* BPM, 박자 */
+.update_input.bpm_beat {
+    display: flex;
 }
 
 /* 카드 내 head 공통 */
@@ -263,6 +281,7 @@ select {
 /* 카드 내 content 공통 */
 .item_content {
     padding: 5px;
+    width: 100%;
 }
 
 /* 곡 정보 : 장르, 키, BPM, 송폼 넘버링, 트랙 형태, 코드 정보 */
@@ -276,7 +295,7 @@ select {
     background-color: #ffff;
     width: 100%;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     overflow: auto;
 }
 .songInfo.track {
@@ -288,7 +307,7 @@ select {
 .songInfo.key {
     margin-right: 5px;
 }
-.songInfo.BPM {
+.songInfo.BPM_beat {
     margin-right: 5px;
 }
 .code_info {

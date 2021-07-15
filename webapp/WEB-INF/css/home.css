@@ -20,32 +20,47 @@
 .loginErrorModal {
 	display: none;
     width: 300px;
-    background-color: rgb(20, 20, 10);
-    border: 1px solid black;
-    border-radius: 3px;
-    color: white;
+    background-color: rgb(217 209 254);
+    border: 2px solid #8172c5;
+    border-radius: 10px;
+    color: #4e4e4e;
     font-weight: bold;
     height: 50px;
-    padding-top: 15px;
-    padding-left: 8px;
+    padding-top: 13px;
+    padding-left: 15px;
 }
 
 .modalCloseBtn{
-	padding-left: 40px;
+	padding-left: 25px;
 	cursor: pointer;
+	color : #ff0000
 }
+
+.login_purple_background {
+    height: 410px;
+    width: 350px;
+    background: #B3A5D9;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 /* 모바일 */
 @media ( max-width : 375px) {
 	.login_box {
-		text-align: center;
+		width: 700px;
+    	margin: 0 auto;
+    	text-align: center;
+    	margin-bottom: 8em;
 	}
 	.loginSection {
-		margin-top: 14em;
 		margin-bottom: 1em;
 	}
 	.loginSectionTitle {
+	    margin-top: 9em;
 		font-size: 21px;
 		font-weight: bold;
+		margin-bottom: 8px;
 	}
 	.idListSection {
 		font-size: 1.8em;
@@ -56,14 +71,18 @@
 	
 	.loginBtn {
 		cursor: pointer;
-		width: 150px;
-		height: 50px;
-		margin: 30px auto;
-		background-color: #26282b;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 1px 10px 13px #131313, -6px -3px 17px #383838;
+	    width: 150px;
+	    height: 50px;
+	    margin: 20px auto 1px;
+	    background-color: #DAD1FF;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	    border-radius: 10px;
+	    color: #4E4E4E;
+	    font-weight: bold;
+	    font-size: large;
 	}
 	.idBox {
 		
@@ -80,10 +99,12 @@
 		font-size: 1.1em;
 		border: 0;
 		padding-left: 10px;
-	    border-radius: 3px;
+		box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 	}
 	.insertId {
-		
+		background-color: #FFFFFF;
+		color: #898989;
+		border-radius: 10px;
 	}
 	.pwdBox {
 		
@@ -95,7 +116,9 @@
 		
 	}
 	.insertPwd {
-		
+		background-color: #FFEAF9;
+		color: #898989;
+    	border-radius: 10px;
 	}
 	.loginBtnBox {
 		
@@ -115,15 +138,19 @@
 /* 웹최소 */
 @media ( min-width : 376px) and (max-width: 575px) {
 	.login_box {
-		text-align: center;
+		width: 700px;
+    	margin: 0 auto;
+    	text-align: center;
+    	margin-bottom: 8em;
 	}
 	.loginSection {
-		margin-top: 14em;
 		margin-bottom: 1em;
 	}
 	.loginSectionTitle {
+	    margin-top: 9em;
 		font-size: 21px;
 		font-weight: bold;
+		margin-bottom: 8px;
 	}
 	.idListSection {
 		font-size: 1.8em;
@@ -136,14 +163,18 @@
 	}
 	.loginBtn {
 		cursor: pointer;
-		width: 150px;
-		height: 50px;
-		margin: 30px auto;
-		background-color: #26282b;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 1px 10px 13px #131313, -6px -3px 17px #383838;
+	    width: 150px;
+	    height: 50px;
+	    margin: 20px auto 1px;
+	    background-color: #DAD1FF;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	    border-radius: 10px;
+	    color: #4E4E4E;
+	    font-weight: bold;
+	    font-size: large;
 	}
 	.idBox {
 		
@@ -160,10 +191,12 @@
 		font-size: 1.1em;
 		border: 0;
 		padding-left: 10px;
-		border-radius: 3px;
+		box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 	}
 	.insertId {
-		
+		background-color: #FFFFFF;
+		color: #898989;
+		border-radius: 10px;
 	}
 	.pwdBox {
 		
@@ -175,7 +208,9 @@
 		
 	}
 	.insertPwd {
-		
+		background-color: #FFEAF9;
+		color: #898989;
+    	border-radius: 10px;
 	}
 	.loginBtnBox {
 		
@@ -196,16 +231,18 @@
 @media ( min-width : 576px) and (max-width: 767px) {
 	.login_box {
 		width: 700px;
-		margin: auto;
-		text-align: center;
+    	margin: 0 auto;
+    	text-align: center;
+    	margin-bottom: 8em;
 	}
 	.loginSection {
-		margin-top: 14em;
 		margin-bottom: 1em;
 	}
 	.loginSectionTitle {
+		margin-top: 9em;
 		font-size: 21px;
 		font-weight: bold;
+		margin-bottom: 8px;
 	}
 	.idListSection {
 		font-size: 1.8em;
@@ -218,14 +255,18 @@
 	}
 	.loginBtn {
 		cursor: pointer;
-		width: 150px;
-		height: 50px;
-		margin: 30px auto;
-		background-color: #26282b;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 1px 10px 13px #131313, -6px -3px 17px #383838;
+	    width: 150px;
+	    height: 50px;
+	    margin: 20px auto 1px;
+	    background-color: #DAD1FF;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	    border-radius: 10px;
+	    color: #4E4E4E;
+	    font-weight: bold;
+	    font-size: large;
 	}
 	.idBox {
 		
@@ -242,13 +283,15 @@
 		font-size: 1.1em;
 		border: 0;
 		padding-left: 10px;
-		border-radius: 3px;
+		box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 	}
 	.insertId {
-		
+		background-color: #FFFFFF;
+		color: #898989;
+		border-radius: 10px;
 	}
 	.pwdBox {
-		
+	
 	}
 	.inputList {
 		margin: 0.7em auto;
@@ -257,7 +300,9 @@
 		
 	}
 	.insertPwd {
-		
+		background-color: #FFEAF9;
+		color: #898989;
+    	border-radius: 10px;
 	}
 	.loginBtnBox {
 		
@@ -278,16 +323,18 @@
 @media ( min-width : 768px) and (max-width: 991px) {
 	.login_box {
 		width: 700px;
-		margin: auto;
-		text-align: center;
+    	margin: 0 auto;
+    	text-align: center;
+    	margin-bottom: 8em;
 	}
 	.loginSection {
-		margin-top: 14em;
 		margin-bottom: 1em;
 	}
 	.loginSectionTitle {
+		margin-top: 9em;
 		font-size: 21px;
 		font-weight: bold;
+		margin-bottom: 8px;
 	}
 	.idListSection {
 		font-size: 1.8em;
@@ -300,14 +347,18 @@
 	}
 	.loginBtn {
 		cursor: pointer;
-		width: 150px;
-		height: 50px;
-		margin: 30px auto;
-		background-color: #26282b;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 1px 10px 13px #131313, -6px -3px 17px #383838;
+	    width: 150px;
+	    height: 50px;
+	    margin: 20px auto 1px;
+	    background-color: #DAD1FF;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	    border-radius: 10px;
+	    color: #4E4E4E;
+	    font-weight: bold;
+	    font-size: large;
 	}
 	.idBox {
 		
@@ -324,10 +375,12 @@
 		font-size: 1.1em;
 		border: 0;
 		padding-left: 10px;
-		border-radius: 3px;
+		box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 	}
 	.insertId {
-		
+		background-color: #FFFFFF;
+		color: #898989;
+		border-radius: 10px;
 	}
 	.pwdBox {
 		
@@ -339,7 +392,9 @@
 		
 	}
 	.insertPwd {
-		
+		background-color: #FFEAF9;
+		color: #898989;
+    	border-radius: 10px;
 	}
 	.loginBtnBox {
 		
@@ -360,16 +415,18 @@
 @media ( min-width : 992px) and (max-width: 1199px) {
 	.login_box {
 		width: 700px;
-		margin: auto;
-		text-align: center;
+    	margin: 0 auto;
+    	text-align: center;
+    	margin-bottom: 8em;
 	}
 	.loginSection {
-		margin-top: 14em;
 		margin-bottom: 1em;
 	}
 	.loginSectionTitle {
+		margin-top: 9em;
 		font-size: 21px;
 		font-weight: bold;
+		margin-bottom: 8px;
 	}
 	.idListSection {
 		font-size: 1.8em;
@@ -382,14 +439,18 @@
 	}
 	.loginBtn {
 		cursor: pointer;
-		width: 150px;
-		height: 50px;
-		margin: 30px auto;
-		background-color: #26282b;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 1px 10px 13px #131313, -6px -3px 17px #383838;
+	    width: 150px;
+	    height: 50px;
+	    margin: 20px auto 1px;
+	    background-color: #DAD1FF;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	    border-radius: 10px;
+	    color: #4E4E4E;
+	    font-weight: bold;
+	    font-size: large;
 	}
 	.idBox {
 		
@@ -406,10 +467,12 @@
 		font-size: 1.1em;
 		border: 0;
 		padding-left: 10px;
-		border-radius: 3px;
+		box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 	}
 	.insertId {
-		
+		background-color: #FFFFFF;
+		color: #898989;
+		border-radius: 10px;
 	}
 	.pwdBox {
 		
@@ -421,7 +484,9 @@
 		
 	}
 	.insertPwd {
-		
+		background-color: #FFEAF9;
+		color: #898989;
+    	border-radius: 10px;
 	}
 	.loginBtnBox {
 		
@@ -442,16 +507,18 @@
 @media ( min-width : 1200px) {
 	.login_box {
 		width: 700px;
-		margin: auto;
-		text-align: center;
+    	margin: 0 auto;
+    	text-align: center;
+    	margin-bottom: 8em;
 	}
 	.loginSection {
-		margin-top: 14em;
 		margin-bottom: 1em;
 	}
 	.loginSectionTitle {
+		margin-top: 9em;
 		font-size: 21px;
 		font-weight: bold;
+		margin-bottom: 8px;
 	}
 	.idListSection {
 		font-size: 1.8em;
@@ -464,14 +531,18 @@
 	}
 	.loginBtn {
 		cursor: pointer;
-		width: 150px;
-		height: 50px;
-		margin: 30px auto;
-		background-color: #26282b;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 1px 10px 13px #131313, -6px -3px 17px #383838;
+	    width: 150px;
+	    height: 50px;
+	    margin: 20px auto 1px;
+	    background-color: #DAD1FF;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	    border-radius: 10px;
+	    color: #4E4E4E;
+	    font-weight: bold;
+	    font-size: large;
 	}
 	.idBox {
 		
@@ -488,10 +559,12 @@
 		font-size: 1.1em;
 		border: 0;
 		padding-left: 10px;
-		border-radius: 3px;
+		box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 	}
 	.insertId {
-		
+		background-color: #FFFFFF;
+		color: #898989;
+		border-radius: 10px;
 	}
 	.pwdBox {
 		
@@ -503,7 +576,9 @@
 		
 	}
 	.insertPwd {
-		
+		background-color: #FFEAF9;
+		color: #898989;
+    	border-radius: 10px;
 	}
 	.loginBtnBox {
 		
@@ -522,9 +597,9 @@
 }
 /* 반응형 작업해야 할것들 */
 .LoginImg {
-    background: url(../../image/upvote.png) 0% 0% / cover;
-    width: 200px;
-    height: 130px;
-    margin: 10px auto;
+    background: url(../../image/loginPage_logo.png) 0% 0% / cover;
+    width: 163px;
+    height: 137px;
+    margin: 20px auto 3px;
     cursor: pointer;
 }
