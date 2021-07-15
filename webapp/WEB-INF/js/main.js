@@ -4,11 +4,11 @@ $('.insert').click(function() {
 });
 
 //로그아웃
-$(document).on("mouseover",".userName",function(){
+$(document).on("mouseover",".userName_logout",function(){
 	$(".logout").css("display", 'flex');
 });
 
-$(document).on("mouseout",".userName",function(){
+$(document).on("mouseout",".userName_logout",function(){
 	$(".logout").css("display", 'none');
 });
 

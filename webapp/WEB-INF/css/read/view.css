@@ -1,8 +1,11 @@
 .tableContainer {
-	padding-top: 60px;
-	width: 70%;
-	margin: 0 auto;
-	
+	padding: 35px;
+    width: 70%;
+    min-width: 812px;
+    background: #B3A5D9;
+    border-radius: 20px;
+    margin: 60px auto;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .tableTitleBox {
@@ -13,23 +16,23 @@
     border-style: hidden;
     background-color: #DAD1FF;
     border-radius: 20px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .selectViewType {
 	display: flex;
     padding-right: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     font-size: 16px;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .viewMine {
 	border-style: solid;
     background-color: #ffff;
     border-radius: 20px;
-    width: 80px;
+    min-width: 80px;
     height: 30px;
-    display: flex;
     color: black;
     font-weight: bold;
     cursor: pointer;
@@ -38,18 +41,23 @@
     justify-content: center;
     align-items: center;
     border-color: #DAD1FF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .searchInfo {
-	color: darkgray;
-	height: 100%;
+    color: darkgray;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-style: solid;
+    border-color: #D4D4D4;
 }
 
 .viewAll {
 	border-style: solid;
     background-color: #FFBEF8;
     border-radius: 20px;
-    width: 80px;
+    min-width: 80px;
     height: 30px;
     display: flex;
     color: black;
@@ -58,6 +66,12 @@
     align-items: center;
     justify-content: center;
     border-color: #DEA7D8;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.viewMine_viewAll {
+    display: flex;
+    
 }
 
 .column{
@@ -71,6 +85,7 @@
 
 .pdname {
 	width: 100px;
+	margin-left: 10px;
 }
 
 .song {
@@ -125,8 +140,8 @@
 
 .loadingBox {
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db;
-  border-bottom: 16px solid #3498db;
+  border-top: 16px solid #DAD1FF;
+  border-bottom: 16px solid #DAD1FF;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -155,6 +170,15 @@
     border-radius: 20px;
     margin-top: 15px;
     cursor: pointer;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.tableDataBox:nth-child(2n) {
+    background: #FFEAF9;
+}
+
+.tableDataBox:nth-child(2n+1) {
+    background: white;
 }
 
 .dataColumnContainer::-webkit-scrollbar {
@@ -165,8 +189,8 @@
   background-color: transparent;
 }
 .dataColumnContainer::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: #B6B6B6;
+  border-radius: 20px;
+  background-color: #D4D4D4;
 }
 .dataColumnContainer::-webkit-scrollbar-button {
   width: 0;
@@ -175,34 +199,32 @@
 
 .search {
 	display: flex;
-	justify-content: flex-start;
 }
 
 .searchBox {
 	color: black;
-	height: 25px;
+	height: 30px;
 	margin-right: 10px;
 }
 
 .searchBtn {
-	font-weight: bold;
+    font-weight: bold;
     font-size: 16px;
-    padding-top: 1px;
-    border-style: hidden;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 20px;
     color: black;
-    padding-left: 3px;
-    padding-right: 4px;
     cursor: pointer;
-    height: 25px;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+    border-style: solid;
+    border-color: #DAD1FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .function {
 	display: flex;
-	width: 100%;
 	justify-content: space-between;
-	margin-top: 8px;
 }
 
 .trackBox {
@@ -233,8 +255,8 @@
   background-color: transparent;
 }
 .trackBox::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: lightsteelblue;
+  border-radius: 20px;
+  background-color: #DAD1FF;
 }
 .trackBox::-webkit-scrollbar-button {
   width: 0;
@@ -249,8 +271,8 @@
   background-color: transparent;
 }
 .chordBox::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: lightsteelblue;
+  border-radius: 20px;
+  background-color: #DAD1FF;
 }
 .chordBox::-webkit-scrollbar-button {
   width: 0;

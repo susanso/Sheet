@@ -22,7 +22,7 @@
 </head>
 
 <body style="background-color: rgb(38, 40, 43); color: rgb(242, 242, 243);">
-<%@ include file="../component/mainTop.jsp" %>
+<%@ include file="../component/top.jsp" %>
 <div class = "selectContainer">
 	<div class = "selectType">
 		<div class = "insert">입력</div>

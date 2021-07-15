@@ -26,35 +26,37 @@
 	<div class="col-xs-12 col-md-12 col-lg-12" style="padding: 0;">
 		<!--로그인-->
 		<div class="login_box defaultPage">
-			<div class="col-xs-12 col-md-12 col-lg-12 loginSection">
-				<div class="loginSectionTitle">
-					Sign In To
-				</div>
-				<div class="LoginImg">
-				</div>
+			<div class="loginSectionTitle">
+				Sign In To
 			</div>
-			<form action="login.go" method="POST" class="loginStart">
-				<div class="col-xs-12 col-md-12 col-lg-12 idBox">
-					<p class="inputList idList">
-						<span class="idListSection" ></span> <span> <input type="text" autocomplete="off" name="id" class="loginInputForm insertId" placeholder="ID"> </span>
-					</p>
-				</div>
-				<div class="col-xs-12 col-md-12 col-lg-12 pwdBox">
-					<p class="inputList pwdList">
-						<span class="pwdListSection" ></span> <span> <input type="password" autocomplete="off" name="pwd" class="loginInputForm insertPwd" placeholder="Password"> </span>
-					</p>
-				</div>
-				<div class="col-xs-12 col-md-12 col-lg-12 loginBtnBox">
-					<div class="loginBtn loginDo">
-						로그인
-					</div>
-				</div>	
-				<div class="col-xs-12 col-md-12 col-lg-12 signUpBox">
-					<div class="signUp">
-						회원가입
+			<div class="login_purple_background">
+				<div class="col-xs-12 col-md-12 col-lg-12 loginSection">
+					<div class="LoginImg">
 					</div>
 				</div>
-			</form>
+				<form action="login.go" method="POST" class="loginStart">
+					<div class="col-xs-12 col-md-12 col-lg-12 idBox">
+						<p class="inputList idList">
+							<span class="idListSection" ></span> <span> <input type="text" autocomplete="off" name="id" class="loginInputForm insertId" placeholder="ID"> </span>
+						</p>
+					</div>
+					<div class="col-xs-12 col-md-12 col-lg-12 pwdBox">
+						<p class="inputList pwdList">
+							<span class="pwdListSection" ></span> <span> <input type="password" autocomplete="off" name="pwd" class="loginInputForm insertPwd" placeholder="Password"> </span>
+						</p>
+					</div>
+					<div class="col-xs-12 col-md-12 col-lg-12 loginBtnBox">
+						<div class="loginBtn loginDo">
+							로그인
+						</div>
+					</div>	
+					<div class="col-xs-12 col-md-12 col-lg-12 signUpBox">
+						<div class="signUp">
+							회원가입
+						</div>
+					</div>
+				</form>
+			</div>	
 		</div>
 	</div>
 	
