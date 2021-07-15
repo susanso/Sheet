@@ -33,6 +33,7 @@
 			<div class="card_container" id = "${songInfo.songId}">
 				<!-- 카드 헤드 부분 -->
 				<div class="card_head">
+					<div class = "card_head_front"></div>
 					<div class="card_head_title">
 						<input type="text" class="update_input song_title" value="${songInfo.songName}" disabled>
 						<input type="text" class="update_input song_artist" value="${songInfo.artist}" disabled>
@@ -47,7 +48,7 @@
 					</div>
 				</div>
 				<!-- 카드 내용 부분 -->
-				<div class="card_content_white_background">
+				<div class="card_content_purple_background">
 					<div class="card_content_gray_background">
 						<!-- 작업 담당자, 작업자 이름 -->
 						<div class="card_content_writer">
@@ -67,9 +68,10 @@
 								<input type="text" class="update_input item_content keyName" value = "${songInfo.keyName}" disabled>
 							</div>
 							<!-- BPM -->
-							<div class="songInfo">
-								<div class="item_head">BPM</div>
-								<input type="text" class="update_input item_content bpm" value = "${songInfo.bpm}" disabled>
+							<div class="songInfo BPM">
+								<div class="item_head">BPM / 박자</div>
+								<input type="text" class="update_input item_content" value = "${songInfo.bpm}" disabled>
+
 							</div>
 							<!-- 송폼 넘버링 -->
 							<div class="songInfo">
