@@ -28,7 +28,6 @@ $(".save_button").click(function() {
 	}
 
 	let inst_li = getInstList(songId);
-
 	let chord_li = getChordList(songId);
 
 	songData = JSON.stringify(songData);
@@ -46,6 +45,7 @@ $(".save_button").click(function() {
 	});
 	alert("수정 완료!");
 	window.close();
+	location.href = "/view";
 });
 
 // 삭제 버튼 

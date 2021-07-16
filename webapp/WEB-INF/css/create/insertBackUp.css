@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+.Title {
+	text-align: center;
+	margin-top: 10vh;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.InputContainer {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.Input {
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	width: 300px;
+	padding-top: 15px;
+}
+
+.SongInfoInputContainer{
+	margin-top: 5vh;
+	font-weight: bold;
+	text-align: center;
+	width: 500px;
+	margin-left: 150px;
+}
+
+.InputBar {
+	font-weight: bold;
+	font-size: 15px;
+	margin-right: 20px;
+}
+
+.input_label {
+	color: black;
+}
+
+.SongInfoButton{
+	margin-top: 22px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+}
+.InstInfoButton{
+	margin-top: 10px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+	display: none;
+}
+.ChordInfoButton{
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+	display: none;
+}
+
+.trackNumButton {
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+}
+
+
+.measureNumButton {
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+}
+
+.song_info{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.InstInfoInputContainer{
+	margin-top: 5vh;
+	font-weight: bold;
+	text-align: center;
+	width: 500px;
+}
+
+.inst_info{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.ChordInfoInputContainer{
+	margin-top: 5vh;
+	font-weight: bold;
+	text-align: center;
+	width: 500px;
+	margin-right: 150px;
+}
+
+.chord_info {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.scroll_container {
+	height: 335px;
+	overflow-y: overlay;
+	margin-top: 20px;
+}
+
+.label {
+	margin-left: 50px;
+}
+
+.instToggleUp{
+	
+}
+
+.instToggleUp{
+	display : none;
+}
+
+
+.emptyInputAlertBox{
+	display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.alertBox{
+	display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: black;
+    font-weight: bold;
+}
+
+.modalCloseBtn{
+	cursor: pointer;
+	position: absolute;
+    top: 35px;
+    right: 10px;
+}
