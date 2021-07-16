@@ -85,6 +85,7 @@ function get_chord_and_track_info(allData_li, songID_li) {
 					
 					track_di.trackNum = info.trackNum;
 					track_di.instName = info.instName;
+					track_di.serum = info.serum;
 					
 					trackInfo.push(track_di);
 				}
@@ -125,6 +126,15 @@ function viewData(data) {
 	}
 	trackBox += '</div>'
 	
+	let serumBox = '<div class = "serumBox">';
+	
+	for (var track of data.trackInfo) {
+		let serumColumn = '<div class = "serumColumn">'
+		serumColumn += track.trackNum + '. ' + track.serum + '</div>';
+		serumBox += serumColumn;
+	}
+	serumBox += '</div>'
+	
 	let chordBox = '<div class = "chordBox">';
 	
 	for (var measure of data.chordInfo) {
@@ -135,7 +145,7 @@ function viewData(data) {
 	chordBox += '</div>'
 	
 	let dataColumn = '';
-	dataColumn += '<div class = "tableDataBox" item="' + data.songId + '">"' + 
+	dataColumn += '<div class = "tableDataBox" item="' + data.songId + '">' + 
 					'<div class = "column pdname">' + data.producerName + '</div>' + 
 					'<div class = "column song">' + data.songName + '</div>' + 
 					'<div class = "column artist">' + data.artist + '</div>' + 
@@ -146,6 +156,7 @@ function viewData(data) {
 					'<div class = "column songform">' + data.songForm + '</div>';
 	
 	dataColumn +=	'<div class = "column track">' + trackBox + '</div>' + 
+					'<div class = "column inst">' + serumBox + '</div>' + 
 					'<div class = "column chordInfo">' + chordBox + '</div>' + 
 			  	  '</div>';
 
@@ -179,6 +190,7 @@ function getChordTrack(songID, song_info) {
 					
 					track_di.trackNum = info.trackNum;
 					track_di.instName = info.instName;
+					track_di.serum = info.serum;
 					
 					trackInfo.push(track_di);
 				}
@@ -213,7 +225,7 @@ function loadingOff(allData_length) {
 	let dataCount = $('.dataColumnContainer').children().length;
 	
 	// 마지막 원소 보여줄 때 로딩중 끄기 
-	if (dataCount == allData_length - 1) {
+	if (dataCount == allData_length) {
 		console.log('loading off');
 		$('.loadingContainer').css('display', 'none');
 	}
@@ -238,7 +250,7 @@ function getData_bySearch(pdName) {
 		url : "/show/pdSong",
 		type: "GET",
 		data: {"producerName" : pdName},
-		
+		async: false,
 		success : function(data) {
 			if (data.songList.length == 0) {
 				alert('찾는 데이터가 없습니다.');

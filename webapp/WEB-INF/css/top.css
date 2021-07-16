@@ -15,14 +15,12 @@
 	cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    font-style: italic;
     margin-top: 3px;
 }
 
 .insertPage{
-/* 	background : url(../image/create/Insert.png); */
-/* 	background-size: 100% 100%; */
 	margin-right: 20px;
+    margin-left: 10px;
 }
 
 
@@ -34,29 +32,29 @@
 	display: flex;
     justify-content: flex-end;
     padding-right: 10px;
+    align-items: center;
+    margin-top: 2px;
 }
 
 .profileImg{
 	background : url(../image/profile/default_profile.png);
 	background-size: 100% 100%;
-	width: 2em;
-	height: 2em;
-	margin: auto;
-	margin-right: 0.4em;
-	border-radius: 100%;
-	cursor: pointer;
+    width: 2em;
+    height: 2em;
+    margin-top: 1px;
+    margin-right: 0.4em;
+    cursor: pointer;
 }
 
 .userName {
-	margin-top: 6px;
-	cursor: pointer;
+    cursor: pointer;
+    min-width: 40px;
 }
 
 .logout{
 	display: none;
-	justify-content: flex-end;
-    padding-left: 20px;
-    padding-top: 5px;
+    justify-content: flex-end;
+    min-width: 55px;
 }
 
 .logoutPage{
@@ -69,8 +67,10 @@
 
 .upvoteLogo{
 	font-size: 24px;
-	font-weight: bold;
-	cursor: pointer;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 300px;
+    margin-left: 10px;
 }
 
 .test{

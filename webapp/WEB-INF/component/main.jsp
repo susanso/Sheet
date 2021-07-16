@@ -24,10 +24,23 @@
 <body style="background-color: rgb(38, 40, 43); color: rgb(242, 242, 243);">
 <%@ include file="../component/top.jsp" %>
 <div class = "title">Main Page</div>
-<div class = "selectContainer">
-	<div class = "selectType">
-		<div class = "insert">입력</div>
-		<div class = "update">수정 & 확인</div>
+
+<div class = "main">	
+	<div class = "selectContainer">
+		<div class = "select_box">
+			<div class = "selectType">
+				<div class = "insert">입력</div>
+				<div class = "update">수정 & 확인</div>
+			</div>
+			<div class = "speechBubble">
+				<div class = "leftSpeechBubble"></div>
+				<div class = "rightSpeechBubble"></div>
+			</div>
+		</div>
+	</div>
+	<div class = "profile_box">
+			<div class = "profile_img"></div>
+			<div class = "user_name">업보트</div>	
 	</div>
 </div>
 <script src="../../js/main.js"></script>

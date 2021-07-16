@@ -26,8 +26,18 @@
 
 <div class = "tableContainer">
 	<div class = "selectViewType">
-		<div class = "viewMine">내 데이터</div>
-		<div class = "viewAll">전체 보기</div>
+		<div class="viewMine_viewAll">
+		    <div class="viewMine">내 데이터</div>
+		    <div class="viewAll">전체 보기</div>
+        </div>
+		<div class = "function">
+		<div class = "search">
+			<div class = "searchBox">
+				<input type = "text" class = "searchInfo" value ='  담당자를 입력해주세요.'>
+			</div>
+			<div class = "searchBtn">검색</div>
+		</div>
+	</div>
 	</div>
 	<div class = "tableTitleBox">
 		<div class = "column pdname">작업 담당자</div>
@@ -39,18 +49,11 @@
 		<div class = "column beat">박자</div>
 		<div class = "column songform">송폼</div>
 		<div class = "column track">트랙 형태</div>
+		<div class = "column inst">악기 정보</div>
 		<div class = "column chordInfo">코드 정보</div>
 	</div>
 	<div class = "tableColumnBox">
 		<div class = "dataColumnContainer">
-		</div>
-	</div>
-	<div class = "function">
-		<div class = "search">
-			<div class = "searchBox">
-				<input type = "text" class = "searchInfo" value ='담당자를 입력해주세요.'>
-			</div>
-			<div class = "searchBtn">검색</div>
 		</div>
 	</div>
 	
