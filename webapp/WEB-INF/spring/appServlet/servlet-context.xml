@@ -21,24 +21,6 @@
 	<resources mapping="/audio/**" location="/resources/audio/" />
 	<resources mapping="/font/**" location="/resources/font/" />
 	<resources mapping="/login/**" location="/WEB-INF/login/" />
-
-
- <!-- Tiles -->
-<!--     <beans:bean id="tilesConfigurer"  -->
-<!--                 class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"> -->
-<!--         <beans:property name="definitions"> -->
-<!--             <beans:list> -->
-<!--                 <beans:value>/WEB-INF/tiles/tiles.xml</beans:value> -->
-<!--             </beans:list> -->
-<!--         </beans:property> -->
-<!--     </beans:bean>         -->
-<!--     <beans:bean id="tilesViewResolver"  -->
-<!--                 class="org.springframework.web.servlet.view.UrlBasedViewResolver"> -->
-<!--         <beans:property name="viewClass"  -->
-<!--                         value="org.springframework.web.servlet.view.tiles3.TilesView" /> -->
-<!--         <beans:property name="order" value="1" /> -->
-<!--     </beans:bean> -->
-
 	
       <!-- file upload setting -->
       <beans:bean id="multipartResolver"
@@ -52,7 +34,6 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="2" />
 	</beans:bean>
-	
 	<context:component-scan base-package="com.upvote.sheet,data.*" />
 	
 </beans:beans>
