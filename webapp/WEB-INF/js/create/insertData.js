@@ -2,6 +2,7 @@ var inst_li_DB;
 var trackIdx;
 var chord_4_reg = RegExp(/^([A-Za-z0-9\+\-]+[,]){3}[A-Za-z0-9\+\-]+$/)
 var chord_8_reg = RegExp(/^([A-Za-z0-9\+\-]+[,]){7}[A-Za-z0-9\+\-]+$/)
+var test;
 
 //////////////// 트랙 정보 (악기 정보 입력) ////////////////
 //트랙 개수 입력 
