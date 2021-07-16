@@ -7,33 +7,23 @@ var chord_8_reg = RegExp(/^([A-Za-z0-9\+\-]+[,]){7}[A-Za-z0-9\+\-]+$/)
 //트랙 개수 입력 
 $('.trackNumButton').click(function() {
 	$('.inst_container').children().remove();
-	$('.serum_container').children().remove();
 	let trackNum = $('.trackNum').val();
 
 	for (var i = 0; i < trackNum; i++) {
 		let inst_info = '';
-		let serum_info = '';
 		//TODO toggle 버튼 누를때 v ^ 모양 변
 		inst_info += '<div class = "Input">' +
-			'<div class = "scrollInputBar">' + (i + 1) + '트랙 악기</div>' +
-			'<label for = "inst">' +
+			'<div class = "InputBar">' + (i + 1) + '트랙 악기</div>' +
+			'<label for = "inst" style = "margin-left: 30px">' +
 			'<input type = "text" class = "input_label inst inst' + i + '" id = "' + i + '">' +
 			'<div class = "instListContainer contain' + i + '"></div>' +
 			'</label>' +
 			'<div class = "instToggle"' + 'value = "' + i + '">#</div>' +
 			'<div>';
-			
-		serum_info += '<div class = "Input">' +
-			'<div class = "scrollInputBar">' + '세럼 번호</div>' +
-			'<label for = "inst">' +
-			'<input type = "text" class = "input_serum_label inst inst' + i + '" id = "' + i + '">' +
-			'<div class = "serumListContainer contain' + i + '"></div>' +
-			'</label>' +
-			'<div>';
 
-		$('.serum_container').append(serum_info);
 		$('.inst_container').append(inst_info);
 	}
+
 	// 악기 정보 가져와서 저장해줌 
 	$.ajax({
 		url: 'getInstList',
@@ -49,34 +39,23 @@ $('.trackNumButton').click(function() {
 $('.trackNum').keyup(function(e) {
 	if (e.keyCode == 13) {
 		$('.inst_container').children().remove();
-		$('.serum_container').children().remove();
 		let trackNum = $('.trackNum').val();
 
 		for (var i = 0; i < trackNum; i++) {
 			let inst_info = '';
-			let serum_info = '';
 			//TODO toggle 버튼 누를때 v ^ 모양 변
 			inst_info += '<div class = "Input">' +
-				'<div class = "scrollInputBar">' + (i + 1) + '트랙 악기</div>' +
-				'<label for = "inst">' +
+				'<div class = "InputBar">' + (i + 1) + '트랙 악기</div>' +
+				'<label for = "inst" style = "margin-left: 30px">' +
 				'<input type = "text" class = "input_label inst inst' + i + '" id = "' + i + '">' +
 				'<div class = "instListContainer contain' + i + '"></div>' +
 				'</label>' +
 				'<div class = "instToggle"' + 'value = "' + i + '">#</div>' +
 				'<div>';
-				
-			serum_info += '<div class = "Input">' +
-			'<div class = "scrollInputBar">' + '세럼 번호</div>' +
-			'<label for = "inst">' +
-			'<input type = "text" class = "input_serum_label inst inst' + i + '" id = "' + i + '">' +
-			'<div class = "serumListContainer contain' + i + '"></div>' +
-			'</label>' +
-			'<div>';
 
-			$('.serum_container').append(serum_info);
 			$('.inst_container').append(inst_info);
 		}
-		
+
 		// 악기 정보 가져와서 저장해줌 
 		$.ajax({
 			url: 'getInstList',
@@ -86,6 +65,7 @@ $('.trackNum').keyup(function(e) {
 				inst_li_DB = data.instList;
 			}
 		});
+
 	}
 });
 
@@ -93,8 +73,7 @@ $('.trackNum').keyup(function(e) {
 $(document).on(" click ", ".instToggle", function() {
 
 	$('.instListContainer').children().remove();
-	$('.serumListContainer').children().remove();
-	
+
 	for (let i = 0; i < inst_li_DB.length; i++) {
 		let inst_li = '<div class = "instOption"' + 'value = "' + i + '">' +
 			inst_li_DB[i].instName +
@@ -116,7 +95,6 @@ $(document).on(" click ", ".instOption", function() {
 $(document).on("propertychange change keyup paste input", ".inst", function() {
 	//이전의 토글 내용 삭제 
 	$('.instListContainer').children().remove();
-	$('.serumListContainer').children().remove();
 
 	//현재 인풋 확인해서 매칭되는 악기 리스트 생성
 	newValue = $(this).val();
@@ -144,7 +122,7 @@ $('.measureNumButton').click(function() {
 	for (var i = 0; i < measureNum; i++) {
 		let chord_info = '';
 		chord_info += '<div class = "Input">' +
-			'<div class = "scrollInputBar">' + (i + 1) + '마디 코드</div>' +
+			'<div class = "InputBar">' + (i + 1) + '마디 코드</div>' +
 			'<label for = "chord" style = "margin-left: 30px">' +
 			'<input type = "text" class = "input_label chord chord' + i + '">' +
 			'</label>' +
@@ -162,7 +140,7 @@ $('.measureNum').keyup(function(e) {
 		for (var i = 0; i < measureNum; i++) {
 			let chord_info = '';
 			chord_info += '<div class = "Input">' +
-				'<div class = "scrollInputBar">' + (i + 1) + '마디 코드</div>' +
+				'<div class = "InputBar">' + (i + 1) + '마디 코드</div>' +
 				'<label for = "chord" style = "margin-left: 30px">' +
 				'<input type = "text" class = "input_label chord chord' + i + '">' +
 				'</label>' +
@@ -216,7 +194,7 @@ $('.SongSubmitButton').click(function() {
 			})
 			return;
 		}
-
+		
 		// 코드 정보 입력 형식 체크
 		if (checkChordForm(chord_li) == false) {
 			let txt = '코드 입력 형식이 올바르지 않습니다.';
@@ -232,12 +210,12 @@ $('.SongSubmitButton').click(function() {
 	// 곡 정보 빈칸 있으면 오류 알림
 	else {
 		let txt = '입력되지 않은 곡 정보가 있습니다.'
-
+		
 		modal('emptyInputAlertBox', txt);
 		$('.modalCloseBtn').click(function() {
 			$('.emptyInputAlertBox').css('display', 'none');
 		})
-
+		
 		return;
 	}
 
@@ -259,9 +237,9 @@ $('.SongSubmitButton').click(function() {
 //코드 입력 형식 체크 ㅁ,ㅁ,ㅁ,ㅁ 
 function checkChordForm(chord_li) {
 	console.log("여기");
-	for (let i = 0; i < chord_li.length; i++) {
+	for (let i=0; i < chord_li.length; i++) {
 		console.log(chord_li[i].measureNum, chord_li[i].chord);
-		if (!chord_4_reg.test(chord_li[i].chord) && !chord_8_reg.test(chord_li[i].chord)) {
+		if(!chord_4_reg.test(chord_li[i].chord) && !chord_8_reg.test(chord_li[i].chord)){
 			console.log("코드 입력 형식 에러");
 			return false;
 		}
@@ -370,11 +348,11 @@ function modal(className, text) {
 
 // 팝업 창 설정 메서드
 function popUp(url) {
-
+	
 	// 팝업 창 크기 설정
 	let popupWidth = 900;
 	let popupHeight = 200;
-
+	
 	// 현재 브라우저 기준 가운데 출력
 	let popupX = (document.body.offsetWidth / 2) - (popupWidth / 2);
 	let popupY = (document.body.offsetHeight / 2) - (popupHeight / 2);

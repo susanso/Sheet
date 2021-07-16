@@ -1,6 +1,9 @@
 .topContainer {
 	display: flex;
 	justify-content: space-between;
+	height: 5vh;
+	position: sticky;
+	background: #262626;
 }
 
 .functionPage{
