@@ -87,13 +87,10 @@ select {
 /* <--------- 카드 부분 시작 ---------> */
 /* 카드 전체를 감싸는 부분 */
 .all_cards_container {
-	width: 85%;
     /* height: 800px; 높이 지정 시 스크롤 나옴*/
-	margin: 0 auto;
+	margin: 0;
     align-content: center;
     font-family: Roboto;
-	margin-top: 50px;	
-	margin-bottom: 100px;
     overflow: auto;
     justify-content: unset;
 }
