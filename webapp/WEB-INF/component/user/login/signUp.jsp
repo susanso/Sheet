@@ -50,7 +50,7 @@
 							spellcheck="false" placeholder="이름">					
 					</div>
 				</div>
-				<div class="alertError alertName">이름을 확인해주세요.</div>
+				<div class="alertError alertName">이름을 입력해주세요.</div>
 				<div class="signUpculumnRow">
 					<div class="signUpTitle">비밀번호  </div>
 					<div class="signUpInputmBox">

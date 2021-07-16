@@ -66,9 +66,9 @@
 						</div>
 						<input class = "songInfo_quantity_apply_button" id = "track_quantity_apply_button" type="button" value="설정" />
 					</div>
-					<div class = "songInfo_add_box">
+					<div class = "songInfo_track_add_box track_add_box1">
 						<div class = "songInfo_add_item"> 악기 1 </div>
-						<input class = "songInfo_add_input_button track_value"  placeholder="트랙 형태" />
+						<input class = "songInfo_add_input_button track_value" id = "track1"  placeholder="트랙 형태" />
 					</div>
 					<div class = "songInfo_track_plus_box"></div>
 				</div>
@@ -78,16 +78,16 @@
 					<div class = "songInfo_name_item"> 코드 정보 </div>
 					<div class = "songInfo_quantity_box">	
 						<div class = "songInfo_quantity_name_item"> 마디 수 </div>
-						<input class = "songInfo_quantity_input_button" id = "codeNumInput" value = "1"/> <!-- 악기 숫자 입력하는 부분 -->
+						<input class = "songInfo_quantity_input_button" id = "codeNumInput" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" value = "1"/> <!-- 악기 숫자 입력하는 부분 -->
 						<div class = "songInfo_quantity_updown_button_box">
-							<input class = "songInfo_quantity_updown_button up_button_code" type="button" value="+" />
-							<input class = "songInfo_quantity_updown_button down_button_code" type="button" value="-" />
+							<div class = "songInfo_quantity_updown_button up_button_code"> +</div>
+							<div class = "songInfo_quantity_updown_button down_button_code"> -</div>
 						</div>
 						<input class = "songInfo_quantity_apply_button" id = "code_quantity_apply_button" type="button" value="설정" />
 					</div>
-					<div class = "songInfo_add_box">
+					<div class = "songInfo_code_add_box code_add_box1">
 						<div class = "songInfo_add_item"> 마디 1 </div>
-						<input class = "songInfo_add_input_button" placeholder="코드 정보" />
+						<input class = "songInfo_add_input_button" id = "code1" placeholder="코드 정보" />
 					</div>
 					<div class = "songInfo_code_plus_box"></div>
 				</div>

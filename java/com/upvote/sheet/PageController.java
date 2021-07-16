@@ -95,4 +95,5 @@ public class PageController {
 	public String test2() {
 		return "component/read/viewDetail/viewDetail";
 	}
+	
 }
